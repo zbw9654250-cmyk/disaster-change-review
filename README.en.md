@@ -8,7 +8,9 @@ Compare two images of the same place before and after a disaster. The circles sh
 
 ![Oso before and after the landslide, with circles around the slide and the water upstream](docs/assets/demo-preview.en.webp)
 
-The demo has five cases. The three geological events have hand-drawn annotations and impact descriptions based on NASA and USGS reports. The other two cases show roofs before and after a hurricane and a wildfire. Their building damage grades come from xBD. Click either image to enlarge it. To use the demo offline, download and unzip the repository, then open [docs/index.html](docs/index.html).
+The demo has five cases. The three geological events have hand-drawn annotations and impact descriptions based on NASA and USGS reports. In the building cases, a long factory roof is gone after a hurricane, and pale debris fills the footprint of a house beside a pool after a wildfire. Both building grades come from xBD. [Hurricane Michael factory roof](https://zbw9654250-cmyk.github.io/disaster-change-review/?lang=en&case=hurricane-michael) · [Santa Rosa wildfire house](https://zbw9654250-cmyk.github.io/disaster-change-review/?lang=en&case=santa-rosa)
+
+Click either image to enlarge it. To use the demo offline, download and unzip the repository, then open [docs/index.html](docs/index.html).
 
 ## Run an example
 

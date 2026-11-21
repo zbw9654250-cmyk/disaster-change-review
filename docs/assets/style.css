@@ -42,8 +42,6 @@ time { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums;
 .photo { display: block; position: relative; width: 100%; cursor: zoom-in; }
 .photo:focus-visible { outline-offset: -3px; }
 .photo img { display: block; width: 100%; height: auto; }
-.building .frame { aspect-ratio: 3 / 2; }
-.building .photo { width: 66.66%; }
 .rings { position: absolute; inset: 0; pointer-events: none; }
 .ring {
   position: absolute; border-radius: 50%; border: 2px solid #ffcf62;
@@ -71,8 +69,6 @@ footer a { color: var(--muted); font-size: 13px; text-decoration: underline; tex
   .reading { grid-template-columns: 1fr; margin-top: 16px; gap: 17px; }
   .finding { grid-template-columns: 1fr 1.35fr; }
   .frame { border-radius: 7px; }
-  .building .frame { aspect-ratio: 1; }
-  .building .photo { width: 100%; }
   .explanation p { font-size: 16px; }
 }
 @media (max-width: 410px) {

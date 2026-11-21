@@ -136,101 +136,86 @@ const GALLERY = [
     ]
   },
   {
-    "id": "harvey",
+    "id": "hurricane-michael",
     "en": {
-      "name": "Hurricane Harvey",
-      "place": "Texas, USA",
+      "name": "Hurricane Michael",
+      "place": "Florida, USA",
       "type": "Hurricane",
-      "severity": "Major damage",
+      "severity": "Destroyed",
       "basis": "Whole building · xBD reference label",
-      "evidence": "The circles mark the same patch of roof. It looks green before the hurricane and much brighter, almost white, afterward.",
+      "evidence": "Look for the two rows of skylights on the building at the top. Below them, the long tan roof inside the circle is visible before the hurricane. Afterward, scattered panels and debris cover the same spot.",
       "credit": "Imagery and building labels · xBD / Maxar",
-      "beforeAlt": "The circle marks a green patch of roof before Hurricane Harvey.",
-      "afterAlt": "The same roof patch appears almost white after Hurricane Harvey."
+      "beforeAlt": "A long tan factory roof fills the circle below a building with two rows of skylights.",
+      "afterAlt": "Panels and debris are scattered where the long tan roof stood. The rows of skylights above are still visible."
     },
-    "name": "哈维飓风",
-    "place": "美国 · 德克萨斯州",
+    "name": "迈克尔飓风",
+    "place": "美国 · 佛罗里达州",
     "type": "飓风",
-    "severity": "严重受损",
+    "severity": "毁坏",
     "basis": "整栋建筑 · xBD 原始标注",
-    "evidence": "两幅图的圈内是同一块屋面。灾前呈绿色，灾后接近白色，局部明显变亮。",
+    "evidence": "先找上方屋顶的两排采光窗。它们下方的圈内，灾前是一整片浅褐色长屋顶。灾后这片屋顶消失，原处散落着板状碎片。",
     "credit": "影像与建筑标注 · xBD / Maxar",
-    "source": "https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/hurricane-harvey_00000304_post_disaster.json",
+    "source": "https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/hurricane-michael_00000022_post_disaster.json",
     "before": {
-      "date": "2017-02-16",
-      "file": "buildings/b-8d20ecdd66c0-pre.png",
-      "alt": "哈维飓风前的建筑，圈注标出用于对照的屋面位置。",
-      "rings": [
-        [
-          41.369,
-          43.4524,
-          13.0952,
-          16.6667
-        ]
-      ]
+      "date": "2017-11-29",
+      "file": "buildings/michael-plant-before.png",
+      "alt": "上方屋顶有两排采光窗，圈内是它下方一片连续的浅褐色厂房屋顶。"
     },
     "after": {
-      "date": "2017-08-31",
-      "file": "buildings/b-8d20ecdd66c0-post.png",
-      "alt": "哈维飓风后的同一栋建筑，圈注标出相应的屋面位置。",
-      "rings": [
-        [
-          40.1786,
-          43.4524,
-          13.0952,
-          16.6667
-        ]
-      ]
+      "date": "2018-10-13",
+      "file": "buildings/michael-plant-after.png",
+      "alt": "上方两排采光窗仍可辨认，下方厂房原来的浅褐色屋顶位置散落着板状碎片。"
     },
+    "rings": [
+      [
+        39,
+        64,
+        51,
+        27,
+        -2
+      ]
+    ],
     "subject": "building"
   },
   {
-    "id": "socal-fire",
+    "id": "santa-rosa",
     "en": {
-      "name": "Southern California wildfire",
-      "place": "California, USA",
+      "name": "Santa Rosa wildfire",
+      "place": "Santa Rosa, California, USA",
       "type": "Wildfire",
-      "severity": "No damage",
+      "severity": "Destroyed",
       "basis": "Whole building · xBD reference label",
-      "evidence": "The circled roof patch changes from brown to gray-brown, with a sharper contrast between light and dark areas after the fire. xBD labels the building as undamaged.",
+      "evidence": "Use the blue pool at lower left and the rounded end of the street on the right to find the house. Before the fire, a brown roof with several ridges spans the circle. Afterward, pale debris fills its footprint.",
       "credit": "Imagery and building labels · xBD / Maxar",
-      "beforeAlt": "The circled patch of roof looks brown before the Southern California wildfire.",
-      "afterAlt": "The same roof patch appears gray-brown with stronger light and dark variation after the fire."
+      "beforeAlt": "A brown roof with several ridges stands between a blue pool and the rounded end of the street.",
+      "afterAlt": "Pale debris fills the former roof footprint between the pool and the rounded end of the street."
     },
-    "name": "南加州山火",
-    "place": "美国 · 加利福尼亚州",
+    "name": "圣罗莎山火",
+    "place": "美国 · 加利福尼亚州圣罗莎",
     "type": "山火",
-    "severity": "无明显损伤",
+    "severity": "毁坏",
     "basis": "整栋建筑 · xBD 原始标注",
-    "evidence": "圈内的屋面从棕褐色变为灰褐色，灾后深浅差异更明显。这栋建筑的整体标注为无明显损伤。",
+    "evidence": "用左下方的蓝色泳池和右侧的圆形路端找准这栋住宅。灾前，圈内的棕色屋顶上能看清几条屋脊。灾后，屋顶的轮廓消失，原址只见成片的浅色残迹。",
     "credit": "影像与建筑标注 · xBD / Maxar",
-    "source": "https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/socal-fire_00000877_post_disaster.json",
+    "source": "https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/santa-rosa-wildfire_00000359_post_disaster.json",
     "before": {
-      "date": "2018-10-23",
-      "file": "buildings/b-abe0ad891f51-pre.png",
-      "alt": "南加州山火前的建筑，圈注标出用于对照的屋面位置。",
-      "rings": [
-        [
-          50.8929,
-          49.4048,
-          14.5833,
-          11.0119
-        ]
-      ]
+      "date": "2017-05-21",
+      "file": "buildings/santa-rosa-before.png",
+      "alt": "蓝色泳池与圆形路端之间有一栋住宅，圈内棕色屋顶上的几条屋脊清晰可见。"
     },
     "after": {
-      "date": "2018-11-14",
-      "file": "buildings/b-abe0ad891f51-post.png",
-      "alt": "南加州山火后的同一栋建筑，圈注标出相应的屋面位置。",
-      "rings": [
-        [
-          52.9762,
-          51.4881,
-          14.5833,
-          11.0119
-        ]
-      ]
+      "date": "2017-10-11",
+      "file": "buildings/santa-rosa-after.png",
+      "alt": "泳池和圆形路端仍清晰可辨，圈内原有的棕色屋顶变成大片浅色残迹。"
     },
+    "rings": [
+      [
+        29,
+        23.5,
+        45,
+        56
+      ]
+    ],
     "subject": "building"
   }
 ];

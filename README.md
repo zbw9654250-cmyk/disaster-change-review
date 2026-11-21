@@ -8,7 +8,9 @@
 
 ![奥索滑坡前后对比，两组圆圈分别标出滑坡和上游积水](docs/assets/demo-preview.webp)
 
-演示里有 5 个案例。三个地质灾害案例的圈由人工标出，影响范围来自 NASA 和 USGS 的事件记录。另两个案例展示飓风和山火前后的屋面变化，整栋建筑的损伤等级来自 xBD 标注。点击任一张图可以放大。要离线查看，下载并解压仓库，双击 [docs/index.html](docs/index.html)。
+演示里有 5 个案例。三个地质灾害案例的圈由人工标出，影响范围来自 NASA 和 USGS 的事件记录。两个建筑案例中，一处厂房的长屋顶在飓风后消失，一栋泳池旁的住宅在山火后只剩浅色残迹。两栋建筑的损伤等级均来自 xBD 标注。[迈克尔飓风厂房](https://zbw9654250-cmyk.github.io/disaster-change-review/?lang=zh&case=hurricane-michael) · [圣罗莎山火住宅](https://zbw9654250-cmyk.github.io/disaster-change-review/?lang=zh&case=santa-rosa)
+
+点击任一张图可以放大。要离线查看，下载并解压仓库，双击 [docs/index.html](docs/index.html)。
 
 ## 在本地跑一个例子
 

@@ -16,12 +16,12 @@
 
 ## xBD 建筑
 
-两栋建筑的灾前后 RGB 来自 xBD 测试分区，影像归属 Maxar / DigitalGlobe Open Data Program，建筑标注由 Ritwik Gupta 等发布。展示的四张 336 × 336 PNG 与仓库测试清单里的无描边裁图逐字节相同。圈注以各期实测屋面窗口为中心，标出供对照的局部。采集日期来自对应图块标注文件的 `metadata.capture_date`，整栋程度直接翻译 xBD 的灾后标注。局部说明来自该栋已保存的图像测量与核验记录。
+两组卫星影像取自 xBD 测试集。影像由 Maxar / DigitalGlobe 提供，建筑轮廓和损伤等级由 Ritwik Gupta 等发布。每组从两期原图的相同像素范围裁出，保留原始方向和颜色。黄圈由人工标出，采集日和整栋建筑的“毁坏”（`destroyed`）等级来自下表的原始标注。
 
-| 案例 | 目标建筑 | 采集日 | 官方标注文件 |
+| 案例 | 灾前 → 灾后 | 原图裁切范围（左、上、右、下，像素） | xBD 建筑 UID 与原始标注 |
 | --- | --- | --- | --- |
-| 哈维飓风 | `b-8d20ecdd66c0` | 2017-02-16 → 2017-08-31 | [灾前](https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/hurricane-harvey_00000304_pre_disaster.json) · [灾后，major-damage](https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/hurricane-harvey_00000304_post_disaster.json) |
-| 南加州山火 | `b-abe0ad891f51` | 2018-10-23 → 2018-11-14 | [灾前](https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/socal-fire_00000877_pre_disaster.json) · [灾后，no-damage](https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/socal-fire_00000877_post_disaster.json) |
+| 迈克尔飓风 · 厂房 | 2017-11-29 → 2018-10-13 | `(694, 804, 1024, 1024)`，330 × 220 | `71b32e9f-6e85-41c1-8f40-12e15cf00ac4` · [灾前](https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/hurricane-michael_00000022_pre_disaster.json) · [灾后](https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/hurricane-michael_00000022_post_disaster.json) |
+| 圣罗莎山火 · 住宅 | 2017-05-21 → 2017-10-11 | `(84, 84, 288, 220)`，204 × 136 | `2bd13650-52b7-42f1-8b4a-80c026ecebae` · [灾前](https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/santa-rosa-wildfire_00000359_pre_disaster.json) · [灾后](https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/santa-rosa-wildfire_00000359_post_disaster.json) |
 
 xBD 派生影像采用署名、非商业性使用、相同方式共享 4.0 国际许可，底图保留原署名与适用条款。[xBD 论文](https://arxiv.org/abs/1911.09296) · [许可条款](https://creativecommons.org/licenses/by-nc-sa/4.0/) · [八栋原始案例的来源和测量窗口](assets/cases.js)
 

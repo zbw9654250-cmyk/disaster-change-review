@@ -16,12 +16,12 @@ The README preview images show Oso and carry the same credits as the Oso image p
 
 ## Buildings from xBD
 
-The Hurricane Harvey and Southern California wildfire cases use satellite imagery from Maxar / DigitalGlobe and building annotations from xBD by Ritwik Gupta and colleagues. Each view is a 336 × 336 pixel crop. The circle marks the roof area measured in that image. Capture dates and whole-building grades come from the xBD annotations. The descriptions of local appearance come from the project's image measurements and review records.
+The two pairs are crops of xBD test images from the Maxar / DigitalGlobe Open Data Program. Ritwik Gupta and colleagues published the building footprints and damage labels. Each pair uses the same pixel window in both original images, with their original orientation and colors. We added the circles by hand. The capture dates and whole-building grade of `destroyed` come from the linked annotations.
 
-| Case and building | Image dates | xBD building label |
-| --- | --- | --- |
-| Hurricane Harvey · `b-8d20ecdd66c0` | Feb 16 and Aug 31, 2017 | Major damage. [Before](https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/hurricane-harvey_00000304_pre_disaster.json) · [After](https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/hurricane-harvey_00000304_post_disaster.json) |
-| Southern California wildfire · `b-abe0ad891f51` | Oct 23 and Nov 14, 2018 | No damage. [Before](https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/socal-fire_00000877_pre_disaster.json) · [After](https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/socal-fire_00000877_post_disaster.json) |
+| Case | Image dates | Crop in source pixels (left, top, right, bottom) | xBD building UID and annotations |
+| --- | --- | --- | --- |
+| Hurricane Michael · industrial building | Nov 29, 2017 and Oct 13, 2018 | `(694, 804, 1024, 1024)`, 330 × 220 | `71b32e9f-6e85-41c1-8f40-12e15cf00ac4` · [Before](https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/hurricane-michael_00000022_pre_disaster.json) · [After](https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/hurricane-michael_00000022_post_disaster.json) |
+| Santa Rosa wildfire · house | May 21 and Oct 11, 2017 | `(84, 84, 288, 220)`, 204 × 136 | `2bd13650-52b7-42f1-8b4a-80c026ecebae` · [Before](https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/santa-rosa-wildfire_00000359_pre_disaster.json) · [After](https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/santa-rosa-wildfire_00000359_post_disaster.json) |
 
 The xBD crops are distributed under CC BY-NC-SA 4.0. Keep the original imagery credits and applicable imagery terms when reusing them. [xBD paper](https://arxiv.org/abs/1911.09296) · [License](https://creativecommons.org/licenses/by-nc-sa/4.0/) · [Source records for the eight example buildings](assets/cases.js)
 

@@ -72,7 +72,6 @@ function selectCase(record) {
   }
   showPhoto("before", record);
   showPhoto("after", record);
-  document.querySelector(".comparison").classList.toggle("building", record.subject === "building");
   const source = byId("source");
   source.textContent = text.credit;
   source.href = record.source;
