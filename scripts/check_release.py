@@ -9,8 +9,6 @@ import sys
 from tempfile import TemporaryDirectory
 from urllib.parse import unquote, urlsplit
 from PIL import Image
-from shapely.geometry import Polygon
-from shapely.ops import unary_union
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -108,42 +106,6 @@ def check_gallery():
     print(f"Verified {len(records)} before-and-after image pairs.")
 
 
-def outline_polygon(path):
-    # Each displayed polygon is an absolute M/L/Z exterior followed by any holes.
-    rings = []
-    for subpath in path.removesuffix("Z").split("Z"):
-        vertices = subpath.removeprefix("M").split("L")
-        rings.append([tuple(map(float, vertex.split())) for vertex in vertices])
-    return Polygon(rings[0], rings[1:])
-
-
-def check_model_examples():
-    script = SITE / "assets" / "review" / "cases.js"
-    data = script.read_text(encoding="utf8").strip()
-    cases = json.loads(data.removeprefix("const REVIEW_CASES = ").removesuffix(";"))
-    if not cases or len({case["id"] for case in cases}) != len(cases):
-        raise ValueError("Model comparison needs examples with unique IDs")
-    report = json.loads((ROOT / "results" / "roof_objects.json").read_bytes())
-    matched = report["scenes"]["s_ebenezer"]["equal_budget"]["classes"]
-    for case in cases:
-        recovered = case["baselineIou"] < 0.5 <= case["currentIou"]
-        if recovered and case["fid"] not in matched[case["category"]]["new_reference_fids"]:
-            raise ValueError(f"Recovered example missing from the reported new matches: {case['id']}")
-        check_url(SITE / "index.html", case["image"], SITE, asset=True)
-        with Image.open(SITE / case["image"]) as image:
-            image.load()
-            if image.size != (case["width"], case["height"]):
-                raise ValueError(f"Overlay dimensions do not match the image: {case['id']}")
-        reference = unary_union([outline_polygon(path) for path in case["reference"]])
-        for method in ("baseline", "current"):
-            shapes = [outline_polygon(path) for path in case[method]]
-            best = max((p.intersection(reference).area / p.union(reference).area for p in shapes), default=0)
-            # Display coordinates are rounded to 0.01 px; the UI shows three decimal places.
-            if round(best, 3) != round(case[method + "Iou"], 3):
-                raise ValueError(f"Overlap differs from the displayed score: {case['id']} / {method}")
-    print(f"Verified displayed outlines and overlap scores for {len(cases)} model examples.")
-
-
 def check_inference():
     cases = ROOT / "data" / "xbd" / "confirm" / "cases.jsonl"
     input_ids = [r["building_id"] for r in read_rows(cases)]
@@ -165,5 +127,4 @@ def check_inference():
 if __name__ == "__main__":
     check_links()
     check_gallery()
-    check_model_examples()
     check_inference()

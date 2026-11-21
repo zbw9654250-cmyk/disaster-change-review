@@ -7,10 +7,4 @@
 | 单栋局部外观说明 | 保持两期目标图与足迹相同，比较上一版自由生成 RAG、CPU 视觉测量、Qwen 核验 | 两名 AI 读者都认为整句具体且有据的计数分别为 1/20、20/20、20/20。5 栋官方无损建筑也观察到颜色改变。[评分与协议计数](observations/review/scores.json) |
 | 光照与已知局部编辑 | 在额外 8 栋单期来源上构造 88 对 | 仅调整全图 Gamma 时，正确解释为与周边一致的有 4/8 → 8/8 栋。在 Gamma 与局部编辑同时存在时，命中编辑质心 6/8 → 8/8；新方法的主选区命中 6 栋，另框补回 2 栋。[逐例输出](observations/review/context-acceptance.json) |
 
-## 屋面损伤的筛选效果
-
-强模型和当前方法在每个测区提交的候选数相同。McLeans 新增 14 处命中，Belvedere 新增 5 处，Ebenezer 新增 3 处，South Reward 和 St Johns 持平。原有的 501 处命中全部保留。同一栋屋顶可能有多处损伤，这次评测按损伤轮廓计数。[逐对象匹配记录](roof_objects.json)
-
-在这五个测区，筛选规则总共腾出了 79 个名额。固定每个测区、每个类别的补入名额后，只按轮廓面积排序并去重，找回了 14 处原来漏检的损伤。用轮廓形状、与其他模型的重合程度等特征排序并去重，找回了 22 处。这是筛选规则确定后在同一批测区做的对照。[排序对照与逐例记录](roof_ranking_ablation.json)
-
-从项目根目录执行 `python scripts/replay_results.py`，可用 Python 标准库复算已存的对象级 F1、排序对照、两批评级准确率及匿名投票计数。重新运行 GPU 需要本地 Qwen 权重。用于周边光照校正的严格配准证明在真实双期测试的 20 栋上均不足，因此光照实验单独报告。[真实双期配准核查](observations/review/registration-qa.json)
+从项目根目录执行 `python scripts/replay_results.py`，可用 Python 标准库复算已存的对象级 F1、两批评级准确率及匿名投票计数。重新运行 GPU 需要本地 Qwen 权重。用于周边光照校正的严格配准证明在真实双期测试的 20 栋上均不足，因此光照实验单独报告。[真实双期配准核查](observations/review/registration-qa.json)
