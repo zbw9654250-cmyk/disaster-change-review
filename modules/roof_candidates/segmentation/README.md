@@ -16,4 +16,4 @@ python modules/roof_candidates/segmentation/vectorize_mask.py --mask combined.ti
 
 `--device cpu` 支持 CPU 推理。双类模型提供外露预测，四地区孔洞模型提供孔洞预测；合并图的冲突像素采用孔洞标签。矢量化按同类别像素的四邻域连接，并将 Polygon 汇出为 WGS84。该图层可交给整栋初评程序。随仓库的 Ebenezer 正射图为公开影像的裁片；裁片单独送入网络与在原图推理后裁切，边缘上下文会不同。
 
-模型作者为 Maja Kucharczyk、Paul E. Nesbit、Chris H. Hugenholtz。下载的权重与 EMD 来自其 Zenodo 归档。模型配置 `mask2former.py` 源自 MMSegmentation 并保留 Apache-2.0 署名与许可证；项目自己的推理适配和融合代码依主仓库 MIT 条款。[原仓库的推理实现](https://github.com/maja-kucharczyk/roof-damage-assessment/blob/1698d70dc3adcc81e2599a4fdbd3ab46d97dc520/Tools/Toolbox_Scripts/delineate_roof_damage.py) · [数据与权重](https://zenodo.org/records/20581719) · [配置许可证](LICENSE-MMSegmentation.txt)
+模型作者为 Maja Kucharczyk、Paul R. Nesbit、Chris H. Hugenholtz。下载的权重与 EMD 来自其 Zenodo 归档。模型配置 `mask2former.py` 源自 MMSegmentation 并保留 Apache-2.0 署名与许可证；项目自己的推理适配和融合代码依主仓库 MIT 条款。[原仓库的推理实现](https://github.com/maja-kucharczyk/roof-damage-assessment/blob/1698d70dc3adcc81e2599a4fdbd3ab46d97dc520/Tools/Toolbox_Scripts/delineate_roof_damage.py) · [数据与权重](https://zenodo.org/records/20581719) · [配置许可证](LICENSE-MMSegmentation.txt)
