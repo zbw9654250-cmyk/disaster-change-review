@@ -6,7 +6,7 @@ const GALLERY = [
     "type": "山体滑坡",
     "severity": "河道受阻",
     "basis": "河谷 · NASA 事件记录",
-    "evidence": "先看画面中央弯曲的河道。灾后，一条浅灰色的泥石带从山坡一直伸进河谷，横过原来的河道。右侧河湾的水面变宽，形成了堰塞湖。",
+    "evidence": "左圈内，灾后一条浅灰色的泥石带横过原来的河道。右圈内，灾前弯窄的河道在灾后变成一片较宽的水面，形成堰塞湖。",
     "credit": "影像与事件记录 · NASA Earth Observatory / USGS",
     "source": "https://science.nasa.gov/earth/earth-observatory/landslide-and-barrier-lake-near-oso-washington-83409/",
     "before": {
@@ -18,7 +18,23 @@ const GALLERY = [
       "date": "2014-03-23",
       "file": "geology/oso-post.png",
       "alt": "奥索滑坡后，泥土和碎屑伸入河道，上游出现更宽的水面。"
-    }
+    },
+    "rings": [
+      [
+        35.5,
+        27.7,
+        13,
+        39,
+        -28
+      ],
+      [
+        53.3,
+        41.6,
+        26.6,
+        14.8,
+        10
+      ]
+    ]
   },
   {
     "id": "mud-creek",
@@ -27,7 +43,7 @@ const GALLERY = [
     "type": "海岸边坡滑塌",
     "severity": "超过 400 米公路被毁",
     "basis": "公路路段 · USGS 调查",
-    "evidence": "灾前，浅色公路沿海岸连续通过。灾后，画面中央的灰褐色土石盖住了这段公路，一直堆到海里，海岸线在这里向外凸出。",
+    "evidence": "灾前，圈内的浅色公路沿海岸连续通过。灾后，灰褐色土石盖住了这段公路，并在岸边堆出一块向海突出的陆地。",
     "credit": "影像 · NASA Earth Observatory / USGS",
     "source": "https://science.nasa.gov/earth/earth-observatory/landslide-buries-scenic-california-highway-90281/",
     "before": {
@@ -39,7 +55,15 @@ const GALLERY = [
       "date": "2017-05-22",
       "file": "geology/mud-creek-post.png",
       "alt": "大苏尔滑坡后，土石堆积伸入海中，海岸轮廓向外突出。"
-    }
+    },
+    "rings": [
+      [
+        41.6,
+        40,
+        14.8,
+        22
+      ]
+    ]
   },
   {
     "id": "la-palma",
@@ -48,7 +72,7 @@ const GALLERY = [
     "type": "火山熔岩覆盖",
     "severity": "大片沿岸农田被覆盖",
     "basis": "沿岸区域 · NASA 影像解读",
-    "evidence": "以左上方的小港口为参照。灾前，沿岸是绿色农田和白色温室。灾后，两条深灰色熔岩带穿过农田、延伸入海，海岸线上多出两处突起。",
+    "evidence": "以上方的小港口为参照。灾前，两处圈内可见农田和温室。灾后，深灰色熔岩沿这两处到达海边，原来的海岸线向海中凸出。",
     "credit": "影像与事件记录 · NASA Earth Observatory / USGS",
     "source": "https://science.nasa.gov/earth/earth-observatory/a-changed-landscape-on-la-palma-149231/",
     "before": {
@@ -60,7 +84,23 @@ const GALLERY = [
       "date": "2021-12-15",
       "file": "geology/volcano/la-palma-after.png",
       "alt": "拉帕尔马岛灾后，两条深灰色熔岩带到达海边，覆盖农田，形成新的陆地。"
-    }
+    },
+    "rings": [
+      [
+        42.1,
+        38.8,
+        19.2,
+        10,
+        -6
+      ],
+      [
+        46.4,
+        64.2,
+        21.2,
+        18,
+        -9
+      ]
+    ]
   },
   {
     "id": "harvey",
@@ -69,31 +109,36 @@ const GALLERY = [
     "type": "飓风",
     "severity": "严重受损",
     "basis": "整栋建筑 · xBD 原始标注",
-    "evidence": "白框标出同一块屋面。灾前框内呈绿色，灾后接近白色，整块区域明显变亮。",
+    "evidence": "两幅图的圈内是同一块屋面。灾前呈绿色，灾后接近白色，局部明显变亮。",
     "credit": "影像与建筑标注 · xBD / Maxar",
     "source": "https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/hurricane-harvey_00000304_post_disaster.json",
     "before": {
       "date": "2017-02-16",
       "file": "buildings/b-8d20ecdd66c0-pre.png",
-      "alt": "哈维飓风前的建筑，白框标出用于对照的屋面位置。",
-      "box": [
-        41.369,
-        43.4524,
-        13.0952,
-        16.6667
+      "alt": "哈维飓风前的建筑，圈注标出用于对照的屋面位置。",
+      "rings": [
+        [
+          41.369,
+          43.4524,
+          13.0952,
+          16.6667
+        ]
       ]
     },
     "after": {
       "date": "2017-08-31",
       "file": "buildings/b-8d20ecdd66c0-post.png",
-      "alt": "哈维飓风后的同一栋建筑，白框标出相应的屋面位置。",
-      "box": [
-        40.1786,
-        43.4524,
-        13.0952,
-        16.6667
+      "alt": "哈维飓风后的同一栋建筑，圈注标出相应的屋面位置。",
+      "rings": [
+        [
+          40.1786,
+          43.4524,
+          13.0952,
+          16.6667
+        ]
       ]
-    }
+    },
+    "subject": "building"
   },
   {
     "id": "socal-fire",
@@ -102,30 +147,35 @@ const GALLERY = [
     "type": "山火",
     "severity": "无明显损伤",
     "basis": "整栋建筑 · xBD 原始标注",
-    "evidence": "白框内的屋面从棕褐色变为灰褐色。灾后，同一区域内的深浅差异更容易分辨。",
+    "evidence": "圈内的屋面从棕褐色变为灰褐色，灾后深浅差异更明显。这栋建筑的整体标注为无明显损伤。",
     "credit": "影像与建筑标注 · xBD / Maxar",
     "source": "https://huggingface.co/datasets/ziruihan/xbd_test/blob/361e53f86506e1f221f42a0c0d9619c213220ae5/test/labels/socal-fire_00000877_post_disaster.json",
     "before": {
       "date": "2018-10-23",
       "file": "buildings/b-abe0ad891f51-pre.png",
-      "alt": "南加州山火前的建筑，白框标出用于对照的屋面位置。",
-      "box": [
-        50.8929,
-        49.4048,
-        14.5833,
-        11.0119
+      "alt": "南加州山火前的建筑，圈注标出用于对照的屋面位置。",
+      "rings": [
+        [
+          50.8929,
+          49.4048,
+          14.5833,
+          11.0119
+        ]
       ]
     },
     "after": {
       "date": "2018-11-14",
       "file": "buildings/b-abe0ad891f51-post.png",
-      "alt": "南加州山火后的同一栋建筑，白框标出相应的屋面位置。",
-      "box": [
-        52.9762,
-        51.4881,
-        14.5833,
-        11.0119
+      "alt": "南加州山火后的同一栋建筑，圈注标出相应的屋面位置。",
+      "rings": [
+        [
+          52.9762,
+          51.4881,
+          14.5833,
+          11.0119
+        ]
       ]
-    }
+    },
+    "subject": "building"
   }
 ];

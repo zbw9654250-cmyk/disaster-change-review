@@ -77,11 +77,22 @@ def check_gallery():
         if date.fromisoformat(before["date"]) >= date.fromisoformat(after["date"]):
             raise ValueError(f"Invalid image chronology: {row['id']}")
         sizes = []
+        counts = []
         for photo in (before, after):
             check_url(gallery, photo["file"], SITE, asset=True)
             with Image.open(gallery.parent / photo["file"]) as image:
                 image.load()
                 sizes.append(image.size)
+            rings = photo.get("rings", row.get("rings", []))
+            if not rings:
+                raise ValueError(f"Missing change annotation: {photo['file']}")
+            for x, y, width, height, *angle in rings:
+                if not (0 <= x < x + width <= 100 and 0 <= y < y + height <= 100
+                        and len(angle) <= 1 and all(-180 <= a <= 180 for a in angle)):
+                    raise ValueError(f"Invalid change annotation: {photo['file']}")
+            counts.append(len(rings))
+        if counts[0] != counts[1]:
+            raise ValueError(f"Unpaired change annotations: {row['id']}")
         if sizes[0] != sizes[1] or before["file"] == after["file"]:
             raise ValueError(f"Expected two equally sized views: {row['id']}")
     print(f"Verified {len(records)} before-and-after image pairs.")

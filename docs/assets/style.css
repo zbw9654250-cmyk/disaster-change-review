@@ -38,7 +38,13 @@ time { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums;
 .photo img { display: block; width: 100%; height: auto; }
 .building .frame { aspect-ratio: 3 / 2; }
 .building .photo { width: 66.66%; }
-.marker { position: absolute; border: 2px solid white; outline: 1px solid #254433; box-shadow: inset 0 0 0 1px #254433; }
+.rings { position: absolute; inset: 0; pointer-events: none; }
+.ring {
+  position: absolute; border-radius: 50%; border: 2px solid #ffcf62;
+  box-shadow: 0 0 0 1px rgb(48 32 11 / 80%);
+}
+.enlarged .photo { cursor: auto; }
+.enlarged .ring { border-width: 3px; }
 [hidden] { display: none !important; }
 .reading {
   margin-top: 23px; padding: 17px 0 22px; border-top: 1px solid var(--line);
