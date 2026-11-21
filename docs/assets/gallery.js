@@ -1,6 +1,17 @@
 const GALLERY = [
   {
     "id": "oso",
+    "en": {
+      "name": "Oso landslide",
+      "place": "Oso, Washington, USA",
+      "type": "Landslide",
+      "severity": "River blocked",
+      "basis": "River valley · NASA event report",
+      "evidence": "In the left circle, pale debris from the slope crosses the former river channel. In the right circle, the narrow bend visible before the slide has widened into a lake behind the debris.",
+      "credit": "Imagery and event report · NASA Earth Observatory / USGS",
+      "beforeAlt": "Before the Oso landslide, a narrow river bends along the base of the slope.",
+      "afterAlt": "After the Oso landslide, pale debris crosses the river and water has spread upstream."
+    },
     "name": "奥索滑坡",
     "place": "美国 · 华盛顿州奥索",
     "type": "山体滑坡",
@@ -38,6 +49,17 @@ const GALLERY = [
   },
   {
     "id": "mud-creek",
+    "en": {
+      "name": "Big Sur landslide",
+      "place": "Big Sur, California, USA",
+      "type": "Coastal landslide",
+      "severity": "Over 400 m of highway destroyed",
+      "basis": "Highway segment · USGS survey",
+      "evidence": "Before the slide, a pale road follows the coast through the circle. Afterward, gray-brown debris covers that section of road and extends beyond the former shoreline.",
+      "credit": "Imagery · NASA Earth Observatory / USGS",
+      "beforeAlt": "Before the Big Sur landslide, the road follows a narrow slope along the coast.",
+      "afterAlt": "After the Big Sur landslide, debris covers the road and forms a new bulge in the shoreline."
+    },
     "name": "大苏尔滑坡",
     "place": "美国 · 加利福尼亚州大苏尔",
     "type": "海岸边坡滑塌",
@@ -67,6 +89,17 @@ const GALLERY = [
   },
   {
     "id": "la-palma",
+    "en": {
+      "name": "La Palma eruption",
+      "place": "La Palma, Spain",
+      "type": "Volcanic eruption",
+      "severity": "Large areas of coastal farmland covered by lava",
+      "basis": "Coastal area · NASA image interpretation",
+      "evidence": "Use the small harbor at the upper left as a landmark. Both circles contain fields and greenhouses before the eruption. Afterward, two dark lava flows reach the sea and extend the shoreline at those spots.",
+      "credit": "Imagery and event report · NASA Earth Observatory / USGS",
+      "beforeAlt": "Before the La Palma eruption, fields and greenhouses line the coast south of the harbor.",
+      "afterAlt": "After the La Palma eruption, two dark lava flows cover farmland and form new land along the shore."
+    },
     "name": "拉帕尔马火山",
     "place": "西班牙 · 拉帕尔马岛",
     "type": "火山熔岩覆盖",
@@ -104,6 +137,17 @@ const GALLERY = [
   },
   {
     "id": "harvey",
+    "en": {
+      "name": "Hurricane Harvey",
+      "place": "Texas, USA",
+      "type": "Hurricane",
+      "severity": "Major damage",
+      "basis": "Whole building · xBD reference label",
+      "evidence": "The circles mark the same patch of roof. It looks green before the hurricane and much brighter, almost white, afterward.",
+      "credit": "Imagery and building labels · xBD / Maxar",
+      "beforeAlt": "The circle marks a green patch of roof before Hurricane Harvey.",
+      "afterAlt": "The same roof patch appears almost white after Hurricane Harvey."
+    },
     "name": "哈维飓风",
     "place": "美国 · 德克萨斯州",
     "type": "飓风",
@@ -142,6 +186,17 @@ const GALLERY = [
   },
   {
     "id": "socal-fire",
+    "en": {
+      "name": "Southern California wildfire",
+      "place": "California, USA",
+      "type": "Wildfire",
+      "severity": "No damage",
+      "basis": "Whole building · xBD reference label",
+      "evidence": "The circled roof patch changes from brown to gray-brown, with a sharper contrast between light and dark areas after the fire. xBD labels the building as undamaged.",
+      "credit": "Imagery and building labels · xBD / Maxar",
+      "beforeAlt": "The circled patch of roof looks brown before the Southern California wildfire.",
+      "afterAlt": "The same roof patch appears gray-brown with stronger light and dark variation after the fire."
+    },
     "name": "南加州山火",
     "place": "美国 · 加利福尼亚州",
     "type": "山火",

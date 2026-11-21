@@ -13,30 +13,39 @@
 <body>
   <main>
     <header>
-      <div class="title-row"><h1 id="heading">灾前灾后对比</h1><span id="place" aria-live="polite"></span></div>
-      <div id="cases" role="group" aria-label="选择灾害案例"></div>
+      <div class="title-row">
+        <h1 id="heading" data-en="Before and after">灾前灾后对比</h1>
+        <div class="title-meta">
+          <span id="place" aria-live="polite"></span>
+          <nav id="languages" aria-label="选择语言" data-en-label="Choose language">
+            <a href="?lang=zh" lang="zh-CN" hreflang="zh-CN">中文</a>
+            <a href="?lang=en" lang="en" hreflang="en">English</a>
+          </nav>
+        </div>
+      </div>
+      <div id="cases" role="group" aria-label="选择灾害案例" data-en-label="Choose a disaster"></div>
     </header>
     <article aria-labelledby="heading">
       <div class="comparison">
         <figure id="before">
-          <figcaption><strong>灾前</strong><time></time></figcaption>
-          <div class="frame"><a class="photo" target="_blank" rel="noopener" aria-label="打开放大的灾前圈注图（新标签页）"><img alt=""><span class="rings" aria-hidden="true"></span></a></div>
+          <figcaption><strong data-en="Before">灾前</strong><time></time></figcaption>
+          <div class="frame"><a class="photo" target="_blank" rel="noopener" aria-label="打开放大的灾前圈注图（新标签页）" data-en-label="Enlarge the annotated before image (opens in a new tab)"><img alt=""><span class="rings" aria-hidden="true"></span></a></div>
         </figure>
         <figure id="after">
-          <figcaption><strong>灾后</strong><time></time></figcaption>
-          <div class="frame"><a class="photo" target="_blank" rel="noopener" aria-label="打开放大的灾后圈注图（新标签页）"><img alt=""><span class="rings" aria-hidden="true"></span></a></div>
+          <figcaption><strong data-en="After">灾后</strong><time></time></figcaption>
+          <div class="frame"><a class="photo" target="_blank" rel="noopener" aria-label="打开放大的灾后圈注图（新标签页）" data-en-label="Enlarge the annotated after image (opens in a new tab)"><img alt=""><span class="rings" aria-hidden="true"></span></a></div>
         </figure>
       </div>
       <div class="reading">
-        <section class="explanation"><h2>证据说明</h2><p id="evidence"></p></section>
+        <section class="explanation"><h2 data-en="What changed">证据说明</h2><p id="evidence"></p></section>
         <dl class="finding">
-          <div><dt>灾害类型</dt><dd id="type"></dd></div>
-          <div><dt>受灾程度</dt><dd id="severity"></dd><dd id="basis"></dd></div>
+          <div><dt data-en="Hazard type">灾害类型</dt><dd id="type"></dd></div>
+          <div><dt data-en="Impact">受灾程度</dt><dd id="severity"></dd><dd id="basis"></dd></div>
         </dl>
       </div>
-      <footer><a id="source" href="DATA-NOTICE.md"></a><a href="DATA-NOTICE.md">影像署名与许可</a></footer>
+      <footer><a id="source" href="DATA-NOTICE.md"></a><a id="credits" href="DATA-NOTICE.md" data-en="Image credits and licenses">影像署名与许可</a></footer>
     </article>
-    <noscript>请在浏览器中启用 JavaScript，查看灾前灾后案例。</noscript>
+    <noscript>请在浏览器中启用 JavaScript，查看灾前灾后案例。 <span lang="en">Enable JavaScript to compare the images.</span></noscript>
   </main>
 </body>
 </html>

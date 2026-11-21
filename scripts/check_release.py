@@ -74,6 +74,14 @@ def check_gallery():
         raise ValueError("Gallery needs cases with unique IDs")
     for row in records:
         before, after = row["before"], row["after"]
+        fields = ("name", "place", "type", "severity", "basis", "evidence", "credit")
+        for language, labels in (("zh", row), ("en", row["en"])):
+            for field in fields:
+                if not labels[field].strip():
+                    raise ValueError(f"Missing {language} {field} for {row['id']}")
+        for phase in ("before", "after"):
+            if not row[phase]["alt"].strip() or not row["en"][phase + "Alt"].strip():
+                raise ValueError(f"Missing bilingual image description: {row['id']} / {phase}")
         if date.fromisoformat(before["date"]) >= date.fromisoformat(after["date"]):
             raise ValueError(f"Invalid image chronology: {row['id']}")
         sizes = []
