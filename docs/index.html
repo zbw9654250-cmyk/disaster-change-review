@@ -4,28 +4,69 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f8f4">
-  <title>灾前灾后对比</title>
+  <title>屋面损伤复核</title>
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/style.css">
   <script src="assets/gallery.js" defer></script>
+  <script src="assets/review/cases.js" defer></script>
   <script src="assets/workspace.js" defer></script>
 </head>
 <body>
   <main>
-    <header>
+    <header class="site-nav">
+      <nav id="views" aria-label="演示视图" data-en-label="Demo views">
+        <a id="review-link" href="?view=review" data-en="Model comparison">模型对照</a>
+        <a id="gallery-link" href="?view=gallery" data-en="Before and after">灾前灾后</a>
+      </nav>
+      <nav id="languages" aria-label="选择语言" data-en-label="Choose language">
+        <a href="?lang=zh" lang="zh-CN" hreflang="zh-CN">中文</a>
+        <a href="?lang=en" lang="en" hreflang="en">English</a>
+      </nav>
+    </header>
+    <article id="model-review" aria-labelledby="review-title" hidden>
+      <h1 id="review-title" data-en="Roof damage review">屋面损伤复核</h1>
+      <p class="intro" data-en="See how the current method fills in a fragmented roof decking outline and picks up a hole the original model missed.">在同一张航拍上，看原模型漏掉的孔洞和没有圈完整的外露屋面板。</p>
+      <section class="results" aria-label="五个测区的屋面损伤定位结果" data-en-label="Roof damage localization across five sites">
+        <dl>
+          <div><dt data-en="Candidates per method · 5 sites">五区合计 · 各自复核</dt><dd>1,269</dd></div>
+          <div><dt data-en="Damage features matched">正确定位的损伤</dt><dd>501 <span>→</span> <b>523</b></dd></div>
+          <div><dt data-en="False positives">误报</dt><dd>768 <span>→</span> <b>746</b></dd></div>
+        </dl>
+      </section>
+      <div id="review-cases" class="choices" role="group" aria-label="选择屋面损伤案例" data-en-label="Choose a roof damage example"></div>
+      <section id="model-example" aria-labelledby="sample-title">
+        <div class="example-row">
+          <h2 id="sample-title"></h2>
+          <div class="legend">
+            <span><i class="prediction-line" aria-hidden="true"></i><span data-en="Model outline">预测轮廓</span></span>
+            <label><input id="reference-toggle" type="checkbox" checked><i class="reference-line" aria-hidden="true"></i><span data-en="Human reference">人工参考</span></label>
+          </div>
+        </div>
+        <div class="comparison models">
+          <figure id="baseline">
+            <figcaption><strong data-en="Original model">原模型</strong><span class="score"></span></figcaption>
+            <button class="model-photo" type="button"><img alt=""><svg aria-hidden="true" focusable="false"></svg></button>
+          </figure>
+          <figure id="current">
+            <figcaption><strong data-en="Current method">当前方法</strong><span class="score"></span></figcaption>
+            <button class="model-photo" type="button"><img alt=""><svg aria-hidden="true" focusable="false"></svg></button>
+          </figure>
+        </div>
+        <p id="sample-evidence" class="evidence"></p>
+        <p class="rule" data-en="IoU measures overlap with the human outline. A match requires the same damage class and IoU ≥ 0.50, with each labeled feature counted once.">IoU 衡量预测轮廓与人工轮廓的重合度。类别相同且 IoU ≥ 0.50 才算命中，每处人工标注只计一次。</p>
+      </section>
+      <footer>
+        <a id="review-credits" href="DATA-NOTICE.md" data-en="Imagery and outline credits">航拍与轮廓来源</a>
+        <a href="https://github.com/zbw9654250-cmyk/disaster-change-review/blob/main/results/roof_objects.json" data-en="Results by site">逐测区评测记录</a>
+      </footer>
+    </article>
+    <article id="event-gallery" aria-labelledby="heading" hidden>
       <div class="title-row">
         <h1 id="heading" data-en="Before and after">灾前灾后对比</h1>
-        <div class="title-meta">
-          <span id="place" aria-live="polite"></span>
-          <nav id="languages" aria-label="选择语言" data-en-label="Choose language">
-            <a href="?lang=zh" lang="zh-CN" hreflang="zh-CN">中文</a>
-            <a href="?lang=en" lang="en" hreflang="en">English</a>
-          </nav>
-        </div>
+        <span id="place" aria-live="polite"></span>
       </div>
-      <div id="cases" role="group" aria-label="选择灾害案例" data-en-label="Choose a disaster"></div>
-    </header>
-    <article aria-labelledby="heading">
+      <p class="intro" data-en="The preset circles guide the comparison. Each case links to the event report or building damage label.">黄圈是预设的读图提示。每个案例都附有灾情记录或建筑损伤等级的来源。</p>
+      <div id="cases" class="choices" role="group" aria-label="选择灾害案例" data-en-label="Choose a disaster"></div>
       <div class="comparison">
         <figure id="before">
           <figcaption><strong data-en="Before">灾前</strong><time></time></figcaption>
@@ -45,7 +86,11 @@
       </div>
       <footer><a id="source" href="DATA-NOTICE.md"></a><a id="credits" href="DATA-NOTICE.md" data-en="Image credits and licenses">影像署名与许可</a></footer>
     </article>
-    <noscript>请在浏览器中启用 JavaScript，查看灾前灾后案例。 <span lang="en">Enable JavaScript to compare the images.</span></noscript>
+    <dialog id="image-dialog" aria-labelledby="zoom-title">
+      <div class="zoom-toolbar"><strong id="zoom-title"></strong><button type="button" id="close-zoom" data-en="Close">关闭</button></div>
+      <div id="zoom-photo"></div>
+    </dialog>
+    <noscript>请在浏览器中启用 JavaScript 查看影像对照。 <span lang="en">Enable JavaScript to compare the images.</span></noscript>
   </main>
 </body>
 </html>

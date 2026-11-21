@@ -66,6 +66,18 @@ def grades():
     return dict(correct=correct, total=total)
 
 
+def roof_ranking():
+    report = load(RESULTS / "roof_ranking_ablation.json")
+    rows = [row for site in report["sites"].values() for row in site["equal_budget"].values()]
+    counts = {"replacement_slots": sum(row["quota"] for row in rows)}
+    for method in ("area_only", "frozen"):
+        recovered = sum(len(row["methods"][method]["new_ids"]) for row in rows)
+        if recovered != report["totals"]["equal_budget"][method]["new_ids"]:
+            raise ValueError(f"Ranking totals disagree for {method}")
+        counts[method + "_recovered"] = recovered
+    return counts
+
+
 if __name__ == "__main__":
-    print(json.dumps(dict(roof_objects=roof_objects(), building_grades=grades(),
+    print(json.dumps(dict(roof_objects=roof_objects(), roof_ranking=roof_ranking(), building_grades=grades(),
                           explanations_accepted_by_both=observations()), indent=2))

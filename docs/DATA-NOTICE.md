@@ -2,9 +2,13 @@
 
 **简体中文** · [English](DATA-NOTICE.en.md)
 
+## 屋面损伤模型对照
+
+左右两栏使用圣马丁岛 Ebenezer 同一天、同一位置的航拍裁片。航片由 GlobalMedic / RescUAV 于 2017 年 9 月 24 日经 OpenAerialMap 发布。人工参考轮廓和上游模型输出来自 Maja Kucharczyk、Paul R. Nesbit、Chris H. Hugenholtz。项目从上游模型的预测中筛选轮廓。网页将原模型与筛选后的轮廓分别绘在底图上，仓库首页截图也使用这组素材。航片和轮廓均按 CC BY 4.0 署名。[裁片与轮廓来源](assets/review/SOURCES.md) · [航片记录](https://api.openaerialmap.org/meta/59e62be63d6412ef7220c38b) · [原始标注与预测](https://zenodo.org/records/20581719)
+
 ## 滑坡和火山
 
-三组案例均使用 NASA Earth Observatory 发布的 Landsat 8 影像。每组两期取同一地点和相同像素范围，页面保留采集日期及影像方向。两期影像的对照圈由项目人工标在相同的图上位置，帮助找到下文描述的变化。灾情说明由项目根据官方事件记录整理，受灾程度描述受影响的河道、路段或农田。
+三组案例均使用 NASA Earth Observatory 发布的 Landsat 8 影像。每组两期取同一地点和相同像素范围，页面保留采集日期及影像方向。项目依据影像和官方事件记录，预先圈出典型变化位置，方便读者对照。受灾程度描述受影响的河道、路段或农田。
 
 | 案例 | 灾前 → 灾后 | 制图与数据 | 受灾程度的依据 |
 | --- | --- | --- | --- |
@@ -12,7 +16,7 @@
 | 大苏尔滑坡 | 2017-04-20 → 2017-05-22 | Joshua Stevens / NASA Earth Observatory，USGS Landsat | 塌方毁坏超过 400 米公路，长度取自现场调查。[USGS 调查](https://www.usgs.gov/special-topics/big-sur-landslides/science/mud-creek-landslide-may-20-2017) |
 | 拉帕尔马岛火山 | 2021-05-21 → 2021-12-15 | Lauren Dauphin / NASA Earth Observatory，USGS Landsat | 熔岩覆盖沿岸田地并入海，形成两处新的陆地。[NASA 事件记录](https://science.nasa.gov/earth/earth-observatory/a-changed-landscape-on-la-palma-149231/) |
 
-原图下载、裁切坐标与再使用条件见[两处滑坡的影像记录](assets/geology/SOURCES.md)和[火山影像记录](assets/geology/volcano/SOURCES.md)。仓库首页的[网页截图](assets/demo-preview.webp)展示奥索滑坡，保留同组影像的制图与数据署名。
+原图下载、裁切坐标与再使用条件见[两处滑坡的影像记录](assets/geology/SOURCES.md)和[火山影像记录](assets/geology/volcano/SOURCES.md)。
 
 ## xBD 建筑
 

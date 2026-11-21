@@ -2,6 +2,10 @@
 
 [简体中文](DATA-NOTICE.md) · **English**
 
+## Roof damage model comparison
+
+Both panels show the same aerial crop of Ebenezer, Sint Maarten. GlobalMedic / RescUAV captured the orthophoto on September 24, 2017 and shared it through OpenAerialMap. Maja Kucharczyk, Paul R. Nesbit and Chris H. Hugenholtz published the reference outlines and upstream predictions. The project selected outlines from those predictions. The demo draws the original and selected outlines separately on the image. The README previews use the same material. The imagery and outlines are credited under CC BY 4.0. [Crop and outline records](assets/review/SOURCES.md) · [Image record](https://api.openaerialmap.org/meta/59e62be63d6412ef7220c38b) · [Original labels and predictions](https://zenodo.org/records/20581719)
+
 ## Landslides and volcanic eruption
 
 Each pair shows the same area in two Landsat 8 images published by NASA Earth Observatory using USGS data. We cropped both images to the same extent and added circles to point out changes described in the published event reports. The impact shown in the demo refers to the river, road or farmland in the scene.
@@ -12,7 +16,7 @@ Each pair shows the same area in two Landsat 8 images published by NASA Earth Ob
 | Mud Creek landslide, Big Sur, California | Apr 20 and May 22, 2017 | Joshua Stevens, NASA Earth Observatory / USGS Landsat | The slide destroyed more than 400 metres of Highway 1, according to the field investigation. [USGS report](https://www.usgs.gov/special-topics/big-sur-landslides/science/mud-creek-landslide-may-20-2017) |
 | La Palma eruption, Spain | May 21 and Dec 15, 2021 | Lauren Dauphin, NASA Earth Observatory / USGS Landsat | Lava covered coastal farmland and formed new land in two places along the shore. [NASA report](https://science.nasa.gov/earth/earth-observatory/a-changed-landscape-on-la-palma-149231/) |
 
-The README preview images show Oso and carry the same credits as the Oso image pair. Original downloads and crop coordinates are listed in the [landslide records](assets/geology/SOURCES.md) and [volcano records](assets/geology/volcano/SOURCES.md). For reuse, see the [NASA Earth Science image guidance](https://science.nasa.gov/earth/faq/).
+Original downloads and crop coordinates are listed in the [landslide records](assets/geology/SOURCES.md) and [volcano records](assets/geology/volcano/SOURCES.md). For reuse, see the [NASA Earth Science image guidance](https://science.nasa.gov/earth/faq/).
 
 ## Buildings from xBD
 

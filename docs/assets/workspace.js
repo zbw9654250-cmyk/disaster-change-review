@@ -24,7 +24,7 @@ if (language === "en") {
     node.setAttribute("aria-label", node.dataset.enLabel);
   }
   byId("credits").href = "DATA-NOTICE.en.md";
-  document.title = byId("heading").textContent;
+  byId("review-credits").href = "DATA-NOTICE.en.md";
 }
 
 const caseText = record => language === "en" ? record.en : record;
@@ -35,10 +35,10 @@ function viewLink(id, lang, phase) {
   return "?" + query;
 }
 
-function setLanguageLinks(record, phase) {
+function setLanguageLinks(makeLink) {
   for (const link of byId("languages").children) {
     const lang = link.lang === "en" ? "en" : "zh";
-    link.href = viewLink(record.id, lang, phase);
+    link.href = makeLink(lang);
     link.setAttribute("aria-current", String(lang === language));
   }
 }
@@ -75,16 +75,118 @@ function selectCase(record) {
   const source = byId("source");
   source.textContent = text.credit;
   source.href = record.source;
-  setLanguageLinks(record);
+  setLanguageLinks(lang => viewLink(record.id, lang));
   for (const button of buttons.children) {
     button.setAttribute("aria-pressed", String(button.value === record.id));
   }
 }
 
+function replaceUrl(href) {
+  try {
+    history.replaceState(null, "", href);
+    return true;
+  } catch {
+    // A local file can still navigate when the browser restricts the History API.
+    location.assign(href);
+    return false;
+  }
+}
+
+function renderOutlines(svg, record, method) {
+  svg.setAttribute("viewBox", "0 0 " + record.width + " " + record.height);
+  svg.replaceChildren();
+  for (const [lines, style] of [[record[method], "prediction"], [record.reference, "reference"]]) {
+    for (const d of lines) {
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path.setAttribute("class", style);
+      path.setAttribute("d", d);
+      svg.append(path);
+    }
+  }
+}
+
+function startReview() {
+  const toggle = byId("reference-toggle");
+  const dialog = byId("image-dialog");
+  let selected = REVIEW_CASES.find(item => item.id === params.get("sample")) ?? REVIEW_CASES[0];
+  toggle.checked = params.get("ref") !== "0";
+
+  function sampleLink(lang) {
+    const query = new URLSearchParams({lang, sample: selected.id});
+    if (!toggle.checked) query.set("ref", "0");
+    return "?" + query;
+  }
+
+  function syncReference() {
+    document.body.classList.toggle("hide-reference", !toggle.checked);
+    setLanguageLinks(sampleLink);
+  }
+
+  function showSample() {
+    const copy = selected[language];
+    byId("sample-title").textContent = "Ebenezer · " + (language === "en" ? "Feature " : "标注 ") + selected.fid;
+    byId("sample-evidence").textContent = copy.evidence;
+    for (const method of ["baseline", "current"]) {
+      const figure = byId(method);
+      const image = figure.querySelector("img");
+      image.src = selected.image;
+      image.alt = copy.alt;
+      const button = figure.querySelector("button");
+      const methodName = figure.querySelector("strong").textContent;
+      button.setAttribute("aria-label", language === "en" ? "Enlarge " + methodName.toLowerCase() + " outlines" : "放大" + methodName + "轮廓");
+      figure.querySelector(".score").textContent = (language === "en" ? "Best IoU " : "最佳 IoU ") + selected[method + "Iou"].toFixed(3);
+      renderOutlines(figure.querySelector("svg"), selected, method);
+    }
+    for (const button of byId("review-cases").children) {
+      button.setAttribute("aria-pressed", String(button.value === selected.id));
+    }
+    syncReference();
+  }
+
+  if (REVIEW_CASES.length > 1) {
+    for (const item of REVIEW_CASES) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = item[language].name;
+      button.value = item.id;
+      button.addEventListener("click", () => {
+        selected = item;
+        if (replaceUrl(sampleLink(language))) showSample();
+      });
+      byId("review-cases").append(button);
+    }
+  } else {
+    byId("review-cases").hidden = true;
+  }
+  toggle.addEventListener("change", () => {
+    if (replaceUrl(sampleLink(language))) syncReference();
+  });
+  for (const button of document.querySelectorAll(".model-photo")) {
+    button.addEventListener("click", () => {
+      const figure = button.closest("figure");
+      byId("zoom-title").textContent = selected[language].name + " · " + figure.querySelector("strong").textContent;
+      byId("zoom-photo").replaceChildren(...[...button.children].map(el => el.cloneNode(true)));
+      dialog.showModal();
+    });
+  }
+  byId("close-zoom").addEventListener("click", () => dialog.close());
+  showSample();
+}
+
 const selected = GALLERY.find(record => record.id === params.get("case"));
 const phase = params.get("phase");
-if (selected && (phase === "before" || phase === "after")) {
-  setLanguageLinks(selected, phase);
+const isGallery = Boolean(selected) || params.get("view") === "gallery";
+byId("review-link").href = "?" + new URLSearchParams({lang: language});
+byId("gallery-link").href = "?" + new URLSearchParams({lang: language, view: "gallery"});
+byId(isGallery ? "gallery-link" : "review-link").setAttribute("aria-current", "page");
+byId(isGallery ? "event-gallery" : "model-review").hidden = false;
+byId(isGallery ? "model-review" : "event-gallery").remove();
+if (isGallery) byId("image-dialog").remove();
+document.title = byId(isGallery ? "heading" : "review-title").textContent;
+if (!isGallery) {
+  startReview();
+} else if (selected && (phase === "before" || phase === "after")) {
+  setLanguageLinks(lang => viewLink(selected.id, lang, phase));
   showPhoto(phase, selected);
   const figure = byId(phase);
   figure.querySelector("figcaption").append(byId("languages"));
@@ -105,14 +207,7 @@ if (selected && (phase === "before" || phase === "after")) {
     button.textContent = caseText(record).name;
     button.addEventListener("click", () => {
       const link = viewLink(record.id, language);
-      try {
-        history.replaceState(null, "", link);
-      } catch {
-        // Some browsers restrict History API calls on local files.
-        location.assign(link);
-        return;
-      }
-      selectCase(record);
+      if (replaceUrl(link)) selectCase(record);
     });
     buttons.append(button);
   }

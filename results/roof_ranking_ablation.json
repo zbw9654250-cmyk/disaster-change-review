@@ -1,0 +1,2604 @@
+{
+  "purpose": "Post-hoc diagnostic on the same five confirmation scenes; no retraining or policy change.",
+  "policy_sha256": "37f881c242ea79f92fb9d68f0b4404696dab816e62d26a44f1f11ca01f17659a",
+  "matching": "Same-class one-to-one maximum cardinality then total IoU, IoU >= 0.50. IDs are zero-based within scene and class.",
+  "quota": "In each scene/class/mode copy the exact list of selected strong objects and the number and positions of auxiliary slots from the frozen policy, before scoring against references.",
+  "area_only": "Positive-area same/dual candidates of the same class with max IoU <0.80 against ALL strong polygons of that class. No learned probability floor. Sort descending by projected area, stable same then dual source order, greedy within-class NMS suppressing IoU >=0.40. Take the quota.",
+  "area_after_frozen_admission": "Keep the frozen score floor and frozen score-ordered NMS winners. Reorder those survivors by descending area, breaking ties in frozen rank order, then take the same quota. This comparison isolates the final within-class ordering among surviving candidates.",
+  "totals": {
+    "main": {
+      "strong": {
+        "tp": 501,
+        "fp": 768,
+        "fn": 379,
+        "precision": 0.3947990543735225,
+        "recall": 0.5693181818181818,
+        "f1": 0.4662633783154956,
+        "new_ids": 0,
+        "lost_ids": 0,
+        "frozen_only_vs_method": 22,
+        "method_only_vs_frozen": 0
+      },
+      "retained": {
+        "tp": 501,
+        "fp": 689,
+        "fn": 379,
+        "precision": 0.42100840336134454,
+        "recall": 0.5693181818181818,
+        "f1": 0.48405797101449277,
+        "new_ids": 0,
+        "lost_ids": 0,
+        "frozen_only_vs_method": 22,
+        "method_only_vs_frozen": 0
+      },
+      "frozen": {
+        "tp": 523,
+        "fp": 746,
+        "fn": 357,
+        "precision": 0.41213553979511425,
+        "recall": 0.5943181818181819,
+        "f1": 0.4867380176826431,
+        "new_ids": 22,
+        "lost_ids": 0,
+        "frozen_only_vs_method": 0,
+        "method_only_vs_frozen": 0
+      },
+      "area_only": {
+        "tp": 515,
+        "fp": 754,
+        "fn": 365,
+        "precision": 0.40583136327817176,
+        "recall": 0.5852272727272727,
+        "f1": 0.47929269427640764,
+        "new_ids": 14,
+        "lost_ids": 0,
+        "frozen_only_vs_method": 17,
+        "method_only_vs_frozen": 9
+      },
+      "area_after_frozen_admission": {
+        "tp": 516,
+        "fp": 753,
+        "fn": 364,
+        "precision": 0.4066193853427896,
+        "recall": 0.5863636363636363,
+        "f1": 0.48022335970218705,
+        "new_ids": 15,
+        "lost_ids": 0,
+        "frozen_only_vs_method": 16,
+        "method_only_vs_frozen": 9
+      }
+    },
+    "equal_budget": {
+      "strong": {
+        "tp": 501,
+        "fp": 768,
+        "fn": 379,
+        "precision": 0.3947990543735225,
+        "recall": 0.5693181818181818,
+        "f1": 0.4662633783154956,
+        "new_ids": 0,
+        "lost_ids": 0,
+        "frozen_only_vs_method": 22,
+        "method_only_vs_frozen": 0
+      },
+      "retained": {
+        "tp": 501,
+        "fp": 689,
+        "fn": 379,
+        "precision": 0.42100840336134454,
+        "recall": 0.5693181818181818,
+        "f1": 0.48405797101449277,
+        "new_ids": 0,
+        "lost_ids": 0,
+        "frozen_only_vs_method": 22,
+        "method_only_vs_frozen": 0
+      },
+      "frozen": {
+        "tp": 523,
+        "fp": 746,
+        "fn": 357,
+        "precision": 0.41213553979511425,
+        "recall": 0.5943181818181819,
+        "f1": 0.4867380176826431,
+        "new_ids": 22,
+        "lost_ids": 0,
+        "frozen_only_vs_method": 0,
+        "method_only_vs_frozen": 0
+      },
+      "area_only": {
+        "tp": 515,
+        "fp": 754,
+        "fn": 365,
+        "precision": 0.40583136327817176,
+        "recall": 0.5852272727272727,
+        "f1": 0.47929269427640764,
+        "new_ids": 14,
+        "lost_ids": 0,
+        "frozen_only_vs_method": 17,
+        "method_only_vs_frozen": 9
+      },
+      "area_after_frozen_admission": {
+        "tp": 516,
+        "fp": 753,
+        "fn": 364,
+        "precision": 0.4066193853427896,
+        "recall": 0.5863636363636363,
+        "f1": 0.48022335970218705,
+        "new_ids": 15,
+        "lost_ids": 0,
+        "frozen_only_vs_method": 16,
+        "method_only_vs_frozen": 9
+      }
+    },
+    "low_fp": {
+      "strong": {
+        "tp": 501,
+        "fp": 768,
+        "fn": 379,
+        "precision": 0.3947990543735225,
+        "recall": 0.5693181818181818,
+        "f1": 0.4662633783154956,
+        "new_ids": 0,
+        "lost_ids": 0,
+        "frozen_only_vs_method": 14,
+        "method_only_vs_frozen": 0
+      },
+      "retained": {
+        "tp": 501,
+        "fp": 689,
+        "fn": 379,
+        "precision": 0.42100840336134454,
+        "recall": 0.5693181818181818,
+        "f1": 0.48405797101449277,
+        "new_ids": 0,
+        "lost_ids": 0,
+        "frozen_only_vs_method": 14,
+        "method_only_vs_frozen": 0
+      },
+      "frozen": {
+        "tp": 515,
+        "fp": 713,
+        "fn": 365,
+        "precision": 0.4193811074918567,
+        "recall": 0.5852272727272727,
+        "f1": 0.48861480075901326,
+        "new_ids": 14,
+        "lost_ids": 0,
+        "frozen_only_vs_method": 0,
+        "method_only_vs_frozen": 0
+      },
+      "area_only": {
+        "tp": 507,
+        "fp": 721,
+        "fn": 373,
+        "precision": 0.41286644951140067,
+        "recall": 0.5761363636363637,
+        "f1": 0.4810246679316888,
+        "new_ids": 6,
+        "lost_ids": 0,
+        "frozen_only_vs_method": 12,
+        "method_only_vs_frozen": 4
+      },
+      "area_after_frozen_admission": {
+        "tp": 513,
+        "fp": 715,
+        "fn": 367,
+        "precision": 0.4177524429967427,
+        "recall": 0.5829545454545455,
+        "f1": 0.48671726755218214,
+        "new_ids": 12,
+        "lost_ids": 0,
+        "frozen_only_vs_method": 7,
+        "method_only_vs_frozen": 5
+      }
+    }
+  },
+  "sites": {
+    "b_gbhurricanedorianmcleans": {
+      "main": {
+        "Decking": {
+          "quota": 27,
+          "area_only_pool": 606,
+          "frozen_qualified_pool": 141,
+          "methods": {
+            "strong": {
+              "counts": [
+                175,
+                343,
+                182
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                6,
+                155,
+                183,
+                184,
+                205,
+                243,
+                272,
+                295,
+                302,
+                316
+              ],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                175,
+                309,
+                182
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                6,
+                155,
+                183,
+                184,
+                205,
+                243,
+                272,
+                295,
+                302,
+                316
+              ],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                185,
+                326,
+                172
+              ],
+              "new_ids": [
+                6,
+                155,
+                183,
+                184,
+                205,
+                243,
+                272,
+                295,
+                302,
+                316
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                182,
+                329,
+                175
+              ],
+              "new_ids": [
+                17,
+                43,
+                155,
+                159,
+                271,
+                291,
+                346
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                6,
+                183,
+                184,
+                205,
+                243,
+                272,
+                295,
+                302,
+                316
+              ],
+              "method_only_vs_frozen": [
+                17,
+                43,
+                159,
+                271,
+                291,
+                346
+              ]
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                182,
+                329,
+                175
+              ],
+              "new_ids": [
+                155,
+                159,
+                182,
+                291,
+                295,
+                297,
+                350
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                6,
+                183,
+                184,
+                205,
+                243,
+                272,
+                302,
+                316
+              ],
+              "method_only_vs_frozen": [
+                159,
+                182,
+                291,
+                297,
+                350
+              ]
+            }
+          }
+        },
+        "Hole": {
+          "quota": 24,
+          "area_only_pool": 235,
+          "frozen_qualified_pool": 96,
+          "methods": {
+            "strong": {
+              "counts": [
+                103,
+                150,
+                56
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                38,
+                94,
+                97,
+                120
+              ],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                103,
+                133,
+                56
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                38,
+                94,
+                97,
+                120
+              ],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                107,
+                153,
+                52
+              ],
+              "new_ids": [
+                38,
+                94,
+                97,
+                120
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                107,
+                153,
+                52
+              ],
+              "new_ids": [
+                16,
+                38,
+                88,
+                97
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                94,
+                120
+              ],
+              "method_only_vs_frozen": [
+                16,
+                88
+              ]
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                108,
+                152,
+                51
+              ],
+              "new_ids": [
+                16,
+                38,
+                74,
+                88,
+                97
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                94,
+                120
+              ],
+              "method_only_vs_frozen": [
+                16,
+                74,
+                88
+              ]
+            }
+          }
+        }
+      },
+      "equal_budget": {
+        "Decking": {
+          "quota": 27,
+          "area_only_pool": 606,
+          "frozen_qualified_pool": 141,
+          "methods": {
+            "strong": {
+              "counts": [
+                175,
+                343,
+                182
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                6,
+                155,
+                183,
+                184,
+                205,
+                243,
+                272,
+                295,
+                302,
+                316
+              ],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                175,
+                309,
+                182
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                6,
+                155,
+                183,
+                184,
+                205,
+                243,
+                272,
+                295,
+                302,
+                316
+              ],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                185,
+                326,
+                172
+              ],
+              "new_ids": [
+                6,
+                155,
+                183,
+                184,
+                205,
+                243,
+                272,
+                295,
+                302,
+                316
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                182,
+                329,
+                175
+              ],
+              "new_ids": [
+                17,
+                43,
+                155,
+                159,
+                271,
+                291,
+                346
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                6,
+                183,
+                184,
+                205,
+                243,
+                272,
+                295,
+                302,
+                316
+              ],
+              "method_only_vs_frozen": [
+                17,
+                43,
+                159,
+                271,
+                291,
+                346
+              ]
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                182,
+                329,
+                175
+              ],
+              "new_ids": [
+                155,
+                159,
+                182,
+                291,
+                295,
+                297,
+                350
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                6,
+                183,
+                184,
+                205,
+                243,
+                272,
+                302,
+                316
+              ],
+              "method_only_vs_frozen": [
+                159,
+                182,
+                291,
+                297,
+                350
+              ]
+            }
+          }
+        },
+        "Hole": {
+          "quota": 24,
+          "area_only_pool": 235,
+          "frozen_qualified_pool": 96,
+          "methods": {
+            "strong": {
+              "counts": [
+                103,
+                150,
+                56
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                38,
+                94,
+                97,
+                120
+              ],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                103,
+                133,
+                56
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                38,
+                94,
+                97,
+                120
+              ],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                107,
+                153,
+                52
+              ],
+              "new_ids": [
+                38,
+                94,
+                97,
+                120
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                107,
+                153,
+                52
+              ],
+              "new_ids": [
+                16,
+                38,
+                88,
+                97
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                94,
+                120
+              ],
+              "method_only_vs_frozen": [
+                16,
+                88
+              ]
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                108,
+                152,
+                51
+              ],
+              "new_ids": [
+                16,
+                38,
+                74,
+                88,
+                97
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                94,
+                120
+              ],
+              "method_only_vs_frozen": [
+                16,
+                74,
+                88
+              ]
+            }
+          }
+        }
+      },
+      "low_fp": {
+        "Decking": {
+          "quota": 13,
+          "area_only_pool": 606,
+          "frozen_qualified_pool": 28,
+          "methods": {
+            "strong": {
+              "counts": [
+                175,
+                343,
+                182
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                184,
+                205,
+                243,
+                272,
+                295
+              ],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                175,
+                309,
+                182
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                184,
+                205,
+                243,
+                272,
+                295
+              ],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                180,
+                317,
+                177
+              ],
+              "new_ids": [
+                184,
+                205,
+                243,
+                272,
+                295
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                178,
+                319,
+                179
+              ],
+              "new_ids": [
+                43,
+                271,
+                346
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                184,
+                205,
+                243,
+                272,
+                295
+              ],
+              "method_only_vs_frozen": [
+                43,
+                271,
+                346
+              ]
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                181,
+                316,
+                176
+              ],
+              "new_ids": [
+                6,
+                155,
+                183,
+                205,
+                272,
+                295
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                184,
+                243
+              ],
+              "method_only_vs_frozen": [
+                6,
+                155,
+                183
+              ]
+            }
+          }
+        },
+        "Hole": {
+          "quota": 12,
+          "area_only_pool": 235,
+          "frozen_qualified_pool": 27,
+          "methods": {
+            "strong": {
+              "counts": [
+                103,
+                150,
+                56
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                38,
+                94
+              ],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                103,
+                133,
+                56
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                38,
+                94
+              ],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                105,
+                143,
+                54
+              ],
+              "new_ids": [
+                38,
+                94
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                105,
+                143,
+                54
+              ],
+              "new_ids": [
+                38,
+                97
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                94
+              ],
+              "method_only_vs_frozen": [
+                97
+              ]
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                106,
+                142,
+                53
+              ],
+              "new_ids": [
+                38,
+                88,
+                97
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                94
+              ],
+              "method_only_vs_frozen": [
+                88,
+                97
+              ]
+            }
+          }
+        }
+      }
+    },
+    "s_belvedere": {
+      "main": {
+        "Decking": {
+          "quota": 3,
+          "area_only_pool": 44,
+          "frozen_qualified_pool": 9,
+          "methods": {
+            "strong": {
+              "counts": [
+                18,
+                31,
+                11
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                14
+              ],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                18,
+                29,
+                11
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                14
+              ],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                20,
+                30,
+                9
+              ],
+              "new_ids": [
+                0,
+                14
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                19,
+                31,
+                10
+              ],
+              "new_ids": [
+                0
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                14
+              ],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                19,
+                31,
+                10
+              ],
+              "new_ids": [
+                0
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                14
+              ],
+              "method_only_vs_frozen": []
+            }
+          }
+        },
+        "Hole": {
+          "quota": 6,
+          "area_only_pool": 59,
+          "frozen_qualified_pool": 30,
+          "methods": {
+            "strong": {
+              "counts": [
+                41,
+                56,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                8,
+                13,
+                30
+              ],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                41,
+                49,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                8,
+                13,
+                30
+              ],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                44,
+                52,
+                13
+              ],
+              "new_ids": [
+                8,
+                13,
+                30
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                41,
+                55,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                8,
+                13,
+                30
+              ],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                41,
+                55,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                8,
+                13,
+                30
+              ],
+              "method_only_vs_frozen": []
+            }
+          }
+        }
+      },
+      "equal_budget": {
+        "Decking": {
+          "quota": 3,
+          "area_only_pool": 44,
+          "frozen_qualified_pool": 9,
+          "methods": {
+            "strong": {
+              "counts": [
+                18,
+                31,
+                11
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                14
+              ],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                18,
+                29,
+                11
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                14
+              ],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                20,
+                30,
+                9
+              ],
+              "new_ids": [
+                0,
+                14
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                19,
+                31,
+                10
+              ],
+              "new_ids": [
+                0
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                14
+              ],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                19,
+                31,
+                10
+              ],
+              "new_ids": [
+                0
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                14
+              ],
+              "method_only_vs_frozen": []
+            }
+          }
+        },
+        "Hole": {
+          "quota": 6,
+          "area_only_pool": 59,
+          "frozen_qualified_pool": 30,
+          "methods": {
+            "strong": {
+              "counts": [
+                41,
+                56,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                8,
+                13,
+                30
+              ],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                41,
+                49,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                8,
+                13,
+                30
+              ],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                44,
+                52,
+                13
+              ],
+              "new_ids": [
+                8,
+                13,
+                30
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                41,
+                55,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                8,
+                13,
+                30
+              ],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                41,
+                55,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                8,
+                13,
+                30
+              ],
+              "method_only_vs_frozen": []
+            }
+          }
+        }
+      },
+      "low_fp": {
+        "Decking": {
+          "quota": 2,
+          "area_only_pool": 44,
+          "frozen_qualified_pool": 3,
+          "methods": {
+            "strong": {
+              "counts": [
+                18,
+                31,
+                11
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                14
+              ],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                18,
+                29,
+                11
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                14
+              ],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                20,
+                29,
+                9
+              ],
+              "new_ids": [
+                0,
+                14
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                18,
+                31,
+                11
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                14
+              ],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                20,
+                29,
+                9
+              ],
+              "new_ids": [
+                0,
+                14
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            }
+          }
+        },
+        "Hole": {
+          "quota": 2,
+          "area_only_pool": 59,
+          "frozen_qualified_pool": 13,
+          "methods": {
+            "strong": {
+              "counts": [
+                41,
+                56,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                13,
+                30
+              ],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                41,
+                49,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                13,
+                30
+              ],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                43,
+                49,
+                14
+              ],
+              "new_ids": [
+                13,
+                30
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                41,
+                51,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                13,
+                30
+              ],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                41,
+                51,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                13,
+                30
+              ],
+              "method_only_vs_frozen": []
+            }
+          }
+        }
+      }
+    },
+    "s_ebenezer": {
+      "main": {
+        "Decking": {
+          "quota": 4,
+          "area_only_pool": 51,
+          "frozen_qualified_pool": 22,
+          "methods": {
+            "strong": {
+              "counts": [
+                44,
+                44,
+                20
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                24
+              ],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                44,
+                39,
+                20
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                24
+              ],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                45,
+                42,
+                19
+              ],
+              "new_ids": [
+                24
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                45,
+                42,
+                19
+              ],
+              "new_ids": [
+                24
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                45,
+                42,
+                19
+              ],
+              "new_ids": [
+                24
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            }
+          }
+        },
+        "Hole": {
+          "quota": 7,
+          "area_only_pool": 56,
+          "frozen_qualified_pool": 24,
+          "methods": {
+            "strong": {
+              "counts": [
+                39,
+                51,
+                34
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                49
+              ],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                39,
+                45,
+                34
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                49
+              ],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                41,
+                50,
+                32
+              ],
+              "new_ids": [
+                0,
+                49
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                39,
+                52,
+                34
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                49
+              ],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                39,
+                52,
+                34
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                49
+              ],
+              "method_only_vs_frozen": []
+            }
+          }
+        }
+      },
+      "equal_budget": {
+        "Decking": {
+          "quota": 4,
+          "area_only_pool": 51,
+          "frozen_qualified_pool": 22,
+          "methods": {
+            "strong": {
+              "counts": [
+                44,
+                44,
+                20
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                24
+              ],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                44,
+                39,
+                20
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                24
+              ],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                45,
+                42,
+                19
+              ],
+              "new_ids": [
+                24
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                45,
+                42,
+                19
+              ],
+              "new_ids": [
+                24
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                45,
+                42,
+                19
+              ],
+              "new_ids": [
+                24
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            }
+          }
+        },
+        "Hole": {
+          "quota": 7,
+          "area_only_pool": 56,
+          "frozen_qualified_pool": 24,
+          "methods": {
+            "strong": {
+              "counts": [
+                39,
+                51,
+                34
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                49
+              ],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                39,
+                45,
+                34
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                49
+              ],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                41,
+                50,
+                32
+              ],
+              "new_ids": [
+                0,
+                49
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                39,
+                52,
+                34
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                49
+              ],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                39,
+                52,
+                34
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                49
+              ],
+              "method_only_vs_frozen": []
+            }
+          }
+        }
+      },
+      "low_fp": {
+        "Decking": {
+          "quota": 1,
+          "area_only_pool": 51,
+          "frozen_qualified_pool": 5,
+          "methods": {
+            "strong": {
+              "counts": [
+                44,
+                44,
+                20
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                24
+              ],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                44,
+                39,
+                20
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                24
+              ],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                45,
+                39,
+                19
+              ],
+              "new_ids": [
+                24
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                45,
+                39,
+                19
+              ],
+              "new_ids": [
+                24
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                45,
+                39,
+                19
+              ],
+              "new_ids": [
+                24
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            }
+          }
+        },
+        "Hole": {
+          "quota": 4,
+          "area_only_pool": 56,
+          "frozen_qualified_pool": 7,
+          "methods": {
+            "strong": {
+              "counts": [
+                39,
+                51,
+                34
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                49
+              ],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                39,
+                45,
+                34
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                49
+              ],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                41,
+                47,
+                32
+              ],
+              "new_ids": [
+                0,
+                49
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                39,
+                49,
+                34
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                49
+              ],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                39,
+                49,
+                34
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [
+                0,
+                49
+              ],
+              "method_only_vs_frozen": []
+            }
+          }
+        }
+      }
+    },
+    "s_southreward": {
+      "main": {
+        "Decking": {
+          "quota": 0,
+          "area_only_pool": 18,
+          "frozen_qualified_pool": 5,
+          "methods": {
+            "strong": {
+              "counts": [
+                15,
+                15,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                15,
+                13,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                15,
+                13,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                15,
+                13,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                15,
+                13,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            }
+          }
+        },
+        "Hole": {
+          "quota": 2,
+          "area_only_pool": 18,
+          "frozen_qualified_pool": 7,
+          "methods": {
+            "strong": {
+              "counts": [
+                25,
+                6,
+                8
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                25,
+                6,
+                8
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                25,
+                8,
+                8
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                25,
+                8,
+                8
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                25,
+                8,
+                8
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            }
+          }
+        }
+      },
+      "equal_budget": {
+        "Decking": {
+          "quota": 0,
+          "area_only_pool": 18,
+          "frozen_qualified_pool": 5,
+          "methods": {
+            "strong": {
+              "counts": [
+                15,
+                15,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                15,
+                13,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                15,
+                13,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                15,
+                13,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                15,
+                13,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            }
+          }
+        },
+        "Hole": {
+          "quota": 2,
+          "area_only_pool": 18,
+          "frozen_qualified_pool": 7,
+          "methods": {
+            "strong": {
+              "counts": [
+                25,
+                6,
+                8
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                25,
+                6,
+                8
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                25,
+                8,
+                8
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                25,
+                8,
+                8
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                25,
+                8,
+                8
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            }
+          }
+        }
+      },
+      "low_fp": {
+        "Decking": {
+          "quota": 0,
+          "area_only_pool": 18,
+          "frozen_qualified_pool": 0,
+          "methods": {
+            "strong": {
+              "counts": [
+                15,
+                15,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                15,
+                13,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                15,
+                13,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                15,
+                13,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                15,
+                13,
+                16
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            }
+          }
+        },
+        "Hole": {
+          "quota": 1,
+          "area_only_pool": 18,
+          "frozen_qualified_pool": 3,
+          "methods": {
+            "strong": {
+              "counts": [
+                25,
+                6,
+                8
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                25,
+                6,
+                8
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                25,
+                7,
+                8
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                25,
+                7,
+                8
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                25,
+                7,
+                8
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            }
+          }
+        }
+      }
+    },
+    "s_stjohns": {
+      "main": {
+        "Decking": {
+          "quota": 4,
+          "area_only_pool": 43,
+          "frozen_qualified_pool": 16,
+          "methods": {
+            "strong": {
+              "counts": [
+                22,
+                29,
+                9
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                22,
+                26,
+                9
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                22,
+                30,
+                9
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                23,
+                29,
+                8
+              ],
+              "new_ids": [
+                18
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": [
+                18
+              ]
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                23,
+                29,
+                8
+              ],
+              "new_ids": [
+                18
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": [
+                18
+              ]
+            }
+          }
+        },
+        "Hole": {
+          "quota": 2,
+          "area_only_pool": 40,
+          "frozen_qualified_pool": 19,
+          "methods": {
+            "strong": {
+              "counts": [
+                19,
+                43,
+                27
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                19,
+                40,
+                27
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                19,
+                42,
+                27
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                19,
+                42,
+                27
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                19,
+                42,
+                27
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            }
+          }
+        }
+      },
+      "equal_budget": {
+        "Decking": {
+          "quota": 4,
+          "area_only_pool": 43,
+          "frozen_qualified_pool": 16,
+          "methods": {
+            "strong": {
+              "counts": [
+                22,
+                29,
+                9
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                22,
+                26,
+                9
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                22,
+                30,
+                9
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                23,
+                29,
+                8
+              ],
+              "new_ids": [
+                18
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": [
+                18
+              ]
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                23,
+                29,
+                8
+              ],
+              "new_ids": [
+                18
+              ],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": [
+                18
+              ]
+            }
+          }
+        },
+        "Hole": {
+          "quota": 2,
+          "area_only_pool": 40,
+          "frozen_qualified_pool": 19,
+          "methods": {
+            "strong": {
+              "counts": [
+                19,
+                43,
+                27
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                19,
+                40,
+                27
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                19,
+                42,
+                27
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                19,
+                42,
+                27
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                19,
+                42,
+                27
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            }
+          }
+        }
+      },
+      "low_fp": {
+        "Decking": {
+          "quota": 2,
+          "area_only_pool": 43,
+          "frozen_qualified_pool": 4,
+          "methods": {
+            "strong": {
+              "counts": [
+                22,
+                29,
+                9
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                22,
+                26,
+                9
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                22,
+                28,
+                9
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                22,
+                28,
+                9
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                22,
+                28,
+                9
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            }
+          }
+        },
+        "Hole": {
+          "quota": 1,
+          "area_only_pool": 40,
+          "frozen_qualified_pool": 3,
+          "methods": {
+            "strong": {
+              "counts": [
+                19,
+                43,
+                27
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "retained": {
+              "counts": [
+                19,
+                40,
+                27
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "frozen": {
+              "counts": [
+                19,
+                41,
+                27
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_only": {
+              "counts": [
+                19,
+                41,
+                27
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            },
+            "area_after_frozen_admission": {
+              "counts": [
+                19,
+                41,
+                27
+              ],
+              "new_ids": [],
+              "lost_ids": [],
+              "frozen_only_vs_method": [],
+              "method_only_vs_frozen": []
+            }
+          }
+        }
+      }
+    }
+  }
+}
