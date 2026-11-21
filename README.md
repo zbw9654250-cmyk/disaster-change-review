@@ -31,8 +31,4 @@ python modules/observations/run_roofs.py --cases data/xbd/confirm/cases.jsonl --
 | [按栋评估损伤](modules/buildings/README.md) | 用灾后航片和建筑轮廓统计损伤面积。Qwen3-VL 的整栋初评在 40 栋中有 14 栋与 xBD 标注一致，7 栋待判。 |
 | [解释局部变化](modules/observations/README.md) | 比较同一屋面在两期影像里的颜色和亮度，给出说明和对应区域，可用 Qwen3-VL 核对。 |
 
-## 屋面损伤筛选比基线好在哪
-
-在 5 个测区，两种方法都提交了 1,269 处供人工复核。我们按轮廓形状和不同模型之间的重合程度挑选候选，保留了原模型找对的全部 501 处，又找回 13 处屋面板外露和 9 处孔洞。命中从 **501 增至 523**，误报从 **768 降至 746**。这些数字按屋面上的损伤区域统计。[查看演示中的对照](https://zbw9654250-cmyk.github.io/disaster-change-review/?lang=zh#baseline-comparison) · [逐测区评测](results/roof_objects.json)
-
 项目代码采用 [MIT 许可](LICENSE)。公开影像和模型各有使用条件，xBD 派生影像限非商业使用并要求署名、以相同方式共享。[数据和模型许可](NOTICE.md)

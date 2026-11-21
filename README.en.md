@@ -31,8 +31,4 @@ The script writes one line per building to `observations.jsonl`. The `explanatio
 | [Assess individual buildings](modules/buildings/README.md) | Measure damage area within a building footprint. Qwen3-VL estimates a whole-building grade. In a separate test, 14 of 40 grades matched xBD labels and 7 buildings were left ungraded. |
 | [Explain local changes](modules/observations/README.md) | Compare color and brightness on the same roof across two dates. Return a description with its location in both images. Qwen3-VL can also check the observations. |
 
-## How roof damage selection improves on the baseline
-
-Across five sites, each method returned 1,269 candidates for review. We ranked outlines by their shape and agreement across models. This kept all 501 baseline matches and recovered 13 more patches of exposed decking and 9 more roof holes. Correct matches rose from **501 to 523**, and false positives fell from **768 to 746**. These counts measure individual roof damage features. [Open the comparison in the demo](https://zbw9654250-cmyk.github.io/disaster-change-review/?lang=en#baseline-comparison) · [Results by site](results/roof_objects.json)
-
 The project code uses the [MIT license](LICENSE). Images and models have their own terms. The xBD image crops require attribution, noncommercial use and sharing under the same license. [Data and model notices (Chinese)](NOTICE.md)

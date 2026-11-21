@@ -38,7 +38,7 @@ function viewLink(id, lang, phase) {
 function setLanguageLinks(record, phase) {
   for (const link of byId("languages").children) {
     const lang = link.lang === "en" ? "en" : "zh";
-    link.href = viewLink(record.id, lang, phase) + (!phase && byId("baseline-comparison").open ? "#baseline-comparison" : "");
+    link.href = viewLink(record.id, lang, phase);
     link.setAttribute("aria-current", String(lang === language));
   }
 }
@@ -98,12 +98,6 @@ if (selected && (phase === "before" || phase === "after")) {
   document.querySelector("main").replaceChildren(figure);
   document.title = caseText(selected).name + " · " + figure.querySelector("strong").textContent;
 } else {
-  const benchmark = byId("baseline-comparison");
-  benchmark.open = location.hash === "#baseline-comparison";
-  benchmark.addEventListener("toggle", () => {
-    const pressed = buttons.querySelector('[aria-pressed="true"]');
-    if (pressed) setLanguageLinks(GALLERY.find(record => record.id === pressed.value));
-  });
   for (const record of GALLERY) {
     const button = document.createElement("button");
     button.type = "button";
