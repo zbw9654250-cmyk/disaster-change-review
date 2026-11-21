@@ -2,13 +2,13 @@
 
 [简体中文](README.md) · **English**
 
-Compare two images of the same place before and after a disaster. The circles show where to look. In the Oso landslide example, the left circle shows debris crossing the river. The right circle shows water spreading upstream.
+Compare two images of the same place before and after a disaster. In the Oso landslide example, follow the river to see how debris from the slope reached the valley floor.
 
 [Open the live demo](https://zbw9654250-cmyk.github.io/disaster-change-review/?lang=en) · [Image credits](docs/DATA-NOTICE.en.md)
 
-![Oso before and after the landslide, with circles around the slide and the water upstream](docs/assets/demo-preview.en.webp)
+![Oso before and after the landslide, with automatically detected changes circled](docs/assets/demo-preview.en.webp)
 
-The demo has five cases. The three geological events have hand-drawn annotations and impact descriptions based on NASA and USGS reports. In the building cases, a long factory roof is gone after a hurricane, and pale debris fills the footprint of a house beside a pool after a wildfire. Both building grades come from xBD. [Hurricane Michael factory roof](https://zbw9654250-cmyk.github.io/disaster-change-review/?lang=en&case=hurricane-michael) · [Santa Rosa wildfire house](https://zbw9654250-cmyk.github.io/disaster-change-review/?lang=en&case=santa-rosa)
+The demo has five cases. For the two landslides and the La Palma eruption, a program compares the before and after RGB images and circles areas of visible change. The circles can be regenerated from the images. The hazard types and impacts come from NASA and USGS event reports. The two building cases use preset circles to show a factory after a hurricane and a house after a wildfire. Their damage grades come from xBD. [Change detection code](scripts/detect_geology_changes.py) · [Image credits and evidence](docs/DATA-NOTICE.en.md)
 
 Click either image to enlarge it. To use the demo offline, download and unzip the repository, then open [docs/index.html](docs/index.html).
 
@@ -28,9 +28,11 @@ The script writes one line per building to `observations.jsonl`. The `explanatio
 | Task | What goes in and what comes out |
 | --- | --- |
 | [Locate roof damage](modules/roof_candidates/README.md) | Combine several model predictions and export roof holes and exposed roof decking as GeoJSON. |
-| [Assess individual buildings](modules/buildings/README.md) | Crop an aerial image using building footprints and measure the damaged roof area. Optionally run Qwen3-VL for a preliminary building grade. |
+| [Assess individual buildings](modules/buildings/README.md) | Measure damage area within a building footprint. Qwen3-VL estimates a whole-building grade. In a separate test, 14 of 40 grades matched xBD labels and 7 buildings were left ungraded. |
 | [Explain local changes](modules/observations/README.md) | Compare color and brightness on the same roof across two dates. Return a description with its location in both images. Qwen3-VL can also check the observations. |
 
-Across five sites, both methods returned 1,269 candidates for review. Combining predictions increased correctly located damage features from 501 to 523 and reduced false positives from 768 to 746. In a separate test, the building grades matched xBD labels for 14 of 40 buildings, with 7 left ungraded. These grades need human review. [Evaluation details and results (Chinese)](results/README.md)
+## How roof damage selection improves on the baseline
+
+Across five sites, each method returned 1,269 candidates for review. We ranked outlines by their shape and agreement across models. This kept all 501 baseline matches and recovered 13 more patches of exposed decking and 9 more roof holes. Correct matches rose from **501 to 523**, and false positives fell from **768 to 746**. These counts measure individual roof damage features. [Open the comparison in the demo](https://zbw9654250-cmyk.github.io/disaster-change-review/?lang=en#baseline-comparison) · [Results by site](results/roof_objects.json)
 
 The project code uses the [MIT license](LICENSE). Images and models have their own terms. The xBD image crops require attribution, noncommercial use and sharing under the same license. [Data and model notices (Chinese)](NOTICE.md)

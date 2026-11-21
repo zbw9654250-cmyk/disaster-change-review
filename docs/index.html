@@ -8,6 +8,7 @@
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/style.css">
   <script src="assets/gallery.js" defer></script>
+  <script src="assets/geology/changes.js" defer></script>
   <script src="assets/workspace.js" defer></script>
 </head>
 <body>
@@ -43,6 +44,11 @@
           <div><dt data-en="Impact">受灾程度</dt><dd id="severity"></dd><dd id="basis"></dd></div>
         </dl>
       </div>
+      <details id="baseline-comparison" class="roof-results">
+        <summary data-en="Roof damage benchmark · 22 more matches from the same 1,269 candidates">屋面损伤对比 · 同样 1,269 个复核名额，多定位 22 处损伤</summary>
+        <p data-en="Across five sites, combining model outlines raised matches from 501 to 523 and cut false positives from 768 to 746. We kept every baseline match and recovered 13 more patches of exposed decking and 9 more roof holes.">在五个测区，合并多组模型的预测轮廓后，命中从 501 处增至 523 处，误报从 768 处降至 746 处。原有命中全部保留，另找回 13 处屋面板外露和 9 处孔洞。</p>
+        <p><span data-en="On one roof in Ebenezer, the baseline outlined only part of the exposed decking. A more complete outline raised the best overlap with the human reference (IoU) from 0.328 to 0.879.">以 Ebenezer 的一栋建筑为例，基线只圈出部分外露屋面板。我们选出更完整的轮廓后，与人工标注的最佳重合度（IoU）从 0.328 升至 0.879。</span> <a href="assets/ebenezer-fid39.png" data-en="Compare the image (left), baseline (center) and selected outline (right)">查看航拍、基线和当前轮廓对照图</a></p>
+      </details>
       <footer><a id="source" href="DATA-NOTICE.md"></a><a id="credits" href="DATA-NOTICE.md" data-en="Image credits and licenses">影像署名与许可</a></footer>
     </article>
     <noscript>请在浏览器中启用 JavaScript，查看灾前灾后案例。 <span lang="en">Enable JavaScript to compare the images.</span></noscript>

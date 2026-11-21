@@ -4,7 +4,9 @@
 
 ## Landslides and volcanic eruption
 
-Each pair shows the same area in two Landsat 8 images published by NASA Earth Observatory using USGS data. We cropped both images to the same extent and added circles to point out changes described in the published event reports. The impact shown in the demo refers to the river, road or farmland in the scene.
+Each pair shows the same area in two Landsat 8 images published by NASA Earth Observatory using USGS data. A program compares local color and texture, reduces the influence of bright clouds and open water, and draws ellipses around connected areas of change. It uses the same settings for all three pairs. The viewer loads the saved coordinates and draws the circles at corresponding locations in both images. Clouds, shadows and seasonal changes can also affect the result. The reports below explain the impact on the river, road or farmland.
+
+From the repository root, install the dependencies in `modules/observations/requirements.txt` and run `python scripts/detect_geology_changes.py --output docs/assets/geology/changes.js` to regenerate the circles from the six images. The output also records a SHA-256 hash for each input. [Generated coordinates and image hashes](assets/geology/changes.js)
 
 | Case | Image dates | Image credit | Reported impact |
 | --- | --- | --- | --- |

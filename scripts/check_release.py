@@ -1,6 +1,7 @@
 """Check repository links, the static Pages site and a real CPU inference from the bundled data."""
 from html.parser import HTMLParser
 from datetime import date
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -8,7 +9,10 @@ import subprocess
 import sys
 from tempfile import TemporaryDirectory
 from urllib.parse import unquote, urlsplit
+import numpy as np
 from PIL import Image
+
+from detect_geology_changes import detect_changes
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -66,12 +70,42 @@ def read_rows(path):
     return [json.loads(line) for line in path.read_text(encoding="utf-8-sig").splitlines() if line.strip()]
 
 
+def read_changes(path):
+    text = path.read_text(encoding="utf-8").strip()
+    return json.loads(text.removeprefix("const GEO_CHANGES = ").removesuffix(";"))
+
+
+def check_detector_controls():
+    before = np.full((120, 180, 3), 60, dtype=np.uint8)
+    if detect_changes(before, before) or detect_changes(before, before + 10):
+        raise ValueError("Unchanged or uniformly brightened scenes should have no circles")
+    for x in (36, 106):
+        after = before.copy()
+        after[40:72, x:x+32] = [150, 72, 35]
+        center_x, center_y = (x + 16) * 100 / 180, 56 * 100 / 120
+        rings = detect_changes(before, after)
+        if not any(left < center_x < left + width and top < center_y < top + height
+                   for left, top, width, height in rings):
+            raise ValueError("A local RGB change should move the detected region with it")
+
+
 def check_gallery():
     # A classic script with a JSON array also works when the page is opened via file://.
     gallery = SITE / "assets" / "gallery.js"
     records = json.loads(gallery.read_text(encoding="utf-8").strip().removeprefix("const GALLERY = ").removesuffix(";"))
     if not records or len({row["id"] for row in records}) != len(records):
         raise ValueError("Gallery needs cases with unique IDs")
+    manifest = gallery.parent / "geology" / "changes.js"
+    changes = read_changes(manifest)
+    with TemporaryDirectory() as temp:
+        regenerated = Path(temp) / "changes.js"
+        subprocess.run([sys.executable, str(ROOT / "scripts" / "detect_geology_changes.py"),
+                        "--output", str(regenerated)], cwd=ROOT, check=True)
+        if read_changes(regenerated) != changes:
+            raise ValueError("Published geological circles differ from the image detector output")
+    geology_ids = {row["id"] for row in records if row["before"]["file"].startswith("geology/")}
+    if changes.keys() != geology_ids:
+        raise ValueError("Each geological case needs its own generated result")
     for row in records:
         before, after = row["before"], row["after"]
         fields = ("name", "place", "type", "severity", "basis", "evidence", "credit")
@@ -86,12 +120,20 @@ def check_gallery():
             raise ValueError(f"Invalid image chronology: {row['id']}")
         sizes = []
         counts = []
-        for photo in (before, after):
+        for phase, photo in (("before", before), ("after", after)):
             check_url(gallery, photo["file"], SITE, asset=True)
             with Image.open(gallery.parent / photo["file"]) as image:
                 image.load()
                 sizes.append(image.size)
-            rings = photo.get("rings", row.get("rings", []))
+            if row["id"] in changes:
+                if "rings" in row or "rings" in photo:
+                    raise ValueError(f"Duplicate, manually stored geological circles: {row['id']}")
+                result = changes[row["id"]]
+                if hashlib.sha256((gallery.parent / photo["file"]).read_bytes()).hexdigest() != result[phase + "Sha256"]:
+                    raise ValueError(f"Displayed image differs from the detector input: {photo['file']}")
+                rings = result["rings"]
+            else:
+                rings = photo.get("rings", row.get("rings", []))
             if not rings:
                 raise ValueError(f"Missing change annotation: {photo['file']}")
             for x, y, width, height, *angle in rings:
@@ -103,7 +145,7 @@ def check_gallery():
             raise ValueError(f"Unpaired change annotations: {row['id']}")
         if sizes[0] != sizes[1] or before["file"] == after["file"]:
             raise ValueError(f"Expected two equally sized views: {row['id']}")
-    print(f"Verified {len(records)} before-and-after image pairs.")
+    print(f"Verified {len(records)} image pairs and reproduced the geological change circles from RGB.")
 
 
 def check_inference():
@@ -126,5 +168,6 @@ def check_inference():
 
 if __name__ == "__main__":
     check_links()
+    check_detector_controls()
     check_gallery()
     check_inference()

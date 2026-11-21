@@ -4,7 +4,9 @@
 
 ## 滑坡和火山
 
-三组案例均使用 NASA Earth Observatory 发布的 Landsat 8 影像。每组两期取同一地点和相同像素范围，页面保留采集日期及影像方向。两期影像的对照圈由项目人工标在相同的图上位置，帮助找到下文描述的变化。灾情说明由项目根据官方事件记录整理，受灾程度描述受影响的河道、路段或农田。
+三组案例均使用 NASA Earth Observatory 发布的 Landsat 8 影像，灾前和灾后取同一地点、同一像素范围。程序从两期 RGB 计算局部颜色和纹理的变化，降低亮云和开阔水域的影响，再给变化集中、连续的区域画椭圆。三个案例使用同一套参数。网页读取预先计算的坐标，在两期原图的相应位置画圈。黄圈提示读图位置，云影和季节差异也可能影响结果。河道受阻、公路损毁和农田被覆盖的判读依据见下表。
+
+在仓库根目录安装 `modules/observations/requirements.txt` 的依赖后，运行 `python scripts/detect_geology_changes.py --output docs/assets/geology/changes.js` 可从六张原图重新生成黄圈。输出同时记录每张输入图的 SHA-256。[生成坐标与影像摘要](assets/geology/changes.js)
 
 | 案例 | 灾前 → 灾后 | 制图与数据 | 受灾程度的依据 |
 | --- | --- | --- | --- |

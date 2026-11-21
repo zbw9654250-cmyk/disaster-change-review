@@ -7,7 +7,7 @@ const GALLERY = [
       "type": "Landslide",
       "severity": "River blocked",
       "basis": "River valley · NASA event report",
-      "evidence": "In the left circle, pale debris from the slope crosses the former river channel. In the right circle, the narrow bend visible before the slide has widened into a lake behind the debris.",
+      "evidence": "The program marks the part of the river valley where the two images differ most. Before the slide, the river bends around fields. Afterward, pale debris crosses the channel and water spreads upstream. NASA records that the slide dammed the river.",
       "credit": "Imagery and event report · NASA Earth Observatory / USGS",
       "beforeAlt": "Before the Oso landslide, a narrow river bends along the base of the slope.",
       "afterAlt": "After the Oso landslide, pale debris crosses the river and water has spread upstream."
@@ -17,7 +17,7 @@ const GALLERY = [
     "type": "山体滑坡",
     "severity": "河道受阻",
     "basis": "河谷 · NASA 事件记录",
-    "evidence": "左圈内，灾后一条浅灰色的泥石带横过原来的河道。右圈内，灾前弯窄的河道在灾后变成一片较宽的水面，形成堰塞湖。",
+    "evidence": "程序圈出了河谷里变化最集中的一段。灾前，河道弯曲，旁边可见田块。灾后，浅色泥石横过河道，上游水面变宽。NASA 记录了滑坡堵河形成堰塞湖的过程。",
     "credit": "影像与事件记录 · NASA Earth Observatory / USGS",
     "source": "https://science.nasa.gov/earth/earth-observatory/landslide-and-barrier-lake-near-oso-washington-83409/",
     "before": {
@@ -29,23 +29,7 @@ const GALLERY = [
       "date": "2014-03-23",
       "file": "geology/oso-post.png",
       "alt": "奥索滑坡后，泥土和碎屑伸入河道，上游出现更宽的水面。"
-    },
-    "rings": [
-      [
-        35.5,
-        27.7,
-        13,
-        39,
-        -28
-      ],
-      [
-        53.3,
-        41.6,
-        26.6,
-        14.8,
-        10
-      ]
-    ]
+    }
   },
   {
     "id": "mud-creek",
@@ -55,7 +39,7 @@ const GALLERY = [
       "type": "Coastal landslide",
       "severity": "Over 400 m of highway destroyed",
       "basis": "Highway segment · USGS survey",
-      "evidence": "Before the slide, a pale road follows the coast through the circle. Afterward, gray-brown debris covers that section of road and extends beyond the former shoreline.",
+      "evidence": "The program marks a patch of slope beside the coastal highway. The pale road follows the shore before the slide. Gray-brown debris covers the slope afterward and extends beyond the old shoreline. The length of road lost comes from the USGS field survey.",
       "credit": "Imagery · NASA Earth Observatory / USGS",
       "beforeAlt": "Before the Big Sur landslide, the road follows a narrow slope along the coast.",
       "afterAlt": "After the Big Sur landslide, debris covers the road and forms a new bulge in the shoreline."
@@ -65,7 +49,7 @@ const GALLERY = [
     "type": "海岸边坡滑塌",
     "severity": "超过 400 米公路被毁",
     "basis": "公路路段 · USGS 调查",
-    "evidence": "灾前，圈内的浅色公路沿海岸连续通过。灾后，灰褐色土石盖住了这段公路，并在岸边堆出一块向海突出的陆地。",
+    "evidence": "程序圈出了沿海公路旁变化明显的一块坡面。灾前能沿海岸辨认浅色的公路，灾后灰褐色土石覆盖坡面，岸线也向海中凸出。公路损毁长度取自 USGS 现场调查。",
     "credit": "影像 · NASA Earth Observatory / USGS",
     "source": "https://science.nasa.gov/earth/earth-observatory/landslide-buries-scenic-california-highway-90281/",
     "before": {
@@ -77,15 +61,7 @@ const GALLERY = [
       "date": "2017-05-22",
       "file": "geology/mud-creek-post.png",
       "alt": "大苏尔滑坡后，土石堆积伸入海中，海岸轮廓向外突出。"
-    },
-    "rings": [
-      [
-        41.6,
-        40,
-        14.8,
-        22
-      ]
-    ]
+    }
   },
   {
     "id": "la-palma",
@@ -95,7 +71,7 @@ const GALLERY = [
       "type": "Volcanic eruption",
       "severity": "Large areas of coastal farmland covered by lava",
       "basis": "Coastal area · NASA image interpretation",
-      "evidence": "Use the small harbor at the upper left as a landmark. Both circles contain fields and greenhouses before the eruption. Afterward, two dark lava flows reach the sea and extend the shoreline at those spots.",
+      "evidence": "Use the small harbor at upper left as a landmark. The program marks two changes along the coast to its south. Fields and greenhouses are visible before the eruption. In the later image, dark lava covers parts of the fields and reaches the sea.",
       "credit": "Imagery and event report · NASA Earth Observatory / USGS",
       "beforeAlt": "Before the La Palma eruption, fields and greenhouses line the coast south of the harbor.",
       "afterAlt": "After the La Palma eruption, two dark lava flows cover farmland and form new land along the shore."
@@ -105,7 +81,7 @@ const GALLERY = [
     "type": "火山熔岩覆盖",
     "severity": "大片沿岸农田被覆盖",
     "basis": "沿岸区域 · NASA 影像解读",
-    "evidence": "以上方的小港口为参照。灾前，两处圈内可见农田和温室。灾后，深灰色熔岩沿这两处到达海边，原来的海岸线向海中凸出。",
+    "evidence": "以左上方的小港口为参照。程序在港口以南的海岸圈出两处变化。灾前沿岸分布着田块和温室，灾后深色熔岩覆盖部分田块，一直延伸到海边。",
     "credit": "影像与事件记录 · NASA Earth Observatory / USGS",
     "source": "https://science.nasa.gov/earth/earth-observatory/a-changed-landscape-on-la-palma-149231/",
     "before": {
@@ -117,23 +93,7 @@ const GALLERY = [
       "date": "2021-12-15",
       "file": "geology/volcano/la-palma-after.png",
       "alt": "拉帕尔马岛灾后，两条深灰色熔岩带到达海边，覆盖农田，形成新的陆地。"
-    },
-    "rings": [
-      [
-        42.1,
-        38.8,
-        19.2,
-        10,
-        -6
-      ],
-      [
-        46.4,
-        64.2,
-        21.2,
-        18,
-        -9
-      ]
-    ]
+    }
   },
   {
     "id": "hurricane-michael",
