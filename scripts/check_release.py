@@ -1,5 +1,6 @@
 """Check repository links, the static Pages site and a real CPU inference from the bundled data."""
 from html.parser import HTMLParser
+from datetime import date
 import json
 from pathlib import Path
 import re
@@ -7,6 +8,7 @@ import subprocess
 import sys
 from tempfile import TemporaryDirectory
 from urllib.parse import unquote, urlsplit
+from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -64,6 +66,27 @@ def read_rows(path):
     return [json.loads(line) for line in path.read_text(encoding="utf-8-sig").splitlines() if line.strip()]
 
 
+def check_gallery():
+    # A classic script with a JSON array also works when the page is opened via file://.
+    gallery = SITE / "assets" / "gallery.js"
+    records = json.loads(gallery.read_text(encoding="utf-8").strip().removeprefix("const GALLERY = ").removesuffix(";"))
+    if not records or len({row["id"] for row in records}) != len(records):
+        raise ValueError("Gallery needs cases with unique IDs")
+    for row in records:
+        before, after = row["before"], row["after"]
+        if date.fromisoformat(before["date"]) >= date.fromisoformat(after["date"]):
+            raise ValueError(f"Invalid image chronology: {row['id']}")
+        sizes = []
+        for photo in (before, after):
+            check_url(gallery, photo["file"], SITE, asset=True)
+            with Image.open(gallery.parent / photo["file"]) as image:
+                image.load()
+                sizes.append(image.size)
+        if sizes[0] != sizes[1] or before["file"] == after["file"]:
+            raise ValueError(f"Expected two equally sized views: {row['id']}")
+    print(f"Verified {len(records)} before-and-after image pairs.")
+
+
 def check_inference():
     cases = ROOT / "data" / "xbd" / "confirm" / "cases.jsonl"
     input_ids = [r["building_id"] for r in read_rows(cases)]
@@ -84,4 +107,5 @@ def check_inference():
 
 if __name__ == "__main__":
     check_links()
+    check_gallery()
     check_inference()

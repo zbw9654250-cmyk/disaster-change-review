@@ -1,59 +1,42 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light"><meta name="theme-color" content="#102f28">
-<title>屋面影像复核 · Roof Evidence</title>
-<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/style.css">
-<script src="assets/cases.js" defer></script><script src="assets/workspace.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f4">
+  <title>灾前灾后对比</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/gallery.js" defer></script>
+  <script src="assets/workspace.js" defer></script>
 </head>
 <body>
-<a href="#main" class="skip">跳到主要内容</a>
-<header class="bar"><div class="bar-inner">
-<a class="brand" href="#review" aria-label="Roof Evidence 影像复核主页"><span class="brand-icon" aria-hidden="true"></span>Roof Evidence</a>
-<nav aria-label="主导航"><a id="tab-review" href="#review">影像复核</a><a id="tab-bench" href="#bench">评测结果</a><a id="tab-sources" href="#sources">数据来源</a></nav>
-<span class="status"><i></i>离线示例</span>
-</div></header>
-<main id="main" tabindex="-1">
-<section id="review">
-<div class="page-head"><div><h1>屋面影像复核</h1><p>对照同一栋建筑的灾前、灾后影像，查看支持模型说明的局部证据。</p></div><div class="set-meta">xBD <span>/</span> 确认集 <span>/</span> 8 栋建筑</div></div>
-<div class="workbench">
-<aside class="case-panel"><div class="case-head"><h2>建筑案例</h2><span id="case-count">8</span></div>
-<label class="filter" for="event-filter"><span class="sr">筛选灾害事件</span><select id="event-filter"><option value="">全部灾害事件</option></select></label>
-<div id="case-list" aria-label="选择建筑"></div>
-</aside>
-<div class="work-content">
-<section class="viewer" aria-labelledby="case-name">
-<div class="viewer-heading"><div><div class="event-line"><span class="location-icon" aria-hidden="true">⌖</span><span id="place"></span></div><h2 id="case-name"></h2></div>
-<div class="seg" aria-label="对比方式"><button type="button" data-layout="pair" aria-pressed="true">并排</button><button type="button" data-layout="wipe" aria-pressed="false">卷帘</button></div></div>
-<div class="map-wrap">
-<div id="map" class="map"><div id="left-pane" class="pane"><img class="scene" alt=""><img class="outline" alt=""><span class="roi"></span></div><div id="right-pane" class="pane"><img class="scene" alt=""><img class="outline" alt=""><span class="roi"></span></div>
-<span class="phase pre"><i></i>灾前 <small>PRE</small></span><span class="phase post"><i></i>灾后 <small>POST</small></span><span id="wipe-handle" hidden aria-hidden="true">‹ ›</span></div>
-<div id="wipe-controls" hidden><label for="wipe-range">灾前显示比例</label><input type="range" id="wipe-range" min="0" max="100" value="50"><output id="wipe-percent" for="wipe-range">50%</output></div>
-</div>
-<div class="map-tools"><div class="layers"><label><input id="show-mask" type="checkbox" checked><span class="swatch outline-key"></span>建筑足迹</label><label><input id="show-roi" type="checkbox" checked><span class="swatch roi-key"></span>证据框</label></div>
-<div class="seg view-toggle" aria-label="影像范围"><button type="button" data-view="scene" aria-pressed="true">场景全图</button><button type="button" data-view="detail" aria-pressed="false">选区放大</button></div></div>
-</section>
-<section class="evidence" aria-labelledby="observation-title"><div class="evidence-main"><div class="section-cap"><span class="obs-icon" aria-hidden="true">◎</span><h2 id="observation-title">局部观察</h2></div>
-<p id="explanation"></p><div class="method-line"><span id="mode"></span><span class="split-dot">·</span><span id="region"></span></div></div>
-<div class="measures"><span>选区中位亮度 <small>0–255</small></span><div class="numbers"><div><strong id="pre-luma"></strong><small>灾前</small></div><b aria-hidden="true">→</b><div><strong id="post-luma"></strong><small>灾后</small></div></div></div>
-</section>
-<details class="audit"><summary>核对三种方法的原始说明</summary><div id="methods"></div></details>
-<details class="audit"><summary>建筑标注与选区记录</summary><div id="provenance"></div></details>
-</div></div>
-</section>
-<section id="bench" hidden><div class="page-head"><div><h1>评测结果</h1><p>按任务查看公开测试范围、比较对象和实际命中数。</p></div></div>
-<div class="report-grid"><article class="report"><h2>屋面损伤定位</h2><p>在加勒比地区五个完整测区，比较相同复核预算下的露板和孔洞定位。候选必须与同类人工轮廓达到 0.50 的交并比，并完成一对一匹配。</p>
-<table><caption>880 个人工标注对象，1,269 个复核名额</caption><thead><tr><th>方法</th><th>命中</th><th>误报</th><th>对象 F1</th></tr></thead><tbody><tr><td>上游专用模型</td><td>501</td><td>768</td><td>46.63%</td></tr><tr><td>多模型候选补漏</td><td>523</td><td>746</td><td>48.67%</td></tr></tbody></table>
-<img class="report-img" src="assets/ebenezer-fid39.png" alt="Ebenezer 屋面板外露案例。航拍、上游分割轮廓与补漏结果并排显示。"><p>Ebenezer 的 FID 39 面积为 73.1 平方米。原始轮廓与标注的最高交并比为 0.328，补回完整轮廓后达到 0.879。</p></article>
-<div class="report-stack"><article class="report"><h2>局部说明</h2><p>20 栋真实双期建筑来自 20 个不同图块。两位 AI 读者先独立记下影像所见，再匿名审核每种方法的整条说明。</p>
-<table><thead><tr><th>方法</th><th>两人均认可</th></tr></thead><tbody><tr><td>旧视觉 RAG</td><td>1 / 20</td></tr><tr><td>本栋图像测量</td><td>20 / 20</td></tr><tr><td>测量 + Qwen 核验</td><td>20 / 20</td></tr></tbody></table></article>
-<article class="report"><h2>整栋评级</h2><p>两批 xBD 建筑共 40 栋，默认 Qwen 等级初评判对 14 栋，7 栋待判，10 栋毁坏中命中 1 栋。影像复核页展示的等级字段来自 xBD 原始标注。</p></article></div></div>
-</section>
-<section id="sources" hidden><div class="page-head"><div><h1>数据来源</h1><p>页面使用公开影像的局部裁图和冻结实验的逐栋记录。</p></div></div>
-<div class="report-grid"><article class="report"><h2>xBD 双期卫星影像</h2><p>案例取自 xBD 测试分区的 8 栋建筑。每期均使用对应原始卫星影像与官方建筑多边形。页面将周边影像裁成场景图；切换「选区放大」显示实际参与测量的足迹内影像。</p><p>数据作者为 Ritwik Gupta 等，影像来源为 Maxar / DigitalGlobe Open Data Program。影像、足迹和派生裁图按 CC BY-NC-SA 4.0 共享。</p><div class="links"><a href="https://arxiv.org/abs/1911.09296">xBD 论文 ↗</a><a href="https://huggingface.co/datasets/ziruihan/xbd_test/tree/361e53f86506e1f221f42a0c0d9619c213220ae5/test">固定测试来源 ↗</a><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">数据许可 ↗</a></div></article>
-<article class="report"><h2>加勒比屋面损伤案例</h2><p>评测页使用 Kucharczyk、Nesbit 与 Hugenholtz 发布的预测和人工矢量；Ebenezer 航拍的署名与裁切记录随案例提供。该图采用 CC BY 4.0 许可。</p><div class="links"><a href="https://zenodo.org/records/20581719">数据与权重 ↗</a><a href="https://github.com/maja-kucharczyk/roof-damage-assessment">原始项目 ↗</a><a href="DATA-NOTICE.md">逐项署名与加工记录 →</a></div></article></div></section>
-<noscript>请启用 JavaScript 以切换案例和查看证据图层。</noscript>
-</main><footer><span>Roof Evidence</span><a href="#sources">数据来源与许可</a></footer>
-</body></html>
+  <main>
+    <header>
+      <div class="title-row"><h1 id="heading">灾前灾后对比</h1><span id="place" aria-live="polite"></span></div>
+      <div id="cases" role="group" aria-label="选择灾害案例"></div>
+    </header>
+    <article aria-labelledby="heading">
+      <div class="comparison">
+        <figure id="before">
+          <figcaption><strong>灾前</strong><time></time></figcaption>
+          <div class="frame"><a class="photo" target="_blank" rel="noopener" aria-label="打开完整灾前影像（新标签页）"><img alt=""><span class="marker" hidden></span></a></div>
+        </figure>
+        <figure id="after">
+          <figcaption><strong>灾后</strong><time></time></figcaption>
+          <div class="frame"><a class="photo" target="_blank" rel="noopener" aria-label="打开完整灾后影像（新标签页）"><img alt=""><span class="marker" hidden></span></a></div>
+        </figure>
+      </div>
+      <div class="reading">
+        <section class="explanation"><h2>证据说明</h2><p id="evidence"></p></section>
+        <dl class="finding">
+          <div><dt>灾害类型</dt><dd id="type"></dd></div>
+          <div><dt>受灾程度</dt><dd id="severity"></dd><dd id="basis"></dd></div>
+        </dl>
+      </div>
+      <footer><a id="source" href="DATA-NOTICE.md"></a><a href="DATA-NOTICE.md">影像署名与许可</a></footer>
+    </article>
+    <noscript>请在浏览器中启用 JavaScript，查看灾前灾后案例。</noscript>
+  </main>
+</body>
+</html>
