@@ -1,0 +1,86 @@
+{
+  "n": 24,
+  "decided": 17,
+  "abstained": 7,
+  "errors": 0,
+  "missing": 0,
+  "correct": 8,
+  "coverage": 0.7083333333333334,
+  "accuracy_all": 0.3333333333333333,
+  "accuracy_when_decided": 0.47058823529411764,
+  "macro_f1": 0.26737967914438504,
+  "review_required": 9,
+  "nonempty_observations": 24,
+  "confusion_rows_true_columns_predicted": {
+    "none": {
+      "none": 6,
+      "light": 0,
+      "moderate": 0,
+      "severe": 0,
+      "uncertain": 0,
+      "inference_error": 0,
+      "missing": 0
+    },
+    "light": {
+      "none": 2,
+      "light": 2,
+      "moderate": 0,
+      "severe": 0,
+      "uncertain": 2,
+      "inference_error": 0,
+      "missing": 0
+    },
+    "moderate": {
+      "none": 2,
+      "light": 3,
+      "moderate": 0,
+      "severe": 1,
+      "uncertain": 0,
+      "inference_error": 0,
+      "missing": 0
+    },
+    "severe": {
+      "none": 1,
+      "light": 0,
+      "moderate": 0,
+      "severe": 0,
+      "uncertain": 5,
+      "inference_error": 0,
+      "missing": 0
+    }
+  },
+  "per_grade": {
+    "none": {
+      "support": 6,
+      "predicted": 11,
+      "correct": 6,
+      "precision": 0.5454545454545454,
+      "recall": 1.0,
+      "f1": 0.7058823529411765
+    },
+    "light": {
+      "support": 6,
+      "predicted": 5,
+      "correct": 2,
+      "precision": 0.4,
+      "recall": 0.3333333333333333,
+      "f1": 0.36363636363636365
+    },
+    "moderate": {
+      "support": 6,
+      "predicted": 0,
+      "correct": 0,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "severe": {
+      "support": 6,
+      "predicted": 1,
+      "correct": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  }
+}

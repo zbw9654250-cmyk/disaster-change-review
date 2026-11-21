@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.webp binary
+*.tif binary
+# Preserve provenance, source-file digests and frozen policy bytes on all platforms.
+data/** -text whitespace=cr-at-eol
+results/** -text whitespace=cr-at-eol
+modules/roof_candidates/*.json -text whitespace=cr-at-eol

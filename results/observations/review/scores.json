@@ -1,0 +1,594 @@
+{
+  "real": {
+    "panel": {
+      "old": {
+        "n": 12,
+        "both_accepted": 1,
+        "either_overclaim": 8,
+        "disagreement": 2
+      },
+      "measure": {
+        "n": 12,
+        "both_accepted": 12,
+        "either_overclaim": 0,
+        "disagreement": 0
+      },
+      "verify": {
+        "n": 12,
+        "both_accepted": 12,
+        "either_overclaim": 0,
+        "disagreement": 0
+      }
+    },
+    "confirm": {
+      "old": {
+        "n": 8,
+        "both_accepted": 0,
+        "either_overclaim": 5,
+        "disagreement": 0
+      },
+      "measure": {
+        "n": 8,
+        "both_accepted": 8,
+        "either_overclaim": 0,
+        "disagreement": 0
+      },
+      "verify": {
+        "n": 8,
+        "both_accepted": 8,
+        "either_overclaim": 0,
+        "disagreement": 0
+      }
+    }
+  },
+  "paired": {
+    "panel": {
+      "old->measure": {
+        "gains": [
+          "b-05a3ccb77cd2",
+          "b-15bb5431a4dd",
+          "b-27949b320f15",
+          "b-2ffb995fbba6",
+          "b-4cbc84ffd0db",
+          "b-5fe7a4afc7a3",
+          "b-b01155215265",
+          "b-d06310a65694",
+          "b-e59d71bf8528",
+          "b-ea6e8473714f",
+          "b-f37ef6ed6ac8"
+        ],
+        "losses": [],
+        "exact_two_sided_p": 0.0009765625
+      },
+      "old->verify": {
+        "gains": [
+          "b-05a3ccb77cd2",
+          "b-15bb5431a4dd",
+          "b-27949b320f15",
+          "b-2ffb995fbba6",
+          "b-4cbc84ffd0db",
+          "b-5fe7a4afc7a3",
+          "b-b01155215265",
+          "b-d06310a65694",
+          "b-e59d71bf8528",
+          "b-ea6e8473714f",
+          "b-f37ef6ed6ac8"
+        ],
+        "losses": [],
+        "exact_two_sided_p": 0.0009765625
+      },
+      "measure->verify": {
+        "gains": [],
+        "losses": [],
+        "exact_two_sided_p": 1.0
+      }
+    },
+    "confirm": {
+      "old->measure": {
+        "gains": [
+          "b-2862a8406b72",
+          "b-8d20ecdd66c0",
+          "b-a9482fc5ef0d",
+          "b-abe0ad891f51",
+          "b-bbc5120e609a",
+          "b-ce3f795ffe12",
+          "b-d64bce19fe1a",
+          "b-feb573029a9b"
+        ],
+        "losses": [],
+        "exact_two_sided_p": 0.0078125
+      },
+      "old->verify": {
+        "gains": [
+          "b-2862a8406b72",
+          "b-8d20ecdd66c0",
+          "b-a9482fc5ef0d",
+          "b-abe0ad891f51",
+          "b-bbc5120e609a",
+          "b-ce3f795ffe12",
+          "b-d64bce19fe1a",
+          "b-feb573029a9b"
+        ],
+        "losses": [],
+        "exact_two_sided_p": 0.0078125
+      },
+      "measure->verify": {
+        "gains": [],
+        "losses": [],
+        "exact_two_sided_p": 1.0
+      }
+    }
+  },
+  "individual": {
+    "panel": [
+      {
+        "building_id": "b-e59d71bf8528",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-e59d71bf8528",
+        "method": "old",
+        "accepted": false,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-e59d71bf8528",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-ea6e8473714f",
+        "method": "old",
+        "accepted": false,
+        "overclaim": true
+      },
+      {
+        "building_id": "b-ea6e8473714f",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-ea6e8473714f",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-05a3ccb77cd2",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-05a3ccb77cd2",
+        "method": "old",
+        "accepted": false,
+        "overclaim": true
+      },
+      {
+        "building_id": "b-05a3ccb77cd2",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-f37ef6ed6ac8",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-f37ef6ed6ac8",
+        "method": "old",
+        "accepted": false,
+        "overclaim": true
+      },
+      {
+        "building_id": "b-f37ef6ed6ac8",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-5730fe52bc6a",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-5730fe52bc6a",
+        "method": "old",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-5730fe52bc6a",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-5fe7a4afc7a3",
+        "method": "old",
+        "accepted": false,
+        "overclaim": true
+      },
+      {
+        "building_id": "b-5fe7a4afc7a3",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-5fe7a4afc7a3",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-4cbc84ffd0db",
+        "method": "old",
+        "accepted": false,
+        "overclaim": true
+      },
+      {
+        "building_id": "b-4cbc84ffd0db",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-4cbc84ffd0db",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-b01155215265",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-b01155215265",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-b01155215265",
+        "method": "old",
+        "accepted": false,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-15bb5431a4dd",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-15bb5431a4dd",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-15bb5431a4dd",
+        "method": "old",
+        "accepted": false,
+        "overclaim": true
+      },
+      {
+        "building_id": "b-2ffb995fbba6",
+        "method": "old",
+        "accepted": false,
+        "overclaim": true
+      },
+      {
+        "building_id": "b-2ffb995fbba6",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-2ffb995fbba6",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-27949b320f15",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-27949b320f15",
+        "method": "old",
+        "accepted": false,
+        "overclaim": true
+      },
+      {
+        "building_id": "b-27949b320f15",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-d06310a65694",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-d06310a65694",
+        "method": "old",
+        "accepted": false,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-d06310a65694",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      }
+    ],
+    "confirm": [
+      {
+        "building_id": "b-d64bce19fe1a",
+        "method": "old",
+        "accepted": false,
+        "overclaim": true
+      },
+      {
+        "building_id": "b-d64bce19fe1a",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-d64bce19fe1a",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-a9482fc5ef0d",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-a9482fc5ef0d",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-a9482fc5ef0d",
+        "method": "old",
+        "accepted": false,
+        "overclaim": true
+      },
+      {
+        "building_id": "b-ce3f795ffe12",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-ce3f795ffe12",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-ce3f795ffe12",
+        "method": "old",
+        "accepted": false,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-bbc5120e609a",
+        "method": "old",
+        "accepted": false,
+        "overclaim": true
+      },
+      {
+        "building_id": "b-bbc5120e609a",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-bbc5120e609a",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-8d20ecdd66c0",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-8d20ecdd66c0",
+        "method": "old",
+        "accepted": false,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-8d20ecdd66c0",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-2862a8406b72",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-2862a8406b72",
+        "method": "old",
+        "accepted": false,
+        "overclaim": true
+      },
+      {
+        "building_id": "b-2862a8406b72",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-abe0ad891f51",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-abe0ad891f51",
+        "method": "old",
+        "accepted": false,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-abe0ad891f51",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-feb573029a9b",
+        "method": "measure",
+        "accepted": true,
+        "overclaim": false
+      },
+      {
+        "building_id": "b-feb573029a9b",
+        "method": "old",
+        "accepted": false,
+        "overclaim": true
+      },
+      {
+        "building_id": "b-feb573029a9b",
+        "method": "verify",
+        "accepted": true,
+        "overclaim": false
+      }
+    ]
+  },
+  "stress": {
+    "shift_blur": {
+      "old": {
+        "n": 8,
+        "stable": 8
+      },
+      "measure": {
+        "n": 8,
+        "stable": 8
+      },
+      "verify": {
+        "n": 8,
+        "stable": 8
+      }
+    },
+    "outside_only": {
+      "old": {
+        "n": 8,
+        "stable": 8
+      },
+      "measure": {
+        "n": 8,
+        "stable": 8
+      },
+      "verify": {
+        "n": 8,
+        "stable": 8
+      }
+    },
+    "identical": {
+      "old": {
+        "n": 8,
+        "stable": 8
+      },
+      "measure": {
+        "n": 8,
+        "stable": 8
+      },
+      "verify": {
+        "n": 8,
+        "stable": 8
+      }
+    },
+    "target_only": {
+      "old": {
+        "n": 8,
+        "changed": 7,
+        "centroid_in_window": 8,
+        "changed_and_located": 7,
+        "uncertain": 1
+      },
+      "measure": {
+        "n": 8,
+        "changed": 8,
+        "centroid_in_window": 8,
+        "changed_and_located": 8
+      },
+      "verify": {
+        "n": 8,
+        "changed": 8,
+        "centroid_in_window": 8,
+        "changed_and_located": 8
+      }
+    }
+  },
+  "timing": {
+    "panel": {
+      "old": 1.1083,
+      "measure": 0.049049999999999996,
+      "verify": 3.35785
+    },
+    "confirm": {
+      "old": 1.0039500000000001,
+      "measure": 0.0488,
+      "verify": 3.3516000000000004
+    },
+    "stress": {
+      "old": 0.50745,
+      "measure": 0.048049999999999995,
+      "verify": 3.1643999999999997
+    }
+  },
+  "gates": {
+    "measure": {
+      "checks": {
+        "panel_accept": true,
+        "panel_overclaim": true,
+        "confirm_accept": true,
+        "confirm_overclaim": true,
+        "localized": true,
+        "negative": true
+      },
+      "met": true
+    },
+    "verify": {
+      "checks": {
+        "panel_accept": true,
+        "panel_overclaim": true,
+        "confirm_accept": true,
+        "confirm_overclaim": true,
+        "localized": true,
+        "negative": true
+      },
+      "met": true
+    }
+  }
+}

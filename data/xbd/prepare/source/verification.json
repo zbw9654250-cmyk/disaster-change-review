@@ -1,0 +1,34 @@
+{
+  "actual_rgb_delta_masks": 32,
+  "clean_rgb_files": 88,
+  "events": 5,
+  "excluded_bboxes": 280,
+  "excluded_tiles": 178,
+  "excluded_uids": 140,
+  "footprint_mask_files": 88,
+  "grades": {
+    "light": 3,
+    "moderate": 3,
+    "none": 3,
+    "severe": 3
+  },
+  "local_edit_masks": 32,
+  "min_axis_clearance_to_old_degrees": 0.0027736187054898664,
+  "min_axis_clearance_within_panel_degrees": 0.013078548578093319,
+  "quadrant_counts": {
+    "bottom-left": 2,
+    "bottom-right": 2,
+    "top-left": 2,
+    "top-right": 2
+  },
+  "stress_pairs": 32,
+  "stress_source_buildings": 8,
+  "target_change_fraction_range": [
+    0.089012,
+    0.105094
+  ],
+  "tiles": 12,
+  "unique_buildings": 12,
+  "upstream_files_verified": 48,
+  "verified": true
+}

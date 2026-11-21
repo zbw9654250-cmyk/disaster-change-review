@@ -1,0 +1,15 @@
+# Python 3.12. Install PyTorch and torchvision for your device first.
+numpy==2.2.6
+scipy==1.13.1
+rasterio==1.5.2
+pyogrio==0.13.0
+pyproj==3.8.0
+shapely==2.2.0
+mmengine==0.10.7
+mmcv-lite==2.1.0
+mmsegmentation==1.2.2
+mmdet==3.3.0
+opencv-python==4.12.0.88
+ftfy==6.3.1
+regex
+requests>=2.32,<3

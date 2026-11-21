@@ -1,0 +1,7 @@
+# CPU observation and geospatial modules. GPU inference is optional.
+numpy>=1.26,<3
+scipy>=1.11,<2
+Pillow>=10,<14
+shapely>=2.1,<3
+rasterio>=1.3,<2
+pyproj>=3.6,<4

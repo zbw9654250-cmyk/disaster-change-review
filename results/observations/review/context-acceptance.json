@@ -1,0 +1,3468 @@
+{
+  "source_manifest_sha256": "b951ac14754c6e71e4b057601daa579110d9e2184b966b4ca1a64ae24ecd90de",
+  "model_sha256": {
+    "linear": "85460a495c4f85b0a8faf8b3a082ba032a1175e0e2fedbfdc6ca78068798d5b0",
+    "adaptive": "c5e15b7df9282baeefecc05482fdfaf55752fd78bd246c3377d0eb49abdb065c"
+  },
+  "groups": {
+    "linear": {
+      "same": {
+        "n": 8,
+        "correct": 8,
+        "no_clear_residual": 8,
+        "any_reported_local": 0
+      },
+      "exposure": {
+        "n": 8,
+        "correct": 5,
+        "reference_insufficient": 3,
+        "any_reported_local": 0,
+        "consistent_with_surroundings": 5
+      },
+      "color_cast": {
+        "n": 8,
+        "correct": 8,
+        "consistent_with_surroundings": 8,
+        "any_reported_local": 0
+      },
+      "inside": {
+        "n": 8,
+        "correct": 8,
+        "local_residual": 8,
+        "any_reported_local": 8,
+        "correct_and_located": 8,
+        "located_in_either_reported_region": 8
+      },
+      "exposure_plus_inside": {
+        "n": 8,
+        "correct": 7,
+        "local_residual": 7,
+        "any_reported_local": 7,
+        "correct_and_located": 6,
+        "located_in_either_reported_region": 6,
+        "consistent_with_surroundings": 1
+      },
+      "invalid_reference": {
+        "n": 8,
+        "correct": 8,
+        "reference_insufficient": 8,
+        "any_reported_local": 0
+      },
+      "incompatible_context": {
+        "n": 8,
+        "correct": 8,
+        "reference_insufficient": 8,
+        "any_reported_local": 0
+      },
+      "unverified_alignment": {
+        "n": 8,
+        "correct": 8,
+        "reference_insufficient": 8,
+        "any_reported_local": 0
+      },
+      "global_gamma": {
+        "n": 8,
+        "correct": 4,
+        "reference_insufficient": 4,
+        "any_reported_local": 0,
+        "consistent_with_surroundings": 4
+      },
+      "gamma_plus_patch": {
+        "n": 8,
+        "correct": 6,
+        "local_residual": 6,
+        "any_reported_local": 6,
+        "correct_and_located": 6,
+        "located_in_either_reported_region": 6,
+        "consistent_with_surroundings": 2
+      },
+      "two_illumination_zones": {
+        "n": 8,
+        "correct": 8,
+        "reference_insufficient": 8,
+        "any_reported_local": 0
+      }
+    },
+    "adaptive": {
+      "same": {
+        "n": 8,
+        "correct": 8,
+        "no_clear_residual": 8,
+        "any_reported_local": 0
+      },
+      "exposure": {
+        "n": 8,
+        "correct": 8,
+        "consistent_with_surroundings": 8,
+        "any_reported_local": 0
+      },
+      "color_cast": {
+        "n": 8,
+        "correct": 8,
+        "consistent_with_surroundings": 8,
+        "any_reported_local": 0
+      },
+      "inside": {
+        "n": 8,
+        "correct": 8,
+        "local_residual": 8,
+        "any_reported_local": 8,
+        "correct_and_located": 8,
+        "located_in_either_reported_region": 8
+      },
+      "exposure_plus_inside": {
+        "n": 8,
+        "correct": 7,
+        "local_residual": 7,
+        "any_reported_local": 8,
+        "correct_and_located": 6,
+        "located_in_either_reported_region": 8,
+        "consistent_with_surroundings": 1
+      },
+      "invalid_reference": {
+        "n": 8,
+        "correct": 8,
+        "reference_insufficient": 8,
+        "any_reported_local": 0
+      },
+      "incompatible_context": {
+        "n": 8,
+        "correct": 8,
+        "reference_insufficient": 8,
+        "any_reported_local": 0
+      },
+      "unverified_alignment": {
+        "n": 8,
+        "correct": 8,
+        "reference_insufficient": 8,
+        "any_reported_local": 0
+      },
+      "global_gamma": {
+        "n": 8,
+        "correct": 8,
+        "consistent_with_surroundings": 8,
+        "any_reported_local": 0
+      },
+      "gamma_plus_patch": {
+        "n": 8,
+        "correct": 6,
+        "local_residual": 6,
+        "any_reported_local": 8,
+        "correct_and_located": 6,
+        "located_in_either_reported_region": 8,
+        "consistent_with_surroundings": 2
+      },
+      "two_illumination_zones": {
+        "n": 8,
+        "correct": 8,
+        "reference_insufficient": 8,
+        "any_reported_local": 0
+      }
+    }
+  },
+  "acceptance": {
+    "gamma_clear": true,
+    "gamma_false": true,
+    "mixed_localized": true,
+    "reject_split_lighting": true
+  },
+  "rows": [
+    {
+      "building_id": "cc-baad00d8ac7a",
+      "condition": "same",
+      "expected": "no_clear_residual",
+      "initial_appearance_xyxy": [
+        0.375,
+        0.208333,
+        0.714286,
+        0.431548
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "no_clear_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.375,
+          0.208333,
+          0.714286,
+          0.431548
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "no_clear_residual",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-baad00d8ac7a",
+      "condition": "exposure",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.458333,
+        0.238095,
+        0.60119,
+        0.369048
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "evidence_windows_not_colocated",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-baad00d8ac7a",
+      "condition": "color_cast",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.33631,
+        0.238095,
+        0.675595,
+        0.547619
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.33631,
+          0.238095,
+          0.675595,
+          0.547619
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-baad00d8ac7a",
+      "condition": "inside",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.383929,
+        0.404762,
+        0.58631,
+        0.589286
+      ],
+      "edit_center": [
+        0.4836309523809524,
+        0.4806547619047619
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.383929,
+          0.404762,
+          0.58631,
+          0.589286
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.3958333,
+          0.4047619,
+          0.5714286,
+          0.5684524
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.3958333,
+          0.3928571,
+          0.5714286,
+          0.5684524
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-baad00d8ac7a",
+      "condition": "exposure_plus_inside",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.458333,
+        0.431548,
+        0.60119,
+        0.5625
+      ],
+      "edit_center": [
+        0.4836309523809524,
+        0.4806547619047619
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.458333,
+          0.431548,
+          0.60119,
+          0.5625
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.4583333,
+          0.4315476,
+          0.5714286,
+          0.5625
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.3958333,
+          0.3928571,
+          0.5714286,
+          0.5684524
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-baad00d8ac7a",
+      "condition": "invalid_reference",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.458333,
+        0.238095,
+        0.60119,
+        0.369048
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "evidence_windows_not_colocated",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "reference_area_or_spread",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-baad00d8ac7a",
+      "condition": "incompatible_context",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.375,
+        0.208333,
+        0.714286,
+        0.431548
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": [
+          0.375,
+          0.208333,
+          0.714286,
+          0.431548
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-baad00d8ac7a",
+      "condition": "unverified_alignment",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.458333,
+        0.238095,
+        0.60119,
+        0.369048
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "evidence_windows_not_colocated",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "grid_or_registration_unverified",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-baad00d8ac7a",
+      "condition": "global_gamma",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.4375,
+        0.21131,
+        0.583333,
+        0.342262
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "evidence_windows_not_colocated",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-baad00d8ac7a",
+      "condition": "gamma_plus_patch",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.425595,
+        0.404762,
+        0.568452,
+        0.535714
+      ],
+      "edit_center": [
+        0.4836309523809524,
+        0.4806547619047619
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.452381,
+          0.404762,
+          0.568452,
+          0.535714
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.4255952,
+          0.4047619,
+          0.5625,
+          0.5357143
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.4047619,
+          0.4017857,
+          0.5625,
+          0.5595238
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-baad00d8ac7a",
+      "condition": "two_illumination_zones",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.25,
+        0.416667,
+        0.392857,
+        0.547619
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "unstable_channel_fit",
+        "residual_or_legacy_window": [
+          0.25,
+          0.416667,
+          0.363095,
+          0.547619
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "unstable_channel_fit",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-8bed25492617",
+      "condition": "same",
+      "expected": "no_clear_residual",
+      "initial_appearance_xyxy": [
+        0.35119,
+        0.1875,
+        0.654762,
+        0.446429
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "no_clear_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.35119,
+          0.1875,
+          0.654762,
+          0.446429
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "no_clear_residual",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-8bed25492617",
+      "condition": "exposure",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.425595,
+        0.440476,
+        0.553571,
+        0.583333
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.425595,
+          0.440476,
+          0.526786,
+          0.583333
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-8bed25492617",
+      "condition": "color_cast",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.303571,
+        0.395833,
+        0.607143,
+        0.735119
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.303571,
+          0.395833,
+          0.607143,
+          0.735119
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-8bed25492617",
+      "condition": "inside",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.425595,
+        0.366071,
+        0.553571,
+        0.511905
+      ],
+      "edit_center": [
+        0.5223214285714286,
+        0.4479166666666667
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.425595,
+          0.366071,
+          0.553571,
+          0.511905
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.4434524,
+          0.3690476,
+          0.5535714,
+          0.5119048
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.4434524,
+          0.3690476,
+          0.6011905,
+          0.5267857
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-8bed25492617",
+      "condition": "exposure_plus_inside",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.502976,
+        0.342262,
+        0.630952,
+        0.488095
+      ],
+      "edit_center": [
+        0.5223214285714286,
+        0.4479166666666667
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.502976,
+          0.342262,
+          0.607143,
+          0.488095
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.5029762,
+          0.3690476,
+          0.6011905,
+          0.4880952
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.4434524,
+          0.3690476,
+          0.6011905,
+          0.5267857
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-8bed25492617",
+      "condition": "invalid_reference",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.425595,
+        0.440476,
+        0.553571,
+        0.583333
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "reference_area_or_spread",
+        "residual_or_legacy_window": [
+          0.425595,
+          0.440476,
+          0.526786,
+          0.583333
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "reference_area_or_spread",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-8bed25492617",
+      "condition": "incompatible_context",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.35119,
+        0.1875,
+        0.654762,
+        0.446429
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": [
+          0.35119,
+          0.1875,
+          0.654762,
+          0.446429
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-8bed25492617",
+      "condition": "unverified_alignment",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.425595,
+        0.440476,
+        0.553571,
+        0.583333
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "grid_or_registration_unverified",
+        "residual_or_legacy_window": [
+          0.425595,
+          0.440476,
+          0.526786,
+          0.583333
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "grid_or_registration_unverified",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-8bed25492617",
+      "condition": "global_gamma",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.392857,
+        0.440476,
+        0.52381,
+        0.583333
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.419643,
+          0.440476,
+          0.52381,
+          0.583333
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-8bed25492617",
+      "condition": "gamma_plus_patch",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.485119,
+        0.196429,
+        0.613095,
+        0.339286
+      ],
+      "edit_center": [
+        0.5223214285714286,
+        0.4479166666666667
+      ],
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.485119,
+          0.22619,
+          0.613095,
+          0.339286
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": false,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.4494048,
+          0.375,
+          0.5952381,
+          0.5208333
+        ],
+        "edit_center_in_output": false,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-8bed25492617",
+      "condition": "two_illumination_zones",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.369048,
+        0.702381,
+        0.497024,
+        0.8125
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": [
+          0.369048,
+          0.702381,
+          0.470238,
+          0.8125
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-6ce7d71bbd36",
+      "condition": "same",
+      "expected": "no_clear_residual",
+      "initial_appearance_xyxy": [
+        0.199405,
+        0.267857,
+        0.541667,
+        0.449405
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "no_clear_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.199405,
+          0.267857,
+          0.541667,
+          0.449405
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "no_clear_residual",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-6ce7d71bbd36",
+      "condition": "exposure",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.657738,
+        0.366071,
+        0.803571,
+        0.470238
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.657738,
+          0.366071,
+          0.803571,
+          0.449405
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-6ce7d71bbd36",
+      "condition": "color_cast",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.214286,
+        0.282738,
+        0.556548,
+        0.529762
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.214286,
+          0.282738,
+          0.556548,
+          0.529762
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-6ce7d71bbd36",
+      "condition": "inside",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.440476,
+        0.425595,
+        0.645833,
+        0.574405
+      ],
+      "edit_center": [
+        0.5401785714285714,
+        0.4955357142857143
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.440476,
+          0.425595,
+          0.645833,
+          0.574405
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.4613095,
+          0.4255952,
+          0.6190476,
+          0.5744048
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.4613095,
+          0.4166667,
+          0.6190476,
+          0.5744048
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-6ce7d71bbd36",
+      "condition": "exposure_plus_inside",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.657738,
+        0.366071,
+        0.803571,
+        0.470238
+      ],
+      "edit_center": [
+        0.5401785714285714,
+        0.4955357142857143
+      ],
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.657738,
+          0.366071,
+          0.803571,
+          0.449405
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": false,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.4613095,
+          0.4166667,
+          0.6190476,
+          0.5744048
+        ],
+        "edit_center_in_output": false,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-6ce7d71bbd36",
+      "condition": "invalid_reference",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.657738,
+        0.366071,
+        0.803571,
+        0.470238
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "reference_area_or_spread",
+        "residual_or_legacy_window": [
+          0.657738,
+          0.366071,
+          0.803571,
+          0.449405
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "reference_area_or_spread",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-6ce7d71bbd36",
+      "condition": "incompatible_context",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.199405,
+        0.267857,
+        0.541667,
+        0.449405
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": [
+          0.199405,
+          0.267857,
+          0.541667,
+          0.449405
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-6ce7d71bbd36",
+      "condition": "unverified_alignment",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.657738,
+        0.366071,
+        0.803571,
+        0.470238
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "grid_or_registration_unverified",
+        "residual_or_legacy_window": [
+          0.657738,
+          0.366071,
+          0.803571,
+          0.449405
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "grid_or_registration_unverified",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-6ce7d71bbd36",
+      "condition": "global_gamma",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.657738,
+        0.345238,
+        0.803571,
+        0.449405
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.657738,
+          0.366071,
+          0.803571,
+          0.449405
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-6ce7d71bbd36",
+      "condition": "gamma_plus_patch",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.657738,
+        0.345238,
+        0.803571,
+        0.449405
+      ],
+      "edit_center": [
+        0.5401785714285714,
+        0.4955357142857143
+      ],
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.657738,
+          0.366071,
+          0.803571,
+          0.449405
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": false,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.4672619,
+          0.422619,
+          0.6130952,
+          0.5684524
+        ],
+        "edit_center_in_output": false,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-6ce7d71bbd36",
+      "condition": "two_illumination_zones",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.535714,
+        0.577381,
+        0.678571,
+        0.681548
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "evidence_windows_not_colocated",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-459ddeb17073",
+      "condition": "same",
+      "expected": "no_clear_residual",
+      "initial_appearance_xyxy": [
+        0.306548,
+        0.190476,
+        0.645833,
+        0.443452
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "no_clear_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.306548,
+          0.190476,
+          0.645833,
+          0.443452
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "no_clear_residual",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-459ddeb17073",
+      "condition": "exposure",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.529762,
+        0.574405,
+        0.675595,
+        0.717262
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "evidence_windows_not_colocated",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-459ddeb17073",
+      "condition": "color_cast",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.443452,
+        0.622024,
+        0.645833,
+        0.800595
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.452381,
+          0.642857,
+          0.645833,
+          0.800595
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-459ddeb17073",
+      "condition": "inside",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.41369,
+        0.39881,
+        0.616071,
+        0.598214
+      ],
+      "edit_center": [
+        0.5104166666666666,
+        0.49255952380952384
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.41369,
+          0.39881,
+          0.616071,
+          0.598214
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.4285714,
+          0.4107143,
+          0.5922619,
+          0.5744048
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.4285714,
+          0.4107143,
+          0.5922619,
+          0.5744048
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-459ddeb17073",
+      "condition": "exposure_plus_inside",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.473214,
+        0.452381,
+        0.616071,
+        0.592262
+      ],
+      "edit_center": [
+        0.5104166666666666,
+        0.49255952380952384
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.482143,
+          0.470238,
+          0.616071,
+          0.592262
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.4732143,
+          0.452381,
+          0.5922619,
+          0.5744048
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.4285714,
+          0.4107143,
+          0.5922619,
+          0.5744048
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-459ddeb17073",
+      "condition": "invalid_reference",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.529762,
+        0.574405,
+        0.675595,
+        0.717262
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "evidence_windows_not_colocated",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "reference_area_or_spread",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-459ddeb17073",
+      "condition": "incompatible_context",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.306548,
+        0.190476,
+        0.645833,
+        0.443452
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": [
+          0.306548,
+          0.190476,
+          0.645833,
+          0.443452
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-459ddeb17073",
+      "condition": "unverified_alignment",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.529762,
+        0.574405,
+        0.675595,
+        0.717262
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "evidence_windows_not_colocated",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "grid_or_registration_unverified",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-459ddeb17073",
+      "condition": "global_gamma",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.434524,
+        0.589286,
+        0.577381,
+        0.729167
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "evidence_windows_not_colocated",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-459ddeb17073",
+      "condition": "gamma_plus_patch",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.467262,
+        0.440476,
+        0.613095,
+        0.583333
+      ],
+      "edit_center": [
+        0.5104166666666666,
+        0.49255952380952384
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.467262,
+          0.440476,
+          0.60119,
+          0.5625
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.4672619,
+          0.4404762,
+          0.5863095,
+          0.5684524
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.4345238,
+          0.4166667,
+          0.5863095,
+          0.5684524
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-459ddeb17073",
+      "condition": "two_illumination_zones",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.505952,
+        0.455357,
+        0.651786,
+        0.598214
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": [
+          0.505952,
+          0.455357,
+          0.622024,
+          0.598214
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-9728d38a3e0a",
+      "condition": "same",
+      "expected": "no_clear_residual",
+      "initial_appearance_xyxy": [
+        0.193452,
+        0.25,
+        0.491071,
+        0.428571
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "no_clear_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.193452,
+          0.25,
+          0.491071,
+          0.428571
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "no_clear_residual",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-9728d38a3e0a",
+      "condition": "exposure",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.235119,
+        0.568452,
+        0.377976,
+        0.684524
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.235119,
+          0.583333,
+          0.377976,
+          0.684524
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-9728d38a3e0a",
+      "condition": "color_cast",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.502976,
+        0.5625,
+        0.8125,
+        0.75
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.502976,
+          0.577381,
+          0.8125,
+          0.75
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-9728d38a3e0a",
+      "condition": "inside",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.360119,
+        0.425595,
+        0.5625,
+        0.58631
+      ],
+      "edit_center": [
+        0.43898809523809523,
+        0.49851190476190477
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.360119,
+          0.425595,
+          0.5625,
+          0.58631
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.360119,
+          0.4255952,
+          0.5357143,
+          0.5863095
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.3422619,
+          0.4017857,
+          0.5357143,
+          0.5952381
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-9728d38a3e0a",
+      "condition": "exposure_plus_inside",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.282738,
+        0.431548,
+        0.425595,
+        0.547619
+      ],
+      "edit_center": [
+        0.43898809523809523,
+        0.49851190476190477
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.282738,
+          0.446429,
+          0.425595,
+          0.547619
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": false,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.3422619,
+          0.4315476,
+          0.4255952,
+          0.547619
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.3422619,
+          0.4017857,
+          0.5357143,
+          0.5952381
+        ],
+        "edit_center_in_output": false,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-9728d38a3e0a",
+      "condition": "invalid_reference",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.235119,
+        0.568452,
+        0.377976,
+        0.684524
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "reference_area_or_spread",
+        "residual_or_legacy_window": [
+          0.235119,
+          0.583333,
+          0.377976,
+          0.684524
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "reference_area_or_spread",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-9728d38a3e0a",
+      "condition": "incompatible_context",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.193452,
+        0.25,
+        0.491071,
+        0.428571
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": [
+          0.193452,
+          0.25,
+          0.491071,
+          0.428571
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-9728d38a3e0a",
+      "condition": "unverified_alignment",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.235119,
+        0.568452,
+        0.377976,
+        0.684524
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "grid_or_registration_unverified",
+        "residual_or_legacy_window": [
+          0.235119,
+          0.583333,
+          0.377976,
+          0.684524
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "grid_or_registration_unverified",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-9728d38a3e0a",
+      "condition": "global_gamma",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.294643,
+        0.625,
+        0.4375,
+        0.741071
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "evidence_windows_not_colocated",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-9728d38a3e0a",
+      "condition": "gamma_plus_patch",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.395833,
+        0.47619,
+        0.53869,
+        0.592262
+      ],
+      "edit_center": [
+        0.43898809523809523,
+        0.49851190476190477
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.395833,
+          0.47619,
+          0.53869,
+          0.574405
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.3958333,
+          0.4761905,
+          0.5297619,
+          0.5892857
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.3482143,
+          0.4077381,
+          0.5297619,
+          0.5892857
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-9728d38a3e0a",
+      "condition": "two_illumination_zones",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.282738,
+        0.526786,
+        0.425595,
+        0.642857
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "evidence_windows_not_colocated",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-263539b1546e",
+      "condition": "same",
+      "expected": "no_clear_residual",
+      "initial_appearance_xyxy": [
+        0.428571,
+        0.184524,
+        0.497024,
+        0.333333
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "no_clear_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.428571,
+          0.184524,
+          0.497024,
+          0.333333
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "no_clear_residual",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-263539b1546e",
+      "condition": "exposure",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.485119,
+        0.684524,
+        0.535714,
+        0.8125
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "evidence_windows_not_colocated",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-263539b1546e",
+      "condition": "color_cast",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.514881,
+        0.488095,
+        0.60119,
+        0.8125
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.52381,
+          0.488095,
+          0.60119,
+          0.8125
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-263539b1546e",
+      "condition": "inside",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.464286,
+        0.21131,
+        0.511905,
+        0.357143
+      ],
+      "edit_center": [
+        0.48660714285714285,
+        0.28422619047619047
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.464286,
+          0.21131,
+          0.511905,
+          0.357143
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.4642857,
+          0.2261905,
+          0.5119048,
+          0.3422619
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.4285714,
+          0.2261905,
+          0.5446429,
+          0.3422619
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-263539b1546e",
+      "condition": "exposure_plus_inside",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.470238,
+        0.217262,
+        0.520833,
+        0.363095
+      ],
+      "edit_center": [
+        0.48660714285714285,
+        0.28422619047619047
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.479167,
+          0.217262,
+          0.520833,
+          0.363095
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.4702381,
+          0.2261905,
+          0.5208333,
+          0.3422619
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.4285714,
+          0.2261905,
+          0.5446429,
+          0.3422619
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-263539b1546e",
+      "condition": "invalid_reference",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.485119,
+        0.684524,
+        0.535714,
+        0.8125
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "evidence_windows_not_colocated",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "reference_area_or_spread",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-263539b1546e",
+      "condition": "incompatible_context",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.428571,
+        0.184524,
+        0.497024,
+        0.333333
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": [
+          0.428571,
+          0.184524,
+          0.497024,
+          0.333333
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-263539b1546e",
+      "condition": "unverified_alignment",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.485119,
+        0.684524,
+        0.535714,
+        0.8125
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "evidence_windows_not_colocated",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "grid_or_registration_unverified",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-263539b1546e",
+      "condition": "global_gamma",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.502976,
+        0.702381,
+        0.553571,
+        0.8125
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "evidence_windows_not_colocated",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-263539b1546e",
+      "condition": "gamma_plus_patch",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.446429,
+        0.223214,
+        0.497024,
+        0.366071
+      ],
+      "edit_center": [
+        0.48660714285714285,
+        0.28422619047619047
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.446429,
+          0.223214,
+          0.488095,
+          0.366071
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.4464286,
+          0.2321429,
+          0.4970238,
+          0.3363095
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.4345238,
+          0.2321429,
+          0.5386905,
+          0.3363095
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-263539b1546e",
+      "condition": "two_illumination_zones",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.488095,
+        0.497024,
+        0.60119,
+        0.8125
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": [
+          0.488095,
+          0.497024,
+          0.60119,
+          0.8125
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-0d6ac67751f5",
+      "condition": "same",
+      "expected": "no_clear_residual",
+      "initial_appearance_xyxy": [
+        0.342262,
+        0.1875,
+        0.574405,
+        0.419643
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "no_clear_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.342262,
+          0.1875,
+          0.574405,
+          0.419643
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "no_clear_residual",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-0d6ac67751f5",
+      "condition": "exposure",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.425595,
+        0.258929,
+        0.52381,
+        0.404762
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.425595,
+          0.258929,
+          0.52381,
+          0.383929
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-0d6ac67751f5",
+      "condition": "color_cast",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.431548,
+        0.1875,
+        0.666667,
+        0.428571
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.431548,
+          0.1875,
+          0.666667,
+          0.428571
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-0d6ac67751f5",
+      "condition": "inside",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.4375,
+        0.282738,
+        0.53869,
+        0.428571
+      ],
+      "edit_center": [
+        0.5193452380952381,
+        0.37351190476190477
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.4375,
+          0.282738,
+          0.53869,
+          0.428571
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.4434524,
+          0.297619,
+          0.5386905,
+          0.4285714
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.4434524,
+          0.297619,
+          0.5952381,
+          0.4494048
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-0d6ac67751f5",
+      "condition": "exposure_plus_inside",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.467262,
+        0.354167,
+        0.568452,
+        0.497024
+      ],
+      "edit_center": [
+        0.5193452380952381,
+        0.37351190476190477
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.467262,
+          0.354167,
+          0.568452,
+          0.497024
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.4672619,
+          0.3541667,
+          0.5684524,
+          0.4494048
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.4434524,
+          0.297619,
+          0.5952381,
+          0.4494048
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-0d6ac67751f5",
+      "condition": "invalid_reference",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.425595,
+        0.258929,
+        0.52381,
+        0.404762
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "reference_area_or_spread",
+        "residual_or_legacy_window": [
+          0.425595,
+          0.258929,
+          0.52381,
+          0.383929
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "reference_area_or_spread",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-0d6ac67751f5",
+      "condition": "incompatible_context",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.342262,
+        0.1875,
+        0.574405,
+        0.419643
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": [
+          0.342262,
+          0.1875,
+          0.574405,
+          0.419643
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-0d6ac67751f5",
+      "condition": "unverified_alignment",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.425595,
+        0.258929,
+        0.52381,
+        0.404762
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "grid_or_registration_unverified",
+        "residual_or_legacy_window": [
+          0.425595,
+          0.258929,
+          0.52381,
+          0.383929
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "grid_or_registration_unverified",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-0d6ac67751f5",
+      "condition": "global_gamma",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.422619,
+        0.229167,
+        0.520833,
+        0.375
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.422619,
+          0.258929,
+          0.520833,
+          0.375
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-0d6ac67751f5",
+      "condition": "gamma_plus_patch",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.4375,
+        0.282738,
+        0.53869,
+        0.428571
+      ],
+      "edit_center": [
+        0.5193452380952381,
+        0.37351190476190477
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.4375,
+          0.282738,
+          0.52381,
+          0.419643
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.4494048,
+          0.3035714,
+          0.5386905,
+          0.4285714
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.4494048,
+          0.3035714,
+          0.5892857,
+          0.4434524
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-0d6ac67751f5",
+      "condition": "two_illumination_zones",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.479167,
+        0.21131,
+        0.577381,
+        0.357143
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "unstable_channel_fit",
+        "residual_or_legacy_window": [
+          0.479167,
+          0.21131,
+          0.559524,
+          0.357143
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "unstable_channel_fit",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-98162b57bd40",
+      "condition": "same",
+      "expected": "no_clear_residual",
+      "initial_appearance_xyxy": [
+        0.342262,
+        0.339286,
+        0.529762,
+        0.485119
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "no_clear_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.342262,
+          0.339286,
+          0.529762,
+          0.485119
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "no_clear_residual",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-98162b57bd40",
+      "condition": "exposure",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.458333,
+        0.532738,
+        0.645833,
+        0.675595
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.458333,
+          0.532738,
+          0.645833,
+          0.675595
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-98162b57bd40",
+      "condition": "color_cast",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.464286,
+        0.529762,
+        0.651786,
+        0.675595
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.464286,
+          0.529762,
+          0.651786,
+          0.675595
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-98162b57bd40",
+      "condition": "inside",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.473214,
+        0.485119,
+        0.58631,
+        0.595238
+      ],
+      "edit_center": [
+        0.5282738095238095,
+        0.5401785714285714
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.473214,
+          0.485119,
+          0.58631,
+          0.595238
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.485119,
+          0.4970238,
+          0.5714286,
+          0.5833333
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.485119,
+          0.4970238,
+          0.5714286,
+          0.5833333
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-98162b57bd40",
+      "condition": "exposure_plus_inside",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.473214,
+        0.488095,
+        0.58631,
+        0.598214
+      ],
+      "edit_center": [
+        0.5282738095238095,
+        0.5401785714285714
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.473214,
+          0.488095,
+          0.58631,
+          0.598214
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.485119,
+          0.4970238,
+          0.5714286,
+          0.5833333
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.485119,
+          0.4970238,
+          0.5714286,
+          0.5833333
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-98162b57bd40",
+      "condition": "invalid_reference",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.458333,
+        0.532738,
+        0.645833,
+        0.675595
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "reference_area_or_spread",
+        "residual_or_legacy_window": [
+          0.458333,
+          0.532738,
+          0.645833,
+          0.675595
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "reference_area_or_spread",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-98162b57bd40",
+      "condition": "incompatible_context",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.342262,
+        0.339286,
+        0.529762,
+        0.485119
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": [
+          0.342262,
+          0.339286,
+          0.529762,
+          0.485119
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-98162b57bd40",
+      "condition": "unverified_alignment",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.458333,
+        0.532738,
+        0.645833,
+        0.675595
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "grid_or_registration_unverified",
+        "residual_or_legacy_window": [
+          0.458333,
+          0.532738,
+          0.645833,
+          0.675595
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "grid_or_registration_unverified",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-98162b57bd40",
+      "condition": "global_gamma",
+      "expected": "consistent_with_surroundings",
+      "initial_appearance_xyxy": [
+        0.458333,
+        0.532738,
+        0.645833,
+        0.675595
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.458333,
+          0.532738,
+          0.645833,
+          0.675595
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "consistent_with_surroundings",
+        "reason": null,
+        "residual_or_legacy_window": null,
+        "separate_followup_status": "no_clear_residual",
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    },
+    {
+      "building_id": "cc-98162b57bd40",
+      "condition": "gamma_plus_patch",
+      "expected": "local_residual",
+      "initial_appearance_xyxy": [
+        0.497024,
+        0.502976,
+        0.580357,
+        0.583333
+      ],
+      "edit_center": [
+        0.5282738095238095,
+        0.5401785714285714
+      ],
+      "linear": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.497024,
+          0.502976,
+          0.580357,
+          0.583333
+        ],
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": true,
+        "edit_center_in_followup": false
+      },
+      "adaptive": {
+        "status": "local_residual",
+        "reason": null,
+        "residual_or_legacy_window": [
+          0.4970238,
+          0.5029762,
+          0.5684524,
+          0.5803571
+        ],
+        "separate_followup_status": "local_residual",
+        "separate_followup_xyxy": [
+          0.4880952,
+          0.5,
+          0.5684524,
+          0.5803571
+        ],
+        "edit_center_in_output": true,
+        "edit_center_in_followup": true
+      }
+    },
+    {
+      "building_id": "cc-98162b57bd40",
+      "condition": "two_illumination_zones",
+      "expected": "reference_insufficient",
+      "initial_appearance_xyxy": [
+        0.5625,
+        0.455357,
+        0.642857,
+        0.535714
+      ],
+      "edit_center": null,
+      "linear": {
+        "status": "reference_insufficient",
+        "reason": "evidence_windows_not_colocated",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      },
+      "adaptive": {
+        "status": "reference_insufficient",
+        "reason": "surroundings_not_consistent",
+        "residual_or_legacy_window": null,
+        "separate_followup_status": null,
+        "separate_followup_xyxy": null,
+        "edit_center_in_output": null,
+        "edit_center_in_followup": null
+      }
+    }
+  ]
+}

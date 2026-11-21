@@ -1,0 +1,62 @@
+{
+  "source_sha256": "a08a2e307a7020ed305dd78f42e82fc73b728895273ad14ff531629c32f87cda",
+  "bank_sha256": "48fd68df0bd8e12cb9c92f6233a552fa280813d5dc2a18c7c4a137d15be2e409",
+  "cases": {
+    "inside": {
+      "status": "local_residual",
+      "pre_window_unchanged": true,
+      "post_window_unchanged": true,
+      "identical_text_state_measurements": true,
+      "context_equals_direct_adaptive": true,
+      "primary_residual_box": [
+        0.4821429,
+        0.3690476,
+        0.5744048,
+        0.5089286
+      ],
+      "followup_residual_box": [
+        0.4136905,
+        0.3690476,
+        0.5892857,
+        0.5446429
+      ],
+      "known_edit_center": [
+        0.5014880952380952,
+        0.4568452380952381
+      ]
+    },
+    "global_gamma": {
+      "status": "consistent_with_surroundings",
+      "pre_window_unchanged": true,
+      "post_window_unchanged": true,
+      "identical_text_state_measurements": true,
+      "context_equals_direct_adaptive": true,
+      "primary_residual_box": null,
+      "followup_residual_box": null,
+      "known_edit_center": null
+    },
+    "gamma_plus_patch": {
+      "status": "local_residual",
+      "pre_window_unchanged": true,
+      "post_window_unchanged": true,
+      "identical_text_state_measurements": true,
+      "context_equals_direct_adaptive": true,
+      "primary_residual_box": [
+        0.422619,
+        0.375,
+        0.514881,
+        0.5089286
+      ],
+      "followup_residual_box": [
+        0.4196429,
+        0.375,
+        0.5833333,
+        0.5386905
+      ],
+      "known_edit_center": [
+        0.5014880952380952,
+        0.4568452380952381
+      ]
+    }
+  }
+}

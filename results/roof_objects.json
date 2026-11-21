@@ -1,0 +1,1218 @@
+{
+  "archive_sha256": "06108e7cf4152f0ba798fbb566546b4780585480dee946e27d855034e21094de",
+  "totals": {
+    "baseline": {
+      "Decking": {
+        "tp": 274,
+        "fp": 462,
+        "fn": 238,
+        "original_tp_retained": 274,
+        "lost": 0,
+        "added": 0,
+        "candidates": 736,
+        "candidate_delta": 0
+      },
+      "both": {
+        "tp": 501,
+        "fp": 768,
+        "fn": 379,
+        "original_tp_retained": 501,
+        "lost": 0,
+        "added": 0,
+        "candidates": 1269,
+        "candidate_delta": 0
+      },
+      "Hole": {
+        "tp": 227,
+        "fp": 306,
+        "fn": 141,
+        "original_tp_retained": 227,
+        "lost": 0,
+        "added": 0,
+        "candidates": 533,
+        "candidate_delta": 0
+      }
+    },
+    "main": {
+      "Decking": {
+        "tp": 287,
+        "fp": 441,
+        "fn": 225,
+        "original_tp_retained": 274,
+        "lost": 0,
+        "added": 13,
+        "candidates": 728,
+        "candidate_delta": -8
+      },
+      "both": {
+        "tp": 523,
+        "fp": 746,
+        "fn": 357,
+        "original_tp_retained": 501,
+        "lost": 0,
+        "added": 22,
+        "candidates": 1269,
+        "candidate_delta": 0
+      },
+      "Hole": {
+        "tp": 236,
+        "fp": 305,
+        "fn": 132,
+        "original_tp_retained": 227,
+        "lost": 0,
+        "added": 9,
+        "candidates": 541,
+        "candidate_delta": 8
+      }
+    },
+    "equal_budget": {
+      "Decking": {
+        "tp": 287,
+        "fp": 441,
+        "fn": 225,
+        "original_tp_retained": 274,
+        "lost": 0,
+        "added": 13,
+        "candidates": 728,
+        "candidate_delta": -8
+      },
+      "both": {
+        "tp": 523,
+        "fp": 746,
+        "fn": 357,
+        "original_tp_retained": 501,
+        "lost": 0,
+        "added": 22,
+        "candidates": 1269,
+        "candidate_delta": 0
+      },
+      "Hole": {
+        "tp": 236,
+        "fp": 305,
+        "fn": 132,
+        "original_tp_retained": 227,
+        "lost": 0,
+        "added": 9,
+        "candidates": 541,
+        "candidate_delta": 8
+      }
+    },
+    "low_fp": {
+      "Decking": {
+        "tp": 282,
+        "fp": 426,
+        "fn": 230,
+        "original_tp_retained": 274,
+        "lost": 0,
+        "added": 8,
+        "candidates": 708,
+        "candidate_delta": -28
+      },
+      "both": {
+        "tp": 515,
+        "fp": 713,
+        "fn": 365,
+        "original_tp_retained": 501,
+        "lost": 0,
+        "added": 14,
+        "candidates": 1228,
+        "candidate_delta": -41
+      },
+      "Hole": {
+        "tp": 233,
+        "fp": 287,
+        "fn": 135,
+        "original_tp_retained": 227,
+        "lost": 0,
+        "added": 6,
+        "candidates": 520,
+        "candidate_delta": -13
+      }
+    }
+  },
+  "scenes": {
+    "b_gbhurricanedorianmcleans": {
+      "baseline": {
+        "sha256": null,
+        "classes": {
+          "Decking": {
+            "tp": 175,
+            "fp": 343,
+            "fn": 182,
+            "original_tp_retained": 175,
+            "lost": 0,
+            "added": 0,
+            "candidates": 518,
+            "candidate_delta": 0,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          },
+          "Hole": {
+            "tp": 103,
+            "fp": 150,
+            "fn": 56,
+            "original_tp_retained": 103,
+            "lost": 0,
+            "added": 0,
+            "candidates": 253,
+            "candidate_delta": 0,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          }
+        },
+        "both": {
+          "tp": 278,
+          "fp": 493,
+          "fn": 238,
+          "original_tp_retained": 278,
+          "lost": 0,
+          "added": 0,
+          "candidates": 771,
+          "candidate_delta": 0
+        },
+        "equal_scene_candidate_count": true
+      },
+      "main": {
+        "sha256": "cff30fa77d0de47f07666e042e0753859896aa00cffacd285dbb980190ee068c",
+        "classes": {
+          "Decking": {
+            "tp": 185,
+            "fp": 326,
+            "fn": 172,
+            "original_tp_retained": 175,
+            "lost": 0,
+            "added": 10,
+            "candidates": 511,
+            "candidate_delta": -7,
+            "competing_components": 3,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [
+              6,
+              155,
+              183,
+              184,
+              205,
+              243,
+              272,
+              295,
+              302,
+              316
+            ],
+            "lost_reference_fids": [],
+            "new_reference_fids": [
+              12,
+              285,
+              315,
+              316,
+              337,
+              392,
+              423,
+              447,
+              454,
+              468
+            ]
+          },
+          "Hole": {
+            "tp": 107,
+            "fp": 153,
+            "fn": 52,
+            "original_tp_retained": 103,
+            "lost": 0,
+            "added": 4,
+            "candidates": 260,
+            "candidate_delta": 7,
+            "competing_components": 1,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [
+              38,
+              94,
+              97,
+              120
+            ],
+            "lost_reference_fids": [],
+            "new_reference_fids": [
+              69,
+              152,
+              155,
+              228
+            ]
+          }
+        },
+        "both": {
+          "tp": 292,
+          "fp": 479,
+          "fn": 224,
+          "original_tp_retained": 278,
+          "lost": 0,
+          "added": 14,
+          "candidates": 771,
+          "candidate_delta": 0
+        },
+        "equal_scene_candidate_count": true
+      },
+      "equal_budget": {
+        "sha256": "cff30fa77d0de47f07666e042e0753859896aa00cffacd285dbb980190ee068c",
+        "classes": {
+          "Decking": {
+            "tp": 185,
+            "fp": 326,
+            "fn": 172,
+            "original_tp_retained": 175,
+            "lost": 0,
+            "added": 10,
+            "candidates": 511,
+            "candidate_delta": -7,
+            "competing_components": 3,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [
+              6,
+              155,
+              183,
+              184,
+              205,
+              243,
+              272,
+              295,
+              302,
+              316
+            ],
+            "lost_reference_fids": [],
+            "new_reference_fids": [
+              12,
+              285,
+              315,
+              316,
+              337,
+              392,
+              423,
+              447,
+              454,
+              468
+            ]
+          },
+          "Hole": {
+            "tp": 107,
+            "fp": 153,
+            "fn": 52,
+            "original_tp_retained": 103,
+            "lost": 0,
+            "added": 4,
+            "candidates": 260,
+            "candidate_delta": 7,
+            "competing_components": 1,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [
+              38,
+              94,
+              97,
+              120
+            ],
+            "lost_reference_fids": [],
+            "new_reference_fids": [
+              69,
+              152,
+              155,
+              228
+            ]
+          }
+        },
+        "both": {
+          "tp": 292,
+          "fp": 479,
+          "fn": 224,
+          "original_tp_retained": 278,
+          "lost": 0,
+          "added": 14,
+          "candidates": 771,
+          "candidate_delta": 0
+        },
+        "equal_scene_candidate_count": true
+      },
+      "low_fp": {
+        "sha256": "01af00ea82903852a9f6ecb615cc451a4413c0fc513d5838f2ebf3721b22ccd5",
+        "classes": {
+          "Decking": {
+            "tp": 180,
+            "fp": 317,
+            "fn": 177,
+            "original_tp_retained": 175,
+            "lost": 0,
+            "added": 5,
+            "candidates": 497,
+            "candidate_delta": -21,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [
+              184,
+              205,
+              243,
+              272,
+              295
+            ],
+            "lost_reference_fids": [],
+            "new_reference_fids": [
+              316,
+              337,
+              392,
+              423,
+              447
+            ]
+          },
+          "Hole": {
+            "tp": 105,
+            "fp": 143,
+            "fn": 54,
+            "original_tp_retained": 103,
+            "lost": 0,
+            "added": 2,
+            "candidates": 248,
+            "candidate_delta": -5,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [
+              38,
+              94
+            ],
+            "lost_reference_fids": [],
+            "new_reference_fids": [
+              69,
+              152
+            ]
+          }
+        },
+        "both": {
+          "tp": 285,
+          "fp": 460,
+          "fn": 231,
+          "original_tp_retained": 278,
+          "lost": 0,
+          "added": 7,
+          "candidates": 745,
+          "candidate_delta": -26
+        },
+        "equal_scene_candidate_count": false
+      }
+    },
+    "s_belvedere": {
+      "baseline": {
+        "sha256": null,
+        "classes": {
+          "Decking": {
+            "tp": 18,
+            "fp": 31,
+            "fn": 11,
+            "original_tp_retained": 18,
+            "lost": 0,
+            "added": 0,
+            "candidates": 49,
+            "candidate_delta": 0,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          },
+          "Hole": {
+            "tp": 41,
+            "fp": 56,
+            "fn": 16,
+            "original_tp_retained": 41,
+            "lost": 0,
+            "added": 0,
+            "candidates": 97,
+            "candidate_delta": 0,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          }
+        },
+        "both": {
+          "tp": 59,
+          "fp": 87,
+          "fn": 27,
+          "original_tp_retained": 59,
+          "lost": 0,
+          "added": 0,
+          "candidates": 146,
+          "candidate_delta": 0
+        },
+        "equal_scene_candidate_count": true
+      },
+      "main": {
+        "sha256": "4db28c4d76c1943c4f30df372a35d10d0b6a521e6682685da543992b8af86ff9",
+        "classes": {
+          "Decking": {
+            "tp": 20,
+            "fp": 30,
+            "fn": 9,
+            "original_tp_retained": 18,
+            "lost": 0,
+            "added": 2,
+            "candidates": 50,
+            "candidate_delta": 1,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [
+              0,
+              14
+            ],
+            "lost_reference_fids": [],
+            "new_reference_fids": [
+              6,
+              33
+            ]
+          },
+          "Hole": {
+            "tp": 44,
+            "fp": 52,
+            "fn": 13,
+            "original_tp_retained": 41,
+            "lost": 0,
+            "added": 3,
+            "candidates": 96,
+            "candidate_delta": -1,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [
+              8,
+              13,
+              30
+            ],
+            "lost_reference_fids": [],
+            "new_reference_fids": [
+              12,
+              25,
+              49
+            ]
+          }
+        },
+        "both": {
+          "tp": 64,
+          "fp": 82,
+          "fn": 22,
+          "original_tp_retained": 59,
+          "lost": 0,
+          "added": 5,
+          "candidates": 146,
+          "candidate_delta": 0
+        },
+        "equal_scene_candidate_count": true
+      },
+      "equal_budget": {
+        "sha256": "4db28c4d76c1943c4f30df372a35d10d0b6a521e6682685da543992b8af86ff9",
+        "classes": {
+          "Decking": {
+            "tp": 20,
+            "fp": 30,
+            "fn": 9,
+            "original_tp_retained": 18,
+            "lost": 0,
+            "added": 2,
+            "candidates": 50,
+            "candidate_delta": 1,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [
+              0,
+              14
+            ],
+            "lost_reference_fids": [],
+            "new_reference_fids": [
+              6,
+              33
+            ]
+          },
+          "Hole": {
+            "tp": 44,
+            "fp": 52,
+            "fn": 13,
+            "original_tp_retained": 41,
+            "lost": 0,
+            "added": 3,
+            "candidates": 96,
+            "candidate_delta": -1,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [
+              8,
+              13,
+              30
+            ],
+            "lost_reference_fids": [],
+            "new_reference_fids": [
+              12,
+              25,
+              49
+            ]
+          }
+        },
+        "both": {
+          "tp": 64,
+          "fp": 82,
+          "fn": 22,
+          "original_tp_retained": 59,
+          "lost": 0,
+          "added": 5,
+          "candidates": 146,
+          "candidate_delta": 0
+        },
+        "equal_scene_candidate_count": true
+      },
+      "low_fp": {
+        "sha256": "29a83b954decb0a32c04c37a2156b5ec229c2fb8b6cf7d8f7afcda30f9f49382",
+        "classes": {
+          "Decking": {
+            "tp": 20,
+            "fp": 29,
+            "fn": 9,
+            "original_tp_retained": 18,
+            "lost": 0,
+            "added": 2,
+            "candidates": 49,
+            "candidate_delta": 0,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [
+              0,
+              14
+            ],
+            "lost_reference_fids": [],
+            "new_reference_fids": [
+              6,
+              33
+            ]
+          },
+          "Hole": {
+            "tp": 43,
+            "fp": 49,
+            "fn": 14,
+            "original_tp_retained": 41,
+            "lost": 0,
+            "added": 2,
+            "candidates": 92,
+            "candidate_delta": -5,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [
+              13,
+              30
+            ],
+            "lost_reference_fids": [],
+            "new_reference_fids": [
+              25,
+              49
+            ]
+          }
+        },
+        "both": {
+          "tp": 63,
+          "fp": 78,
+          "fn": 23,
+          "original_tp_retained": 59,
+          "lost": 0,
+          "added": 4,
+          "candidates": 141,
+          "candidate_delta": -5
+        },
+        "equal_scene_candidate_count": false
+      }
+    },
+    "s_ebenezer": {
+      "baseline": {
+        "sha256": null,
+        "classes": {
+          "Decking": {
+            "tp": 44,
+            "fp": 44,
+            "fn": 20,
+            "original_tp_retained": 44,
+            "lost": 0,
+            "added": 0,
+            "candidates": 88,
+            "candidate_delta": 0,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          },
+          "Hole": {
+            "tp": 39,
+            "fp": 51,
+            "fn": 34,
+            "original_tp_retained": 39,
+            "lost": 0,
+            "added": 0,
+            "candidates": 90,
+            "candidate_delta": 0,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          }
+        },
+        "both": {
+          "tp": 83,
+          "fp": 95,
+          "fn": 54,
+          "original_tp_retained": 83,
+          "lost": 0,
+          "added": 0,
+          "candidates": 178,
+          "candidate_delta": 0
+        },
+        "equal_scene_candidate_count": true
+      },
+      "main": {
+        "sha256": "b758a9653247380e1bd7798aa73fe81796a2b6a933791af4a3bca1a8989eeb4c",
+        "classes": {
+          "Decking": {
+            "tp": 45,
+            "fp": 42,
+            "fn": 19,
+            "original_tp_retained": 44,
+            "lost": 0,
+            "added": 1,
+            "candidates": 87,
+            "candidate_delta": -1,
+            "competing_components": 1,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [
+              24
+            ],
+            "lost_reference_fids": [],
+            "new_reference_fids": [
+              39
+            ]
+          },
+          "Hole": {
+            "tp": 41,
+            "fp": 50,
+            "fn": 32,
+            "original_tp_retained": 39,
+            "lost": 0,
+            "added": 2,
+            "candidates": 91,
+            "candidate_delta": 1,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [
+              0,
+              49
+            ],
+            "lost_reference_fids": [],
+            "new_reference_fids": [
+              7,
+              108
+            ]
+          }
+        },
+        "both": {
+          "tp": 86,
+          "fp": 92,
+          "fn": 51,
+          "original_tp_retained": 83,
+          "lost": 0,
+          "added": 3,
+          "candidates": 178,
+          "candidate_delta": 0
+        },
+        "equal_scene_candidate_count": true
+      },
+      "equal_budget": {
+        "sha256": "b758a9653247380e1bd7798aa73fe81796a2b6a933791af4a3bca1a8989eeb4c",
+        "classes": {
+          "Decking": {
+            "tp": 45,
+            "fp": 42,
+            "fn": 19,
+            "original_tp_retained": 44,
+            "lost": 0,
+            "added": 1,
+            "candidates": 87,
+            "candidate_delta": -1,
+            "competing_components": 1,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [
+              24
+            ],
+            "lost_reference_fids": [],
+            "new_reference_fids": [
+              39
+            ]
+          },
+          "Hole": {
+            "tp": 41,
+            "fp": 50,
+            "fn": 32,
+            "original_tp_retained": 39,
+            "lost": 0,
+            "added": 2,
+            "candidates": 91,
+            "candidate_delta": 1,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [
+              0,
+              49
+            ],
+            "lost_reference_fids": [],
+            "new_reference_fids": [
+              7,
+              108
+            ]
+          }
+        },
+        "both": {
+          "tp": 86,
+          "fp": 92,
+          "fn": 51,
+          "original_tp_retained": 83,
+          "lost": 0,
+          "added": 3,
+          "candidates": 178,
+          "candidate_delta": 0
+        },
+        "equal_scene_candidate_count": true
+      },
+      "low_fp": {
+        "sha256": "30f7fcfa18382dd72cc6e4566082be6bcd99cac8afe711170db631cf76c7fe5d",
+        "classes": {
+          "Decking": {
+            "tp": 45,
+            "fp": 39,
+            "fn": 19,
+            "original_tp_retained": 44,
+            "lost": 0,
+            "added": 1,
+            "candidates": 84,
+            "candidate_delta": -4,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [
+              24
+            ],
+            "lost_reference_fids": [],
+            "new_reference_fids": [
+              39
+            ]
+          },
+          "Hole": {
+            "tp": 41,
+            "fp": 47,
+            "fn": 32,
+            "original_tp_retained": 39,
+            "lost": 0,
+            "added": 2,
+            "candidates": 88,
+            "candidate_delta": -2,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [
+              0,
+              49
+            ],
+            "lost_reference_fids": [],
+            "new_reference_fids": [
+              7,
+              108
+            ]
+          }
+        },
+        "both": {
+          "tp": 86,
+          "fp": 86,
+          "fn": 51,
+          "original_tp_retained": 83,
+          "lost": 0,
+          "added": 3,
+          "candidates": 172,
+          "candidate_delta": -6
+        },
+        "equal_scene_candidate_count": false
+      }
+    },
+    "s_southreward": {
+      "baseline": {
+        "sha256": null,
+        "classes": {
+          "Decking": {
+            "tp": 15,
+            "fp": 15,
+            "fn": 16,
+            "original_tp_retained": 15,
+            "lost": 0,
+            "added": 0,
+            "candidates": 30,
+            "candidate_delta": 0,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          },
+          "Hole": {
+            "tp": 25,
+            "fp": 6,
+            "fn": 8,
+            "original_tp_retained": 25,
+            "lost": 0,
+            "added": 0,
+            "candidates": 31,
+            "candidate_delta": 0,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          }
+        },
+        "both": {
+          "tp": 40,
+          "fp": 21,
+          "fn": 24,
+          "original_tp_retained": 40,
+          "lost": 0,
+          "added": 0,
+          "candidates": 61,
+          "candidate_delta": 0
+        },
+        "equal_scene_candidate_count": true
+      },
+      "main": {
+        "sha256": "0c3adcedcbc8491ee8fbb128de3cfc5e3f640037e0401b76b2e358cba7dd2332",
+        "classes": {
+          "Decking": {
+            "tp": 15,
+            "fp": 13,
+            "fn": 16,
+            "original_tp_retained": 15,
+            "lost": 0,
+            "added": 0,
+            "candidates": 28,
+            "candidate_delta": -2,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          },
+          "Hole": {
+            "tp": 25,
+            "fp": 8,
+            "fn": 8,
+            "original_tp_retained": 25,
+            "lost": 0,
+            "added": 0,
+            "candidates": 33,
+            "candidate_delta": 2,
+            "competing_components": 1,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          }
+        },
+        "both": {
+          "tp": 40,
+          "fp": 21,
+          "fn": 24,
+          "original_tp_retained": 40,
+          "lost": 0,
+          "added": 0,
+          "candidates": 61,
+          "candidate_delta": 0
+        },
+        "equal_scene_candidate_count": true
+      },
+      "equal_budget": {
+        "sha256": "0c3adcedcbc8491ee8fbb128de3cfc5e3f640037e0401b76b2e358cba7dd2332",
+        "classes": {
+          "Decking": {
+            "tp": 15,
+            "fp": 13,
+            "fn": 16,
+            "original_tp_retained": 15,
+            "lost": 0,
+            "added": 0,
+            "candidates": 28,
+            "candidate_delta": -2,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          },
+          "Hole": {
+            "tp": 25,
+            "fp": 8,
+            "fn": 8,
+            "original_tp_retained": 25,
+            "lost": 0,
+            "added": 0,
+            "candidates": 33,
+            "candidate_delta": 2,
+            "competing_components": 1,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          }
+        },
+        "both": {
+          "tp": 40,
+          "fp": 21,
+          "fn": 24,
+          "original_tp_retained": 40,
+          "lost": 0,
+          "added": 0,
+          "candidates": 61,
+          "candidate_delta": 0
+        },
+        "equal_scene_candidate_count": true
+      },
+      "low_fp": {
+        "sha256": "071025208597ea0459a29bfaf8f4594cf999bdc8b48abc4bfdc327032e89d45d",
+        "classes": {
+          "Decking": {
+            "tp": 15,
+            "fp": 13,
+            "fn": 16,
+            "original_tp_retained": 15,
+            "lost": 0,
+            "added": 0,
+            "candidates": 28,
+            "candidate_delta": -2,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          },
+          "Hole": {
+            "tp": 25,
+            "fp": 7,
+            "fn": 8,
+            "original_tp_retained": 25,
+            "lost": 0,
+            "added": 0,
+            "candidates": 32,
+            "candidate_delta": 1,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          }
+        },
+        "both": {
+          "tp": 40,
+          "fp": 20,
+          "fn": 24,
+          "original_tp_retained": 40,
+          "lost": 0,
+          "added": 0,
+          "candidates": 60,
+          "candidate_delta": -1
+        },
+        "equal_scene_candidate_count": false
+      }
+    },
+    "s_stjohns": {
+      "baseline": {
+        "sha256": null,
+        "classes": {
+          "Decking": {
+            "tp": 22,
+            "fp": 29,
+            "fn": 9,
+            "original_tp_retained": 22,
+            "lost": 0,
+            "added": 0,
+            "candidates": 51,
+            "candidate_delta": 0,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          },
+          "Hole": {
+            "tp": 19,
+            "fp": 43,
+            "fn": 27,
+            "original_tp_retained": 19,
+            "lost": 0,
+            "added": 0,
+            "candidates": 62,
+            "candidate_delta": 0,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          }
+        },
+        "both": {
+          "tp": 41,
+          "fp": 72,
+          "fn": 36,
+          "original_tp_retained": 41,
+          "lost": 0,
+          "added": 0,
+          "candidates": 113,
+          "candidate_delta": 0
+        },
+        "equal_scene_candidate_count": true
+      },
+      "main": {
+        "sha256": "e1a4f835f604b135bac6829acf4022d3b0490112b7b1b856839ebf33ba5507a3",
+        "classes": {
+          "Decking": {
+            "tp": 22,
+            "fp": 30,
+            "fn": 9,
+            "original_tp_retained": 22,
+            "lost": 0,
+            "added": 0,
+            "candidates": 52,
+            "candidate_delta": 1,
+            "competing_components": 1,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          },
+          "Hole": {
+            "tp": 19,
+            "fp": 42,
+            "fn": 27,
+            "original_tp_retained": 19,
+            "lost": 0,
+            "added": 0,
+            "candidates": 61,
+            "candidate_delta": -1,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          }
+        },
+        "both": {
+          "tp": 41,
+          "fp": 72,
+          "fn": 36,
+          "original_tp_retained": 41,
+          "lost": 0,
+          "added": 0,
+          "candidates": 113,
+          "candidate_delta": 0
+        },
+        "equal_scene_candidate_count": true
+      },
+      "equal_budget": {
+        "sha256": "e1a4f835f604b135bac6829acf4022d3b0490112b7b1b856839ebf33ba5507a3",
+        "classes": {
+          "Decking": {
+            "tp": 22,
+            "fp": 30,
+            "fn": 9,
+            "original_tp_retained": 22,
+            "lost": 0,
+            "added": 0,
+            "candidates": 52,
+            "candidate_delta": 1,
+            "competing_components": 1,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          },
+          "Hole": {
+            "tp": 19,
+            "fp": 42,
+            "fn": 27,
+            "original_tp_retained": 19,
+            "lost": 0,
+            "added": 0,
+            "candidates": 61,
+            "candidate_delta": -1,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          }
+        },
+        "both": {
+          "tp": 41,
+          "fp": 72,
+          "fn": 36,
+          "original_tp_retained": 41,
+          "lost": 0,
+          "added": 0,
+          "candidates": 113,
+          "candidate_delta": 0
+        },
+        "equal_scene_candidate_count": true
+      },
+      "low_fp": {
+        "sha256": "879f5f8271939792e96e5431c28a0ea96bd29a2d73203fd65d64e349b282df12",
+        "classes": {
+          "Decking": {
+            "tp": 22,
+            "fp": 28,
+            "fn": 9,
+            "original_tp_retained": 22,
+            "lost": 0,
+            "added": 0,
+            "candidates": 50,
+            "candidate_delta": -1,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          },
+          "Hole": {
+            "tp": 19,
+            "fp": 41,
+            "fn": 27,
+            "original_tp_retained": 19,
+            "lost": 0,
+            "added": 0,
+            "candidates": 60,
+            "candidate_delta": -2,
+            "competing_components": 0,
+            "lost_reference_class_indices": [],
+            "new_reference_class_indices": [],
+            "lost_reference_fids": [],
+            "new_reference_fids": []
+          }
+        },
+        "both": {
+          "tp": 41,
+          "fp": 69,
+          "fn": 36,
+          "original_tp_retained": 41,
+          "lost": 0,
+          "added": 0,
+          "candidates": 110,
+          "candidate_delta": -3
+        },
+        "equal_scene_candidate_count": false
+      }
+    }
+  },
+  "class_rows_with_verified_counts_and_reference_changes": 40
+}

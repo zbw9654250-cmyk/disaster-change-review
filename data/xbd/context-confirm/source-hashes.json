@@ -1,0 +1,286 @@
+{
+  "revision": "361e53f86506e1f221f42a0c0d9619c213220ae5",
+  "cases_sha256": "b951ac14754c6e71e4b057601daa579110d9e2184b966b4ca1a64ae24ecd90de",
+  "rows": [
+    {
+      "building_id": "cc-baad00d8ac7a",
+      "source_files": {
+        "test/images/midwest-flooding_00000026_post_disaster.png": {
+          "sha256": "7e481ba3b7e72c690b3d511d9e0e1eed0c03524e5d706cb9f5caf395fa09d38a",
+          "upstream": {
+            "rfilename": "test/images/midwest-flooding_00000026_post_disaster.png",
+            "blobId": "f88ae598312f43fbcd18268a516469071341c287",
+            "size": 1440592,
+            "lfs": {
+              "sha256": "7e481ba3b7e72c690b3d511d9e0e1eed0c03524e5d706cb9f5caf395fa09d38a",
+              "size": 1440592,
+              "pointerSize": 132
+            }
+          }
+        },
+        "test/labels/midwest-flooding_00000026_post_disaster.json": {
+          "sha256": "308eacdd90720dd51b5cf2fdbaa3e06990537fbe4b1dbce5d70585e7112db2a3",
+          "upstream": {
+            "rfilename": "test/labels/midwest-flooding_00000026_post_disaster.json",
+            "blobId": "ad21f43f463ac1d1a3fc9c47eafd207304eb9efd",
+            "size": 98907
+          }
+        }
+      },
+      "crop_xyxy": [
+        7,
+        683,
+        80,
+        756
+      ],
+      "footprint_pixels": 25192,
+      "image_sha256": "5008dc10217dba8ea50a3ceadd07094b6f12a6648e13b1a685547675f29fb580",
+      "mask_sha256": "45fab50a1c631befe4e951a521c9e31344a5c228f78fbe98001e8c410b013626"
+    },
+    {
+      "building_id": "cc-8bed25492617",
+      "source_files": {
+        "test/images/santa-rosa-wildfire_00000238_post_disaster.png": {
+          "sha256": "b3e5bbe51aae75b411a4b3b16e6b3e65a5b626ff19b0f45572d359f2e5bd78e7",
+          "upstream": {
+            "rfilename": "test/images/santa-rosa-wildfire_00000238_post_disaster.png",
+            "blobId": "49bc0315fe2c1be9c53fb8de5da17186a62c2a50",
+            "size": 1669460,
+            "lfs": {
+              "sha256": "b3e5bbe51aae75b411a4b3b16e6b3e65a5b626ff19b0f45572d359f2e5bd78e7",
+              "size": 1669460,
+              "pointerSize": 132
+            }
+          }
+        },
+        "test/labels/santa-rosa-wildfire_00000238_post_disaster.json": {
+          "sha256": "b45a01f7f684e08643e9971fc399c87dc92f80ed9a9d07aa457438fa0b2d9944",
+          "upstream": {
+            "rfilename": "test/labels/santa-rosa-wildfire_00000238_post_disaster.json",
+            "blobId": "9dfdb3cd9abfd21027b70852ea709dc765281240",
+            "size": 214821
+          }
+        }
+      },
+      "crop_xyxy": [
+        407,
+        282,
+        489,
+        364
+      ],
+      "footprint_pixels": 20391,
+      "image_sha256": "b58bf1760f67f892ac2ab01943641c6cad75fcca54405950581400866dfe2cc7",
+      "mask_sha256": "9a421bb50e7e2c5a12c6eb85f8f1d6687424b6ef2f80eb99f7bdab9598315b77"
+    },
+    {
+      "building_id": "cc-6ce7d71bbd36",
+      "source_files": {
+        "test/images/palu-tsunami_00000021_post_disaster.png": {
+          "sha256": "144aa31ea41f9b2487f628e69791784e1a65a5c5da8adaa326fdf3f7eba48898",
+          "upstream": {
+            "rfilename": "test/images/palu-tsunami_00000021_post_disaster.png",
+            "blobId": "9dcebeb18889b72bbd1565a3bf1147103f85b6d1",
+            "size": 1538131,
+            "lfs": {
+              "sha256": "144aa31ea41f9b2487f628e69791784e1a65a5c5da8adaa326fdf3f7eba48898",
+              "size": 1538131,
+              "pointerSize": 132
+            }
+          }
+        },
+        "test/labels/palu-tsunami_00000021_post_disaster.json": {
+          "sha256": "e74613a77d37e0b812bea9fea28896b63f6a24ac20259e5327f422b9a017fae6",
+          "upstream": {
+            "rfilename": "test/labels/palu-tsunami_00000021_post_disaster.json",
+            "blobId": "b7200f7af28ad15b053778fd5f4e29dbf11f0028",
+            "size": 238487
+          }
+        }
+      },
+      "crop_xyxy": [
+        710,
+        351,
+        762,
+        403
+      ],
+      "footprint_pixels": 20708,
+      "image_sha256": "2e52f756850b7abf6439a3f4379bbbeb8a3decfdefb85cbcb106debe7aa0f78d",
+      "mask_sha256": "093ad8eafb19895d02fa50f2951a5de00c21465d826a48051d35b72bb6c8e0fa"
+    },
+    {
+      "building_id": "cc-459ddeb17073",
+      "source_files": {
+        "test/images/hurricane-florence_00000543_post_disaster.png": {
+          "sha256": "b01fdb0b68c608d0cc0bab0a3546bbcb5c391108f9eb48bfa1e45df67f0b52b6",
+          "upstream": {
+            "rfilename": "test/images/hurricane-florence_00000543_post_disaster.png",
+            "blobId": "22a8a657b9453cfdfdc8e23d0b22c88d24e759bc",
+            "size": 1515799,
+            "lfs": {
+              "sha256": "b01fdb0b68c608d0cc0bab0a3546bbcb5c391108f9eb48bfa1e45df67f0b52b6",
+              "size": 1515799,
+              "pointerSize": 132
+            }
+          }
+        },
+        "test/labels/hurricane-florence_00000543_post_disaster.json": {
+          "sha256": "52f5181f39d41816c999eb01619c621bd5772a65f4e5cf31c631f8db7111b4c0",
+          "upstream": {
+            "rfilename": "test/labels/hurricane-florence_00000543_post_disaster.json",
+            "blobId": "41a0982fe341fde8df7636d119e43fd29f668a81",
+            "size": 4894
+          }
+        }
+      },
+      "crop_xyxy": [
+        41,
+        599,
+        94,
+        652
+      ],
+      "footprint_pixels": 22105,
+      "image_sha256": "ab83b4e601c28a8f9bc3bf0e073fbb9fe9c9284030b41fa2c39efa0088feb15e",
+      "mask_sha256": "a7956962304b06b8df18acdd906bf67f6999a3ebf1dd3326145145ac48764186"
+    },
+    {
+      "building_id": "cc-9728d38a3e0a",
+      "source_files": {
+        "test/images/hurricane-michael_00000070_post_disaster.png": {
+          "sha256": "024ad1c294339efde56a9ed27939a992029efef06f04f6ac972f7d4df8f47167",
+          "upstream": {
+            "rfilename": "test/images/hurricane-michael_00000070_post_disaster.png",
+            "blobId": "c3e17818683c544b293aec094a4546d20b530b4d",
+            "size": 1643419,
+            "lfs": {
+              "sha256": "024ad1c294339efde56a9ed27939a992029efef06f04f6ac972f7d4df8f47167",
+              "size": 1643419,
+              "pointerSize": 132
+            }
+          }
+        },
+        "test/labels/hurricane-michael_00000070_post_disaster.json": {
+          "sha256": "b9dd8047684f7e477785d85df4d5d84107eb3f48b51334b58a74c2e506a8ed50",
+          "upstream": {
+            "rfilename": "test/labels/hurricane-michael_00000070_post_disaster.json",
+            "blobId": "43c359bec90e4890a3c7b919ef5b83f2cbbeb1de",
+            "size": 1885
+          }
+        }
+      },
+      "crop_xyxy": [
+        664,
+        477,
+        736,
+        549
+      ],
+      "footprint_pixels": 32284,
+      "image_sha256": "842ecad41cbe405f10baa902f9d24636d5d3acb8d2b59c7621cc083780a843e7",
+      "mask_sha256": "8e342cade7fe076bc12898282e0419b39ce52f954f3c44279c0e95661e1124ab"
+    },
+    {
+      "building_id": "cc-263539b1546e",
+      "source_files": {
+        "test/images/hurricane-harvey_00000420_post_disaster.png": {
+          "sha256": "0ef473fb3638a8b1bc818d475011cd80578d19ce3d3f67961ac0608539e88544",
+          "upstream": {
+            "rfilename": "test/images/hurricane-harvey_00000420_post_disaster.png",
+            "blobId": "9dc7c35f52f5d50ffd43bc60d4eb39d22a1a3f0a",
+            "size": 1319223,
+            "lfs": {
+              "sha256": "0ef473fb3638a8b1bc818d475011cd80578d19ce3d3f67961ac0608539e88544",
+              "size": 1319223,
+              "pointerSize": 132
+            }
+          }
+        },
+        "test/labels/hurricane-harvey_00000420_post_disaster.json": {
+          "sha256": "10b4f07a270666d36379296540fd042a841774a9a532bd67f001cd8c20e3f6f8",
+          "upstream": {
+            "rfilename": "test/labels/hurricane-harvey_00000420_post_disaster.json",
+            "blobId": "226cb41f0a927a79030593392f9cf51666df8c8b",
+            "size": 46230
+          }
+        }
+      },
+      "crop_xyxy": [
+        43,
+        478,
+        200,
+        635
+      ],
+      "footprint_pixels": 11220,
+      "image_sha256": "9061992a59d64ea7d59acef74d9e7823e46713c332a3a3a846405c743fb4160c",
+      "mask_sha256": "be1990776db52603404d1f0d7a6d26cad211b80fca5488d2f22b8bd2a500ed7e"
+    },
+    {
+      "building_id": "cc-0d6ac67751f5",
+      "source_files": {
+        "test/images/mexico-earthquake_00000022_post_disaster.png": {
+          "sha256": "71836913aaa3440f9c7ea69c5c3c688ea70af57589000a9da656839ae7a016b3",
+          "upstream": {
+            "rfilename": "test/images/mexico-earthquake_00000022_post_disaster.png",
+            "blobId": "1989c6a2afc97526bdb2bd5623aa9521a2ac3311",
+            "size": 1469688,
+            "lfs": {
+              "sha256": "71836913aaa3440f9c7ea69c5c3c688ea70af57589000a9da656839ae7a016b3",
+              "size": 1469688,
+              "pointerSize": 132
+            }
+          }
+        },
+        "test/labels/mexico-earthquake_00000022_post_disaster.json": {
+          "sha256": "7470d0c591fa0c830dbbf10159643a8426ebadc9615023c935307f36e4941d73",
+          "upstream": {
+            "rfilename": "test/labels/mexico-earthquake_00000022_post_disaster.json",
+            "blobId": "4f7d0e1e55084345178a5c20b17393af96d6fd98",
+            "size": 144046
+          }
+        }
+      },
+      "crop_xyxy": [
+        88,
+        262,
+        156,
+        330
+      ],
+      "footprint_pixels": 19317,
+      "image_sha256": "bd236c2066da880606a9406aff2849db9cea26a32247e2bd933db1c436b4982e",
+      "mask_sha256": "657130a9037521032641be6d2692360b1fa9f5e8901dc9613934b3dad80f65bd"
+    },
+    {
+      "building_id": "cc-98162b57bd40",
+      "source_files": {
+        "test/images/hurricane-matthew_00000147_post_disaster.png": {
+          "sha256": "02f3320ff0ac537a184b733dd01e4a6bd2d082c4bf33e54a5a295da954c15dde",
+          "upstream": {
+            "rfilename": "test/images/hurricane-matthew_00000147_post_disaster.png",
+            "blobId": "256895e631a53549df2d3becaf9f8f2b76289c9d",
+            "size": 1692209,
+            "lfs": {
+              "sha256": "02f3320ff0ac537a184b733dd01e4a6bd2d082c4bf33e54a5a295da954c15dde",
+              "size": 1692209,
+              "pointerSize": 132
+            }
+          }
+        },
+        "test/labels/hurricane-matthew_00000147_post_disaster.json": {
+          "sha256": "8afdb0008077c2a50cd229f44b3b5c3cbc169cecd1a76a2163b741d0be602198",
+          "upstream": {
+            "rfilename": "test/labels/hurricane-matthew_00000147_post_disaster.json",
+            "blobId": "da7c211a3ae6de6c07297c3552a5ad3c43040614",
+            "size": 3259
+          }
+        }
+      },
+      "crop_xyxy": [
+        913,
+        26,
+        953,
+        66
+      ],
+      "footprint_pixels": 6254,
+      "image_sha256": "7e80590c18aa53dd12a53b48dffc5ea2bc34166a78201b433a4438f5812f3cdd",
+      "mask_sha256": "0ba6525d200f65010a90c7012c6274bf7935b4c79974cd39406c9a6ba4b11b43"
+    }
+  ]
+}

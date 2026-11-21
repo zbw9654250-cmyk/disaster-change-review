@@ -1,0 +1,26 @@
+{
+  "buildings": 8,
+  "unique_tiles": 8,
+  "events": [
+    "hurricane-florence",
+    "hurricane-harvey",
+    "hurricane-michael",
+    "socal-fire"
+  ],
+  "grade_counts": {
+    "none": 2,
+    "severe": 2,
+    "moderate": 2,
+    "light": 2
+  },
+  "minimum_gap_to_history_and_other_batch_degrees": 0.0031947357835697687,
+  "minimum_gap_within_degrees": 0.07567794615086143,
+  "upstream_objects_verified": 32,
+  "verified_input_files": 32,
+  "historic_exclusions": {
+    "tiles": 170,
+    "uids": 132,
+    "bounds": 264
+  },
+  "previously_unseen_events": []
+}

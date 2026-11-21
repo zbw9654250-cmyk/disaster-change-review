@@ -1,0 +1,246 @@
+{
+  "api": "https://huggingface.co/api/datasets/ziruihan/xbd_test/revision/361e53f86506e1f221f42a0c0d9619c213220ae5?blobs=true",
+  "sha": "361e53f86506e1f221f42a0c0d9619c213220ae5",
+  "objects": {
+    "test/images/hurricane-florence_00000087_post_disaster.png": {
+      "rfilename": "test/images/hurricane-florence_00000087_post_disaster.png",
+      "blobId": "054ddd3904e7d14a66797f7aac92b85f53ce934c",
+      "size": 1505541,
+      "lfs": {
+        "sha256": "97ed6c0a2857006ea6905880beabaef00bb230c8f936bc09a99a20c4de5bb8d6",
+        "size": 1505541,
+        "pointerSize": 132
+      }
+    },
+    "test/images/hurricane-florence_00000087_pre_disaster.png": {
+      "rfilename": "test/images/hurricane-florence_00000087_pre_disaster.png",
+      "blobId": "4c2271f42c05f24c4a62b2343d5152785e718d5a",
+      "size": 1570109,
+      "lfs": {
+        "sha256": "c4b199cc08bb344a4feca86da048aff422db17311e603744d668b003da084928",
+        "size": 1570109,
+        "pointerSize": 132
+      }
+    },
+    "test/images/hurricane-florence_00000396_post_disaster.png": {
+      "rfilename": "test/images/hurricane-florence_00000396_post_disaster.png",
+      "blobId": "fdb8c6380898c42e6da7fba012519d3dcbf8b923",
+      "size": 1575928,
+      "lfs": {
+        "sha256": "22643f1d1d0c7316622f37359bbadd29c89fb7d7ebd342d9a6adf007013b2019",
+        "size": 1575928,
+        "pointerSize": 132
+      }
+    },
+    "test/images/hurricane-florence_00000396_pre_disaster.png": {
+      "rfilename": "test/images/hurricane-florence_00000396_pre_disaster.png",
+      "blobId": "2f30c6594fffcd0f3d19cdd6ee10494177cc1cd9",
+      "size": 1567857,
+      "lfs": {
+        "sha256": "9c22921160ef3aba2ad9d5f0c0027ffec302ec52d4298214533649d676d81892",
+        "size": 1567857,
+        "pointerSize": 132
+      }
+    },
+    "test/images/hurricane-harvey_00000096_post_disaster.png": {
+      "rfilename": "test/images/hurricane-harvey_00000096_post_disaster.png",
+      "blobId": "f095cadae60c3aa2d9a6886f470447727b8144a4",
+      "size": 1401374,
+      "lfs": {
+        "sha256": "a48ade0333569652708741448ec02883f197a5979abfe0b7e728e80543583eac",
+        "size": 1401374,
+        "pointerSize": 132
+      }
+    },
+    "test/images/hurricane-harvey_00000096_pre_disaster.png": {
+      "rfilename": "test/images/hurricane-harvey_00000096_pre_disaster.png",
+      "blobId": "bed6e498c3c5c4afeabf9c0d1bccc8a4d668d011",
+      "size": 1668469,
+      "lfs": {
+        "sha256": "dafb328b4b5ecc0242bf9ee412489d7e4f699b4e29b225bb3e0cf48eea309047",
+        "size": 1668469,
+        "pointerSize": 132
+      }
+    },
+    "test/images/hurricane-harvey_00000304_post_disaster.png": {
+      "rfilename": "test/images/hurricane-harvey_00000304_post_disaster.png",
+      "blobId": "3de4c40da5482249fdc555a02d67887d59067651",
+      "size": 1404315,
+      "lfs": {
+        "sha256": "5e432b8769fc149f0a12d53bd13b455e6fba878c5e2b44750e7a47e1326ada01",
+        "size": 1404315,
+        "pointerSize": 132
+      }
+    },
+    "test/images/hurricane-harvey_00000304_pre_disaster.png": {
+      "rfilename": "test/images/hurricane-harvey_00000304_pre_disaster.png",
+      "blobId": "5c9850e9640be554e26be9a2afecacababfb1873",
+      "size": 1311013,
+      "lfs": {
+        "sha256": "8cd61361c0b7541222c50464bb6fa50ddfd341116963d7764a02e4243a1725b8",
+        "size": 1311013,
+        "pointerSize": 132
+      }
+    },
+    "test/images/hurricane-michael_00000082_post_disaster.png": {
+      "rfilename": "test/images/hurricane-michael_00000082_post_disaster.png",
+      "blobId": "2dfda0d04536664783ac2ae2c3f2d29a3243e25d",
+      "size": 1653259,
+      "lfs": {
+        "sha256": "c7c0e238aa41258cff0070152b14d59f2b9a3e0df2dae441e0198788f57e9815",
+        "size": 1653259,
+        "pointerSize": 132
+      }
+    },
+    "test/images/hurricane-michael_00000082_pre_disaster.png": {
+      "rfilename": "test/images/hurricane-michael_00000082_pre_disaster.png",
+      "blobId": "975d99068ad3322cb11549d8ce791d9d1b96fd0b",
+      "size": 1608566,
+      "lfs": {
+        "sha256": "14876fa56531f83ba1e295109c360925096edcd9422884854dc51be8b8450311",
+        "size": 1608566,
+        "pointerSize": 132
+      }
+    },
+    "test/images/hurricane-michael_00000395_post_disaster.png": {
+      "rfilename": "test/images/hurricane-michael_00000395_post_disaster.png",
+      "blobId": "17f390d40a9895ac70bd14300e2d9626e4c37f0b",
+      "size": 1741442,
+      "lfs": {
+        "sha256": "cb8bd80f4f460fcca18731d583ac6b2c039078b3e11c6f91878e4d6f3f69329b",
+        "size": 1741442,
+        "pointerSize": 132
+      }
+    },
+    "test/images/hurricane-michael_00000395_pre_disaster.png": {
+      "rfilename": "test/images/hurricane-michael_00000395_pre_disaster.png",
+      "blobId": "fbb2548ebdda8b6c03b751be6d327fa02f879d1a",
+      "size": 1580700,
+      "lfs": {
+        "sha256": "019cbaf3bd7c7079bc6004bcf736ebb6b3169f9ea718f06f741065223d81ddff",
+        "size": 1580700,
+        "pointerSize": 132
+      }
+    },
+    "test/images/hurricane-michael_00000481_post_disaster.png": {
+      "rfilename": "test/images/hurricane-michael_00000481_post_disaster.png",
+      "blobId": "3ee6be839a235903df8cf3efca0c455ce475bb8c",
+      "size": 1378381,
+      "lfs": {
+        "sha256": "a1c33ddfe20d2fa759f5e008e17165334a5815dca53382f91489fbb10f5b7e56",
+        "size": 1378381,
+        "pointerSize": 132
+      }
+    },
+    "test/images/hurricane-michael_00000481_pre_disaster.png": {
+      "rfilename": "test/images/hurricane-michael_00000481_pre_disaster.png",
+      "blobId": "1fbadeabc047ce2b7113a87e310adda004214304",
+      "size": 1220895,
+      "lfs": {
+        "sha256": "c08f035a2855d9ea6cf8d6b89201e2059b352da8a4d2c9491ee587bd5c85c358",
+        "size": 1220895,
+        "pointerSize": 132
+      }
+    },
+    "test/images/socal-fire_00000877_post_disaster.png": {
+      "rfilename": "test/images/socal-fire_00000877_post_disaster.png",
+      "blobId": "56c17d24d5e3e1412a09a0288c17b4eaa98e9ceb",
+      "size": 1403722,
+      "lfs": {
+        "sha256": "0f4a5e8071cd090b2eec5b761592719e886eca866fa979ce54d65d79c90001c4",
+        "size": 1403722,
+        "pointerSize": 132
+      }
+    },
+    "test/images/socal-fire_00000877_pre_disaster.png": {
+      "rfilename": "test/images/socal-fire_00000877_pre_disaster.png",
+      "blobId": "f1ad014148c38ff9d06724b4eba625eae8fed733",
+      "size": 1589592,
+      "lfs": {
+        "sha256": "532c90d3a002601fd7f725906af345ef4f0fc1aff4470484fcaf13ece3c22520",
+        "size": 1589592,
+        "pointerSize": 132
+      }
+    },
+    "test/labels/hurricane-florence_00000087_post_disaster.json": {
+      "rfilename": "test/labels/hurricane-florence_00000087_post_disaster.json",
+      "blobId": "d0e757dc2f3067fb260121d5dd57167ba212a61f",
+      "size": 67599
+    },
+    "test/labels/hurricane-florence_00000087_pre_disaster.json": {
+      "rfilename": "test/labels/hurricane-florence_00000087_pre_disaster.json",
+      "blobId": "093d6115c05340810ad1bb258c54c359301bf032",
+      "size": 64597
+    },
+    "test/labels/hurricane-florence_00000396_post_disaster.json": {
+      "rfilename": "test/labels/hurricane-florence_00000396_post_disaster.json",
+      "blobId": "92ea47bf92eaaa5cda6db6bc23b4cc53c794ef92",
+      "size": 9157
+    },
+    "test/labels/hurricane-florence_00000396_pre_disaster.json": {
+      "rfilename": "test/labels/hurricane-florence_00000396_pre_disaster.json",
+      "blobId": "438d667acf4b3b47cd2f3ce29b3d35bcd1ce84f1",
+      "size": 8645
+    },
+    "test/labels/hurricane-harvey_00000096_post_disaster.json": {
+      "rfilename": "test/labels/hurricane-harvey_00000096_post_disaster.json",
+      "blobId": "06a949664a1025fd0ae391c608608b339cd54079",
+      "size": 209142
+    },
+    "test/labels/hurricane-harvey_00000096_pre_disaster.json": {
+      "rfilename": "test/labels/hurricane-harvey_00000096_pre_disaster.json",
+      "blobId": "7f501a4974712c8b4da0012a44b248998ae04783",
+      "size": 197183
+    },
+    "test/labels/hurricane-harvey_00000304_post_disaster.json": {
+      "rfilename": "test/labels/hurricane-harvey_00000304_post_disaster.json",
+      "blobId": "bf11d1df8d8ff27c74b1ba6a9d7f9ab0dbdad1d2",
+      "size": 11112
+    },
+    "test/labels/hurricane-harvey_00000304_pre_disaster.json": {
+      "rfilename": "test/labels/hurricane-harvey_00000304_pre_disaster.json",
+      "blobId": "548e9f0cb5ef8d4cae68a27a20a3503ade4ceaf8",
+      "size": 10304
+    },
+    "test/labels/hurricane-michael_00000082_post_disaster.json": {
+      "rfilename": "test/labels/hurricane-michael_00000082_post_disaster.json",
+      "blobId": "8225963df040d8edd444c951b5a78cfa2abe3dc1",
+      "size": 73345
+    },
+    "test/labels/hurricane-michael_00000082_pre_disaster.json": {
+      "rfilename": "test/labels/hurricane-michael_00000082_pre_disaster.json",
+      "blobId": "7539374ed6328dbb2221bd06abf3ed3e2f610b8b",
+      "size": 68711
+    },
+    "test/labels/hurricane-michael_00000395_post_disaster.json": {
+      "rfilename": "test/labels/hurricane-michael_00000395_post_disaster.json",
+      "blobId": "f840e3e4a6217b46d91b7c8a0fe091cf667e5aff",
+      "size": 1386
+    },
+    "test/labels/hurricane-michael_00000395_pre_disaster.json": {
+      "rfilename": "test/labels/hurricane-michael_00000395_pre_disaster.json",
+      "blobId": "943c6e9d87d148e004d1d2f58fe3b2b5fc41ce1b",
+      "size": 1352
+    },
+    "test/labels/hurricane-michael_00000481_post_disaster.json": {
+      "rfilename": "test/labels/hurricane-michael_00000481_post_disaster.json",
+      "blobId": "22ca621e4c2b3d42dfda6352b3e3f5d00f8ca018",
+      "size": 112102
+    },
+    "test/labels/hurricane-michael_00000481_pre_disaster.json": {
+      "rfilename": "test/labels/hurricane-michael_00000481_pre_disaster.json",
+      "blobId": "d41705c45c0dd9d5ccc12d36639f539b69eea458",
+      "size": 101859
+    },
+    "test/labels/socal-fire_00000877_post_disaster.json": {
+      "rfilename": "test/labels/socal-fire_00000877_post_disaster.json",
+      "blobId": "00c8ca750a0aef4295a48ba4dc16386dd1938245",
+      "size": 23056
+    },
+    "test/labels/socal-fire_00000877_pre_disaster.json": {
+      "rfilename": "test/labels/socal-fire_00000877_pre_disaster.json",
+      "blobId": "21b072eca6d7280cea1bc4535cc6dc9c0cc62231",
+      "size": 21712
+    }
+  }
+}
