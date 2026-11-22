@@ -57,6 +57,18 @@ time { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums;
 .legend-swatch { display: inline-block; width: 14px; height: 14px; border-radius: 50%; border: 2px solid; }
 .baseline-swatch { border-color: #e0a341; }
 .ours-swatch { border-color: #20a58a; }
+.baseline-summary {
+  margin-top: 15px; padding: 12px 14px; border: 1px solid var(--line);
+  border-radius: 9px; background: #f1f4ee; color: var(--muted);
+}
+.baseline-summary-title { font-size: 13px; font-weight: 650; color: var(--ink); }
+.baseline-methods { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 8px; }
+.baseline-method { display: inline-flex; align-items: center; gap: 7px; padding: 5px 8px; border: 1px solid #cbd5ca; border-radius: 6px; background: #fafbf8; font-size: 12px; }
+.baseline-method.current { border-color: #d9b873; background: #fffaf0; }
+.baseline-method b { color: var(--ink); font-weight: 650; }
+.baseline-method em { font-style: normal; color: var(--muted); }
+.baseline-summary p { margin-top: 8px; font-size: 13px; line-height: 1.6; }
+.baseline-summary code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .92em; }
 .enlarged .photo { cursor: auto; }
 .enlarged .ring { border-width: 3px; }
 [hidden] { display: none !important; }
@@ -91,3 +103,4 @@ footer a { color: var(--muted); font-size: 13px; text-decoration: underline; tex
   figcaption { gap: 5px; }
   time { font-size: 12px; }
 }
+

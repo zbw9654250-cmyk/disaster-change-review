@@ -45,6 +45,15 @@
         <span><i class="legend-swatch baseline-swatch" aria-hidden="true"></i><span data-en="Baseline single candidate">基线单候选</span></span>
         <span><i class="legend-swatch ours-swatch" aria-hidden="true"></i><span data-en="Reviewed result contour">改进结果轮廓</span></span>
       </div>
+      <section class="baseline-summary" aria-label="三条基线" data-en-label="Three baselines">
+        <div class="baseline-summary-title" data-en="Three baselines">三条基线</div>
+        <div class="baseline-methods">
+          <span class="baseline-method current"><b>RGB-rule-v1</b><em data-en="shown here">当前展示</em></span>
+          <span class="baseline-method"><b>FC-Siam-Diff</b><em data-en="optional run">可选运行</em></span>
+          <span class="baseline-method"><b>BIT</b><em data-en="optional run">可选运行</em></span>
+        </div>
+        <p data-en="This page draws the CPU RGB baseline. The other two models use the same before/after input and can be run with scripts/run_change_baselines.py when their optional checkpoints are available.">本页橙色虚线使用 CPU RGB 基线。FC-Siam-Diff 和 BIT 接收同样的灾前灾后输入，准备好可选权重后可用 <code>scripts/run_change_baselines.py</code> 运行。</p>
+      </section>
       <div class="reading">
         <section class="explanation"><h2 data-en="What changed">证据说明</h2><p id="evidence"></p></section>
         <dl class="finding">
@@ -58,3 +67,4 @@
   </main>
 </body>
 </html>
+

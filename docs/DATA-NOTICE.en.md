@@ -18,7 +18,7 @@ The README preview images show Oso and carry the same credits as the Oso image p
 
 ## Buildings from xBD
 
-The two pairs are crops of xBD test images from the Maxar / DigitalGlobe Open Data Program. Ritwik Gupta and colleagues published the building footprints and damage labels. Each pair uses the same pixel window in both original images, with their original orientation and colors. The baseline circles come from the RGB change detector. The green reviewed result follows the complete public xBD destroyed-building footprint in the crop, so the entire affected roof can be inspected. The capture dates, whole-building grades and contour source come from the linked annotations.
+The two pairs are crops of xBD test images from the Maxar / DigitalGlobe Open Data Program. Ritwik Gupta and colleagues published the building footprints and damage labels. Each pair uses the same pixel window in both original images, with their original orientation and colors. The orange web baseline is RGB-rule-v1. FC-Siam-Diff and BIT are optional deep baselines with the same input contract and can be run with `scripts/run_change_baselines.py`. The green reviewed result follows the complete public xBD destroyed-building footprint in the crop, so the entire affected roof can be inspected. It does not represent an FC-Siam-Diff or BIT prediction. The capture dates, whole-building grades and contour source come from the linked annotations.
 
 | Case | Image dates | Crop in source pixels (left, top, right, bottom) | xBD building UID and annotations |
 | --- | --- | --- | --- |
@@ -28,3 +28,4 @@ The two pairs are crops of xBD test images from the Maxar / DigitalGlobe Open Da
 The xBD crops are distributed under CC BY-NC-SA 4.0. Keep the original imagery credits and applicable imagery terms when reusing them. [xBD paper](https://arxiv.org/abs/1911.09296) · [License](https://creativecommons.org/licenses/by-nc-sa/4.0/) · [Data notes and source records](../data/xbd/README.md)
 
 The online demo reads the original images and generated region file directly from the repository. The repository also includes a [roof decking comparison from Ebenezer](assets/ebenezer-fid39.png). GlobalMedic / RescUAV captured the aerial image on September 24, 2017 and published it through OpenAerialMap. The outlines come from Maja Kucharczyk, Paul R. Nesbit and Chris H. Hugenholtz. These materials use CC BY 4.0. [Image record](https://api.openaerialmap.org/meta/59e62be63d6412ef7220c38b) · [Outline dataset](https://zenodo.org/records/20581719)
+

@@ -6,9 +6,38 @@ The project takes aligned RGB images from before and after a disaster. It return
 
 [Open the live demo](https://zbw9654250-cmyk.github.io/disaster-change-review/?lang=en)
 
-## The baseline
+## Three baselines
 
-The baseline uses the RGB change detector in `scripts/detect_geology_changes.py`. The program compares color, local texture and brightness between the two images, finds connected candidate regions and keeps the highest-scoring region. The orange dashed outline in the web demo is the baseline result. Its input is an aligned before and after image pair, and its output is an ellipse around one candidate.
+The project compares three change-localization methods. All three take the same aligned before and after RGB pair and return a change region. The web demo currently draws the first baseline. The other two run through the optional command-line entry point.
+
+| Baseline | Method | Output | Role |
+| --- | --- | --- | --- |
+| RGB-rule-v1 | Color, local texture and brightness residuals with connected-component filtering | Ellipse candidates | Explainable CPU baseline |
+| FC-Siam-Diff | Shared-weight Siamese bi-temporal encoder and difference decoder | Binary change mask | Main deep-learning baseline |
+| BIT | Bi-temporal CNN, semantic tokens and Transformer blocks | Binary change mask | Global-change baseline |
+
+The orange dashed outline in the web demo is RGB-rule-v1. FC-Siam-Diff and BIT use the public implementation and checkpoint entry points from [Open-CD](https://github.com/likyoo/open-cd) / [Open-CD Lite](https://github.com/taktpixel/opencd-lite). The weights remain upstream artifacts and are not reported as this project's disaster-damage accuracy. The xBD footprints in this repository describe building extent, not pixel-level damage masks, so they are not used to invent FC-Siam-Diff or BIT pixel IoU.
+
+Run the shared output command:
+
+```sh
+python scripts/run_change_baselines.py \
+  --model rgb \
+  --before docs/assets/geology/volcano/la-palma-before.png \
+  --after docs/assets/geology/volcano/la-palma-after.png \
+  --output artifacts/baselines/la-palma/rgb
+```
+
+The command writes `mask.png`, `overlay.png`, `regions.geojson` and `metrics.json`. FC-Siam-Diff and BIT require the optional package and a compatible checkpoint:
+
+```sh
+python -m pip install "opencd-lite[torch]"
+python scripts/run_change_baselines.py --model fc_siam_diff \
+  --before BEFORE.png --after AFTER.png --checkpoint fc_siam_diff.pth \
+  --output artifacts/baselines/example/fc_siam_diff --device cuda
+```
+
+The common evaluation should report change IoU, precision, recall, F1, building-footprint coverage, miss rate, p50/p95 latency and peak memory. Four-level building damage grades require a separate xView2 two-stage localization and classification baseline.
 
 ## The reviewed result
 
@@ -91,8 +120,10 @@ The geological-disaster images come from NASA Earth Observatory and USGS. The bu
 | Module | Purpose |
 | --- | --- |
 | [Change region generation](scripts/generate_gallery_regions.py) | Generate the baseline candidates and reviewed contours used by the web page |
+| [Three-baseline runner](scripts/run_change_baselines.py) | Run RGB-rule-v1, FC-Siam-Diff and BIT with one output contract |
 | [Roof damage localization](modules/roof_candidates/README.md) | Merge segmentation predictions and export roof damage GeoJSON |
 | [Building damage assessment](modules/buildings/README.md) | Measure damage area inside a building footprint |
 | [Local change observations](modules/observations/README.md) | Compare two roof images and return evidence locations and text |
 
 The project code uses the [MIT license](LICENSE). Public images, labels and models follow their own licenses.
+

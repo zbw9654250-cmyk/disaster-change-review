@@ -6,9 +6,38 @@
 
 [打开在线演示](https://zbw9654250-cmyk.github.io/disaster-change-review/?lang=zh)
 
-## 基线是什么
+## 三条基线
 
-基线使用 `scripts/detect_geology_changes.py` 中的 RGB 变化检测器。程序比较两期影像的颜色、局部纹理和亮度变化，生成连通候选区域，再只保留得分最高的区域。网页中的橙色虚线表示基线结果，输入是灾前和灾后两张对齐影像，输出是一个椭圆候选框。
+项目固定比较三种变化定位方法。三种方法都接收同一地点、同一尺寸的灾前和灾后 RGB 影像，输出变化区域。当前网页实际绘制的是第一条基线，另外两条通过可选脚本运行。
+
+| 基线 | 方法 | 输出 | 用途 |
+| --- | --- | --- | --- |
+| RGB-rule-v1 | 颜色、局部纹理和亮度差异，配合连通区域筛选 | 椭圆候选区域 | CPU 可运行、可解释的现有基线 |
+| FC-Siam-Diff | 共享权重的双时相 Siamese 编码器和差分解码器 | 二值变化掩膜 | 正式深度学习基线 |
+| BIT | 双时相 CNN、语义 token 和 Transformer | 二值变化掩膜 | 全局变化建模基线 |
+
+网页中的橙色虚线表示 RGB-rule-v1。FC-Siam-Diff 和 BIT 使用 [Open-CD](https://github.com/likyoo/open-cd) / [Open-CD Lite](https://github.com/taktpixel/opencd-lite) 的公开实现和 LEVIR-CD 权重入口。权重属于上游项目，不能直接当作本项目灾损精度结果。当前数据中的 xBD footprint 是建筑范围标注，不是像素级受灾掩膜，因此项目不会用它们虚构 FC-Siam-Diff 或 BIT 的像素 IoU。
+
+运行统一输出脚本：
+
+```sh
+python scripts/run_change_baselines.py \
+  --model rgb \
+  --before docs/assets/geology/volcano/la-palma-before.png \
+  --after docs/assets/geology/volcano/la-palma-after.png \
+  --output artifacts/baselines/la-palma/rgb
+```
+
+脚本会写出 `mask.png`、`overlay.png`、`regions.geojson` 和 `metrics.json`。FC-Siam-Diff 或 BIT 需要先安装可选依赖并提供对应 checkpoint：
+
+```sh
+python -m pip install "opencd-lite[torch]"
+python scripts/run_change_baselines.py --model fc_siam_diff \
+  --before BEFORE.png --after AFTER.png --checkpoint fc_siam_diff.pth \
+  --output artifacts/baselines/example/fc_siam_diff --device cuda
+```
+
+三条基线的统一评测应报告变化区域 IoU、Precision、Recall、F1、建筑 footprint 覆盖率、漏检率、p50/p95 推理时间和显存占用。四档建筑损伤等级需要单独使用 xView2 两阶段定位与分类基线，不能由二值变化模型直接代替。
 
 ## 改进结果是什么
 
@@ -90,8 +119,10 @@ git push origin main
 | 模块 | 作用 |
 | --- | --- |
 | [变化区域生成](scripts/generate_gallery_regions.py) | 生成网页使用的基线候选和改进轮廓 |
+| [三基线运行器](scripts/run_change_baselines.py) | 统一运行 RGB-rule-v1、FC-Siam-Diff 和 BIT，并导出掩膜与指标 |
 | [屋面损伤定位](modules/roof_candidates/README.md) | 合并多组分割预测并导出屋面损伤 GeoJSON |
 | [逐栋损伤评估](modules/buildings/README.md) | 在建筑 footprint 内统计损伤面积 |
 | [局部变化说明](modules/observations/README.md) | 比较两期屋面影像并输出证据位置和文字说明 |
 
 项目代码采用 [MIT 许可](LICENSE)。公开影像、标注和模型按照各自许可使用。
+

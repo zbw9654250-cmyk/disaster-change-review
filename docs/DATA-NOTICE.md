@@ -8,7 +8,7 @@
 
 在仓库根目录安装 `requirements.txt` 的依赖后，运行 `python scripts/generate_gallery_regions.py --output docs/assets/change_regions.js` 可从十张灾前灾后图重新生成基线候选和改进轮廓。基线只保留最高分候选。拉帕尔马的改进结果由像素变化掩膜矢量化生成。迈克尔和圣罗莎的完整屋顶轮廓来自同一裁切范围内的公开 xBD destroyed 建筑 footprint，用来约束整栋受灾建筑的显示范围，来源记录在下表。它们属于公开标注引导的参考轮廓，不是模型独立预测的损伤掩膜。输出同时记录每张输入图的 SHA-256。[生成区域与影像摘要](assets/change_regions.js)
 
-两套结果来自同一个变化检测器，不代表两个独立训练的模型。网页这样拆开是为了对照单候选和经过复核的候选保留策略。精选案例用于说明候选筛选可能带来的定位改善，不作为总体精度结论。
+网页当前的橙色基线来自 RGB-rule-v1。FC-Siam-Diff 和 BIT 是同一输入契约下的可选深度基线，统一运行入口见 `scripts/run_change_baselines.py`。网页中的绿色轮廓仍是复核结果，不代表 FC-Siam-Diff 或 BIT 已经在这些精选案例上运行。精选案例用于说明候选定位方式，不作为总体精度结论。
 
 | 案例 | 灾前 → 灾后 | 制图与数据 | 受灾程度的依据 |
 | --- | --- | --- | --- |
@@ -30,3 +30,4 @@
 xBD 派生影像采用署名、非商业性使用、相同方式共享 4.0 国际许可，底图保留原署名与适用条款。[xBD 论文](https://arxiv.org/abs/1911.09296) · [许可条款](https://creativecommons.org/licenses/by-nc-sa/4.0/) · [数据说明与来源记录](../data/xbd/README.md)
 
 仓库亦保留 [Ebenezer 屋面板外露的定位对照图](assets/ebenezer-fid39.png)。航片由 GlobalMedic – RescUAV 于 2017-09-24 经 OpenAerialMap 发布，轮廓由 Maja Kucharczyk、Paul R. Nesbit 与 Chris H. Hugenholtz 提供，按 CC BY 4.0 署名。[原影像记录](https://api.openaerialmap.org/meta/59e62be63d6412ef7220c38b) · [轮廓数据](https://zenodo.org/records/20581719)
+
