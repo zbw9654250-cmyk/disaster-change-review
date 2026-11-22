@@ -90,6 +90,8 @@ python scripts/generate_gallery_regions.py --output docs/assets/change_regions.j
 
 `docs/assets/baseline_outputs.js` stores the FC-Siam-Diff and BIT contours and metrics generated on the RTX 5090. After running a deep model again, update the same fields in this file. Keep the model weights on the local machine or the server.
 
+For the five demo pairs, FC-Siam-Diff took about 2.64 to 2.70 seconds per image pair, and BIT took about 2.78 to 2.88 seconds. FC-Siam-Diff returned contours for La Palma and Mud Creek. BIT returned zero positive contours for all five cross-dataset cases. The page keeps these raw outputs so the cross-dataset behavior can be checked.
+
 ## Deploy the project
 
 GitHub Pages publishes the `docs` directory. The repository includes `.github/workflows/pages.yml`. After a commit reaches the `main` branch, GitHub Actions runs the tests and publishes the page.

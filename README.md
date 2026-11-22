@@ -89,6 +89,8 @@ python scripts/generate_gallery_regions.py --output docs/assets/change_regions.j
 
 `docs/assets/baseline_outputs.js` 保存已在 RTX 5090 上运行的 FC-Siam-Diff 和 BIT 轮廓与指标。重新运行深度模型后，可以用相同字段更新这个文件，模型权重仍放在本地或服务器。
 
+当前五组案例的 FC-Siam-Diff 推理时间约为 2.64 到 2.70 秒，BIT 推理时间约为 2.78 到 2.88 秒。FC-Siam-Diff 在拉帕尔马和大苏尔案例输出了变化轮廓，BIT 在五组跨域案例中输出 0 个正类轮廓。网页保留这些原始结果，便于复核跨域模型的表现。
+
 ## 部署
 
 GitHub Pages 发布 `docs` 目录。仓库已经配置 `.github/workflows/pages.yml`。提交到 `main` 分支后，GitHub Actions 会运行测试并发布网页。
