@@ -2,23 +2,50 @@
 
 [简体中文](README.md)
 
-The project takes aligned RGB images from before and after a disaster. It returns change candidates, affected-area contours and building damage observations. The web demo places the before image, the post-disaster baseline and the reviewed result in one row so you can check coverage and contour location.
+The project takes an aligned RGB image pair from before and after a disaster. It draws the changed area as a contour. The web page places the before image, a baseline result and a reviewed result together so you can check whether the detected area is complete.
 
 [Open the live demo](https://zbw9654250-cmyk.github.io/disaster-change-review/?lang=en)
 
-## Three baselines
+## The baselines
 
-The project compares three change-localization methods. All three take the same aligned before and after RGB pair and return a change region. The web demo currently draws the first baseline. The other two run through the optional command-line entry point.
+The page provides three baselines. All three take the same aligned before and after image pair.
 
-| Baseline | Method | Output | Role |
-| --- | --- | --- | --- |
-| RGB-rule-v1 | Color, local texture and brightness residuals with connected-component filtering | Ellipse candidates | Explainable CPU baseline |
-| FC-Siam-Diff | Shared-weight Siamese bi-temporal encoder and difference decoder | Binary change mask | Main deep-learning baseline |
-| BIT | Bi-temporal CNN, semantic tokens and Transformer blocks | Binary change mask | Global-change baseline |
+| Baseline | Method | Output |
+| --- | --- | --- |
+| RGB-rule-v1 | Computes color, texture and brightness differences, then filters connected regions | Orange candidate rings |
+| FC-Siam-Diff | Uses a shared-weight Siamese network and feature differences for bi-temporal change localization | Binary change mask and green contour |
+| BIT | Uses a bi-temporal CNN, semantic tokens and Transformer blocks for global change modeling | Binary change mask and green contour |
 
-The orange dashed outline in the web demo is RGB-rule-v1. FC-Siam-Diff and BIT use the public implementation and checkpoint entry points from [Open-CD](https://github.com/likyoo/open-cd) / [Open-CD Lite](https://github.com/taktpixel/opencd-lite). The weights remain upstream artifacts and are not reported as this project's disaster-damage accuracy. The xBD footprints in this repository describe building extent, not pixel-level damage masks, so they are not used to invent FC-Siam-Diff or BIT pixel IoU.
+RGB-rule-v1 is the CPU baseline. FC-Siam-Diff and BIT use the [Open-CD Lite](https://github.com/taktpixel/opencd-lite) inference interface and the LEVIR-CD checkpoints from the [Open-CD Model Zoo](https://huggingface.co/likyoo/Open-CD_Model_Zoo). The FC-Siam-Diff and BIT results on the page were generated on an RTX 5090 for the five demo pairs. The page stores contours and metrics, and does not store model weights.
 
-Run the shared output command:
+Both deep checkpoints were trained on LEVIR-CD building-change data. The geological-disaster and xBD images on the page are cross-dataset inputs, so the results are zero-shot change-localization examples. They are not disaster-damage accuracy results. An xBD footprint describes building extent, not a pixel-level damage mask, so it is not used to invent pixel IoU.
+
+## Results on the page
+
+Choose a case first, then choose RGB-rule-v1, FC-Siam-Diff or BIT in the baseline section. If a deep model produces no positive pixels for a case, the page shows an empty contour and keeps the model latency and mask fraction. The empty contour is part of the actual model output.
+
+The page opens with three featured cases.
+
+| Case | Input | Page content |
+| --- | --- | --- |
+| La Palma eruption | Landsat 8 before and after images | Change contour around the lava-covered area |
+| Hurricane Michael | xBD industrial-building before and after images | Contour for the affected building |
+| Santa Rosa wildfire | xBD house before and after images | Contour for the affected house |
+
+The Oso landslide and Mud Creek landslide are also available from the case buttons.
+
+[View the live demo](https://zbw9654250-cmyk.github.io/disaster-change-review/?lang=en)
+
+## Output files
+
+All three baselines use `scripts/run_change_baselines.py`. Each run writes the following files.
+
+- `mask.png` is a binary change mask.
+- `overlay.png` draws the contour on the post-disaster image.
+- `regions.geojson` stores the contour in image-percentage coordinates.
+- `metrics.json` stores the model, input image hashes, mask fraction, contour count and latency.
+
+RGB-rule-v1 runs without a GPU.
 
 ```sh
 python scripts/run_change_baselines.py \
@@ -28,44 +55,22 @@ python scripts/run_change_baselines.py \
   --output artifacts/baselines/la-palma/rgb
 ```
 
-The command writes `mask.png`, `overlay.png`, `regions.geojson` and `metrics.json`. FC-Siam-Diff and BIT require the optional package and a compatible checkpoint:
+FC-Siam-Diff requires its matching config and checkpoint.
 
 ```sh
 python -m pip install "opencd-lite[torch]"
 python scripts/run_change_baselines.py --model fc_siam_diff \
   --config opencd-lite/configs/fcsn/fc_siam_diff_256x256_40k_levircd.py \
-  --before BEFORE.png --after AFTER.png --checkpoint fc_siam_diff.pth \
+  --before BEFORE.png --after AFTER.png \
+  --checkpoint fc_siam_diff_256x256_40k_levircd.pth \
   --output artifacts/baselines/example/fc_siam_diff --device cuda
 ```
 
-`--config` points to the matching file from the [Open-CD Lite repository](https://github.com/taktpixel/opencd-lite). Use `configs/bit/bit_r18_256x256_40k_levircd.py` for BIT.
+Run BIT with the same command by changing `--model` to `bit` and using `opencd-lite/configs/bit/bit_r18_256x256_40k_levircd.py`. Download the checkpoint from Open-CD Model Zoo. Do not commit model weights to this repository.
 
-The common evaluation should report change IoU, precision, recall, F1, building-footprint coverage, miss rate, p50/p95 latency and peak memory. Four-level building damage grades require a separate xView2 two-stage localization and classification baseline.
+## Run the web page locally
 
-## The reviewed result
-
-The reviewed result adds a pixel-change mask, contour vectorization and a complete-building constraint for the building examples.
-
-- Geological-disaster images use brightness, color and before-after differences to build a continuous change mask. Morphological processing and `find_contours` then produce a green closed contour along the change boundary.
-- Building images use the public xBD `destroyed` building footprint to constrain the affected building area. The green contour covers the full industrial building or house, so you can check whether the baseline candidate missed part of the roof.
-
-The baseline and reviewed result use the same post-disaster image. The contour sources and data licenses are listed in [Data notes](docs/DATA-NOTICE.en.md).
-
-## Examples in the demo
-
-The default page shows three examples.
-
-| Example | Image type | Output shown in the demo |
-| --- | --- | --- |
-| La Palma eruption | Landsat 8 before and after images | Pixel contour around the main lava-change zone |
-| Hurricane Michael | xBD industrial-building before and after images | Complete affected-building footprint contour |
-| Santa Rosa wildfire | xBD house before and after images | Complete affected-building footprint contour |
-
-[View the three examples](https://zbw9654250-cmyk.github.io/disaster-change-review/?lang=en)
-
-## Run the web demo locally
-
-The web page is static. It does not need a backend service or a GPU. The commands below use Python 3.12.
+The web page is static and does not need a backend service. Run the following commands, then open `http://127.0.0.1:8000/?lang=en` in a browser.
 
 ```sh
 git clone https://github.com/zbw9654250-cmyk/disaster-change-review.git
@@ -74,46 +79,40 @@ python -m venv .venv
 # Windows PowerShell
 .venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
-python scripts/generate_gallery_regions.py --output docs/assets/change_regions.js
 python -m http.server 8000 --directory docs
 ```
 
-Open `http://127.0.0.1:8000/?lang=en` in a browser. `generate_gallery_regions.py` regenerates the candidate and contour file from the before and after images in the repository.
-
-## Run the building image example
-
-The following command processes eight building samples on a CPU and writes one observation for each building.
+Run the following command if you regenerate the gallery contours.
 
 ```sh
-python -m pip install -r modules/observations/requirements.txt
-python modules/observations/run_roofs.py --cases data/xbd/confirm/cases.jsonl --output observations.jsonl
+python scripts/generate_gallery_regions.py --output docs/assets/change_regions.js
 ```
 
-The output is written to `observations.jsonl`. A sample output file is [confirm-measure.jsonl](results/observations/out/confirm-measure.jsonl).
+`docs/assets/baseline_outputs.js` stores the FC-Siam-Diff and BIT contours and metrics generated on the RTX 5090. After running a deep model again, update the same fields in this file. Keep the model weights on the local machine or the server.
 
 ## Deploy the project
 
-GitHub Pages publishes the `docs` directory. The repository includes `.github/workflows/pages.yml`. After you push to the `main` branch, GitHub runs the tests and publishes the page.
+GitHub Pages publishes the `docs` directory. The repository includes `.github/workflows/pages.yml`. After a commit reaches the `main` branch, GitHub Actions runs the tests and publishes the page.
 
 ```sh
 git add .
-git commit -m "update demo"
+git commit -m "update change detection demo"
 git push origin main
 ```
 
-For a new repository, open `Settings`, `Pages` and `Build and deployment`, then set the source to `GitHub Actions`. The Pages settings show the public URL after deployment. You can also upload the `docs` directory to another static hosting service.
+You can also publish the `docs` directory on another static hosting service. Deep-model inference needs a GPU and a checkpoint. The web page only displays the generated contours and metrics.
 
 ## Dataset contents
 
-| Data | Contents | Use |
+| Path | Contents | Use |
 | --- | --- | --- |
-| `docs/assets/geology` | Three before and after geological-disaster pairs for the Oso landslide, Mud Creek landslide and La Palma eruption | Change detection and web examples |
-| `docs/assets/buildings` | Two xBD building pairs for the Hurricane Michael industrial building and the Santa Rosa wildfire house | Whole-building contour examples |
-| `data/xbd/confirm` | Eight building samples with eight before and after crop pairs, 16 masks and damage grades. The events include hurricanes, wildfire and several damage levels | CPU observation example and regression checks |
-| `data/xbd/context-confirm` | Eight cross-disaster scenes with images and masks for flooding, wildfire, tsunami, hurricanes and an earthquake | Context review |
-| `data/xbd/stress` | Thirty-two stress samples with 64 paired images, masks and reference change images | Misalignment, blur and external-change tests |
-| `data/xbd/library/windows` | 132 building windows with retrieval indexes | Retrieval and evaluation |
-| `data/ebenezer` | Eight aerial roof images, building footprints, damage GeoJSON and an orthophoto | Roof damage contour module |
+| `docs/assets/geology` | Three before and after pairs for the Oso landslide, Mud Creek landslide and La Palma eruption | Geological-disaster change localization and web cases |
+| `docs/assets/buildings` | Two xBD pairs for the Hurricane Michael industrial building and Santa Rosa wildfire house | Whole-building contour cases |
+| `data/xbd/confirm` | Eight building samples with paired crops, masks and damage grades | CPU review and regression checks |
+| `data/xbd/context-confirm` | Scenes for flooding, wildfire, tsunami, hurricanes and an earthquake | Context review |
+| `data/xbd/stress` | Stress samples with misalignment, blur and external changes | Robustness tests |
+| `data/xbd/library/windows` | Building windows and retrieval indexes | Retrieval and evaluation |
+| `data/ebenezer` | Aerial roof images, building footprints, damage GeoJSON and an orthophoto | Roof damage contour module |
 | `data/roof_candidates` | Three GeoJSON candidate layers named `strong`, `same` and `dual` | Roof candidate fusion module |
 
 The geological-disaster images come from NASA Earth Observatory and USGS. The building images and labels come from xBD. See [Data notes](docs/DATA-NOTICE.en.md), [NOTICE.md](NOTICE.md) and the README files in each data directory for sources, crop ranges and licenses.
@@ -122,7 +121,7 @@ The geological-disaster images come from NASA Earth Observatory and USGS. The bu
 
 | Module | Purpose |
 | --- | --- |
-| [Change region generation](scripts/generate_gallery_regions.py) | Generate the baseline candidates and reviewed contours used by the web page |
+| [Change region generation](scripts/generate_gallery_regions.py) | Generate the RGB candidates and reviewed contours used by the page |
 | [Three-baseline runner](scripts/run_change_baselines.py) | Run RGB-rule-v1, FC-Siam-Diff and BIT with one output contract |
 | [Roof damage localization](modules/roof_candidates/README.md) | Merge segmentation predictions and export roof damage GeoJSON |
 | [Building damage assessment](modules/buildings/README.md) | Measure damage area inside a building footprint |

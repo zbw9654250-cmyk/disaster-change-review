@@ -63,11 +63,14 @@ time { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums;
 }
 .baseline-summary-title { font-size: 13px; font-weight: 650; color: var(--ink); }
 .baseline-methods { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 8px; }
-.baseline-method { display: inline-flex; align-items: center; gap: 7px; padding: 5px 8px; border: 1px solid #cbd5ca; border-radius: 6px; background: #fafbf8; font-size: 12px; }
-.baseline-method.current { border-color: #d9b873; background: #fffaf0; }
+.baseline-method { appearance: none; display: inline-flex; align-items: center; gap: 7px; padding: 5px 8px; border: 1px solid #cbd5ca; border-radius: 6px; background: #fafbf8; color: var(--muted); cursor: pointer; font: inherit; font-size: 12px; }
+.baseline-method:hover:not(:disabled) { background: #e9efe6; }
+.baseline-method[aria-pressed="true"] { border-color: #d9b873; background: #fffaf0; }
+.baseline-method:disabled { cursor: not-allowed; opacity: .48; }
 .baseline-method b { color: var(--ink); font-weight: 650; }
 .baseline-method em { font-style: normal; color: var(--muted); }
 .baseline-summary p { margin-top: 8px; font-size: 13px; line-height: 1.6; }
+.baseline-summary #baseline-details { margin-top: 9px; color: var(--ink); font-size: 13px; }
 .baseline-summary code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .92em; }
 .enlarged .photo { cursor: auto; }
 .enlarged .ring { border-width: 3px; }
