@@ -69,7 +69,7 @@ def contours_from_mask(mask: np.ndarray) -> list[list[list[float]]]:
 
 
 def run_opencd(model_name: str, before: np.ndarray, after: np.ndarray,
-               checkpoint: Path, device: str) -> np.ndarray:
+               config: Path, checkpoint: Path, device: str) -> np.ndarray:
     """Run the optional opencd-lite adapter.
 
     The adapter is intentionally isolated from the CPU path. This repository
@@ -86,7 +86,11 @@ def run_opencd(model_name: str, before: np.ndarray, after: np.ndarray,
     builder = getattr(module, "build_model", None)
     if builder is None:
         raise RuntimeError("The installed opencd-lite package does not expose build_model")
-    model = builder(model_name, checkpoint=str(checkpoint), device=device)
+    model = builder(str(config), checkpoint=str(checkpoint))
+    if device == "auto":
+        import torch
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+    model.to(device)
     prediction = model.predict(before, after)
     if hasattr(prediction, "detach"):
         prediction = prediction.detach().cpu().numpy()
@@ -164,6 +168,8 @@ def main() -> None:
     parser.add_argument("--before", required=True, type=Path)
     parser.add_argument("--after", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--config", type=Path,
+                        help="Open-CD Lite config file required for fc_siam_diff and bit")
     parser.add_argument("--checkpoint", type=Path,
                         help="Required for fc_siam_diff and bit")
     parser.add_argument("--device", default="auto", help="opencd-lite device, for example cuda or cpu")
@@ -175,7 +181,9 @@ def main() -> None:
     else:
         if args.checkpoint is None:
             parser.error("--checkpoint is required for fc_siam_diff and bit")
-        mask = run_opencd(args.model, before, after, args.checkpoint, args.device)
+        if args.config is None:
+            parser.error("--config is required for fc_siam_diff and bit")
+        mask = run_opencd(args.model, before, after, args.config, args.checkpoint, args.device)
     latency_ms = (time.perf_counter() - started) * 1000
     write_outputs(args.output, args.model, args.before, args.after, before, after, mask, latency_ms, args.checkpoint)
     print(json.dumps({"model": MODEL_NAMES[args.model], "output": str(args.output),

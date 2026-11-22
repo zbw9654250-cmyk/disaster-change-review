@@ -33,9 +33,12 @@ python scripts/run_change_baselines.py \
 ```sh
 python -m pip install "opencd-lite[torch]"
 python scripts/run_change_baselines.py --model fc_siam_diff \
+  --config opencd-lite/configs/fcsn/fc_siam_diff_256x256_40k_levircd.py \
   --before BEFORE.png --after AFTER.png --checkpoint fc_siam_diff.pth \
   --output artifacts/baselines/example/fc_siam_diff --device cuda
 ```
+
+`--config` points to the matching file from the [Open-CD Lite repository](https://github.com/taktpixel/opencd-lite). Use `configs/bit/bit_r18_256x256_40k_levircd.py` for BIT.
 
 三条基线的统一评测应报告变化区域 IoU、Precision、Recall、F1、建筑 footprint 覆盖率、漏检率、p50/p95 推理时间和显存占用。四档建筑损伤等级需要单独使用 xView2 两阶段定位与分类基线，不能由二值变化模型直接代替。
 

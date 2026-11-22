@@ -33,9 +33,12 @@ The command writes `mask.png`, `overlay.png`, `regions.geojson` and `metrics.jso
 ```sh
 python -m pip install "opencd-lite[torch]"
 python scripts/run_change_baselines.py --model fc_siam_diff \
+  --config opencd-lite/configs/fcsn/fc_siam_diff_256x256_40k_levircd.py \
   --before BEFORE.png --after AFTER.png --checkpoint fc_siam_diff.pth \
   --output artifacts/baselines/example/fc_siam_diff --device cuda
 ```
+
+`--config` points to the matching file from the [Open-CD Lite repository](https://github.com/taktpixel/opencd-lite). Use `configs/bit/bit_r18_256x256_40k_levircd.py` for BIT.
 
 The common evaluation should report change IoU, precision, recall, F1, building-footprint coverage, miss rate, p50/p95 latency and peak memory. Four-level building damage grades require a separate xView2 two-stage localization and classification baseline.
 
