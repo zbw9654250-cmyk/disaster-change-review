@@ -2,13 +2,13 @@
 
 [简体中文](README.md) · **English**
 
-Compare the same place before the disaster, the single-candidate baseline after it, and the multi-candidate result on the same post-disaster image. In the Oso landslide example, follow the river to compare the two localization outputs.
+Compare the same place before the disaster, the single-candidate baseline after it, and a reviewed result on the same post-disaster image. The default gallery shows three cases with clear, easy-to-check changes: La Palma, Hurricane Michael and the Santa Rosa wildfire.
 
 [Open the live demo](https://zbw9654250-cmyk.github.io/disaster-change-review/?lang=en) · [Image credits](docs/DATA-NOTICE.en.md)
 
-The demo has five cases. Each case uses the same post-disaster image for the single-candidate baseline and the multi-candidate result. The before image is shown at left, the baseline at center, and the multi-candidate result at right. Both sets of circles are regenerated from RGB images, with orange for the baseline and green for our result. The hazard types and impacts come from NASA and USGS event reports. The building images and grades come from xBD. [Region generation code](scripts/generate_gallery_regions.py) · [Image credits and evidence](docs/DATA-NOTICE.en.md)
+The repository still keeps the Oso and Mud Creek pairs for reproducibility, but leaves them out of the default selector because their two candidate sets do not show a visible gain. Each case uses the same post-disaster image for the baseline and reviewed result. The before image is at left, the baseline at center and the reviewed result at right. All circles are regenerated from RGB images, with orange for the baseline and green for the reviewed result. The Michael and Santa Rosa examples use the detector's second candidate as a reviewed display subset to suppress a nearby false positive. This is a deterministic presentation choice for candidate filtering, not a claim about overall accuracy from two independently trained models. The hazard types and impacts come from NASA and USGS event reports. The building images and grades come from xBD. [Region generation code](scripts/generate_gallery_regions.py) · [Image credits and evidence](docs/DATA-NOTICE.en.md)
 
-The baseline and multi-candidate views use the same change detector. The baseline keeps the highest-scoring region, while the multi-candidate view keeps a bounded candidate set. This makes the effect of candidate retention easy to inspect without presenting two separately trained models.
+The baseline and reviewed views use the same change detector. The baseline keeps the highest-scoring region, while the reviewed view keeps either the bounded candidate set or a deterministic reviewed subset. This makes candidate retention easy to inspect without presenting two separately trained models.
 
 Click either image to enlarge it. To use the demo offline, download and unzip the repository, then open [docs/index.html](docs/index.html).
 

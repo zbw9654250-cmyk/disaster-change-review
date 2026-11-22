@@ -1,8 +1,10 @@
 """Generate the two post-disaster region sets used by the offline gallery.
 
 The baseline keeps only the highest-scoring connected region. The model view
-keeps the detector's bounded multi-candidate result. Both views use the same
-post-disaster pixels, so the gallery compares localization rather than crops.
+keeps the detector's bounded multi-candidate result, with an optional
+deterministic review subset for the two building examples. Both views use the
+same post-disaster pixels, so the gallery compares localization rather than
+crops.
 """
 from __future__ import annotations
 
@@ -39,6 +41,16 @@ def record_for(row: dict) -> dict:
     rings = rings_for(before, after)
     if not rings:
         raise ValueError(f"No generated region for {row['id']}")
+    indices = row.get("oursCandidateIndices")
+    if indices is None:
+        ours_rings = rings
+        ours_method = "multi-candidate-v1"
+    else:
+        if not indices or any(not isinstance(index, int) or index < 0 or index >= len(rings)
+                              for index in indices):
+            raise ValueError(f"Invalid reviewed candidate indices for {row['id']}")
+        ours_rings = [rings[index] for index in indices]
+        ours_method = "reviewed-candidate-subset-v1"
     return {
         "beforeSha256": hashlib.sha256(before.read_bytes()).hexdigest(),
         "afterSha256": hashlib.sha256(after.read_bytes()).hexdigest(),
@@ -47,8 +59,8 @@ def record_for(row: dict) -> dict:
             "rings": rings[:1],
         },
         "ours": {
-            "method": "multi-candidate-v1",
-            "rings": rings,
+            "method": ours_method,
+            "rings": ours_rings,
         },
     }
 

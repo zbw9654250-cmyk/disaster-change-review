@@ -98,14 +98,8 @@ const CHANGE_REGIONS = {
       ]
     },
     "ours": {
-      "method": "multi-candidate-v1",
+      "method": "reviewed-candidate-subset-v1",
       "rings": [
-        [
-          77.121,
-          43.968,
-          17.273,
-          31.609
-        ],
         [
           48.955,
           52.523,
@@ -130,14 +124,8 @@ const CHANGE_REGIONS = {
       ]
     },
     "ours": {
-      "method": "multi-candidate-v1",
+      "method": "reviewed-candidate-subset-v1",
       "rings": [
-        [
-          42.23,
-          1.875,
-          30.735,
-          29.338
-        ],
         [
           35.314,
           40.625,

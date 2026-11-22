@@ -1,6 +1,7 @@
 const GALLERY = [
   {
     "id": "oso",
+    "featured": false,
     "en": {
       "name": "Oso landslide",
       "place": "Oso, Washington, USA",
@@ -33,6 +34,7 @@ const GALLERY = [
   },
   {
     "id": "mud-creek",
+    "featured": false,
     "en": {
       "name": "Big Sur landslide",
       "place": "Big Sur, California, USA",
@@ -97,6 +99,7 @@ const GALLERY = [
   },
   {
     "id": "hurricane-michael",
+    "oursCandidateIndices": [1],
     "en": {
       "name": "Hurricane Michael",
       "place": "Florida, USA",
@@ -129,6 +132,7 @@ const GALLERY = [
   },
   {
     "id": "santa-rosa",
+    "oursCandidateIndices": [1],
     "en": {
       "name": "Santa Rosa wildfire",
       "place": "Santa Rosa, California, USA",

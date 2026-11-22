@@ -28,6 +28,7 @@ if (language === "en") {
 }
 
 const caseText = record => language === "en" ? record.en : record;
+const featuredGallery = GALLERY.filter(record => record.featured !== false);
 
 function viewLink(id, lang, phase) {
   const query = new URLSearchParams({lang, case: id});
@@ -103,7 +104,7 @@ if (selected && ["before", "baseline", "ours"].includes(phase)) {
   document.querySelector("main").replaceChildren(figure);
   document.title = caseText(selected).name + " · " + figure.querySelector("strong").textContent;
 } else {
-  for (const record of GALLERY) {
+  for (const record of featuredGallery) {
     const button = document.createElement("button");
     button.type = "button";
     button.value = record.id;
@@ -121,5 +122,5 @@ if (selected && ["before", "baseline", "ours"].includes(phase)) {
     });
     buttons.append(button);
   }
-  selectCase(selected ?? GALLERY[0]);
+  selectCase(selected ?? featuredGallery[0]);
 }
