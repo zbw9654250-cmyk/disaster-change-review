@@ -43,8 +43,11 @@ time { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums;
 .photo:focus-visible { outline-offset: -3px; }
 .photo img { display: block; width: 100%; height: auto; }
 .rings { position: absolute; inset: 0; pointer-events: none; }
+.contours { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.contours polygon { fill: rgb(32 165 138 / 8%); stroke: #20a58a; stroke-width: .62; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.baseline-contours polygon { fill: rgb(224 163 65 / 7%); stroke: #e0a341; stroke-dasharray: 2 1.5; }
 .ring {
-  position: absolute; border-radius: 50%; border: 2px solid;
+  position: absolute; border-radius: 50%; border: 2px dashed;
   box-shadow: 0 0 0 1px rgb(48 32 11 / 80%);
 }
 .baseline-ring { border-color: #e0a341; }

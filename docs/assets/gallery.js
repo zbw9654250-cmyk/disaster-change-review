@@ -73,7 +73,7 @@ const GALLERY = [
       "type": "Volcanic eruption",
       "severity": "Large areas of coastal farmland covered by lava",
       "basis": "Coastal area · NASA image interpretation",
-      "evidence": "Use the small harbor at upper left as a landmark. The program marks two changes along the coast to its south. Fields and greenhouses are visible before the eruption. In the later image, dark lava covers parts of the fields and reaches the sea.",
+      "evidence": "Use the small harbor at upper left as a landmark. The program traces the main continuous dark change zone along the coast to its south. Fields and greenhouses are visible before the eruption. In the later image, dark lava covers parts of the fields and reaches the sea.",
       "credit": "Imagery and event report · NASA Earth Observatory / USGS",
       "beforeAlt": "Before the La Palma eruption, fields and greenhouses line the coast south of the harbor.",
       "afterAlt": "After the La Palma eruption, two dark lava flows cover farmland and form new land along the shore."
@@ -83,7 +83,7 @@ const GALLERY = [
     "type": "火山熔岩覆盖",
     "severity": "大片沿岸农田被覆盖",
     "basis": "沿岸区域 · NASA 影像解读",
-    "evidence": "以左上方的小港口为参照。程序在港口以南的海岸圈出两处变化。灾前沿岸分布着田块和温室，灾后深色熔岩覆盖部分田块，一直延伸到海边。",
+    "evidence": "以左上方的小港口为参照。程序沿港口以南海岸的主要连续深色变化带描出轮廓。灾前沿岸分布着田块和温室，灾后深色熔岩覆盖部分田块，一直延伸到海边。",
     "credit": "影像与事件记录 · NASA Earth Observatory / USGS",
     "source": "https://science.nasa.gov/earth/earth-observatory/a-changed-landscape-on-la-palma-149231/",
     "before": {

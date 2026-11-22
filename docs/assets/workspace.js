@@ -55,8 +55,9 @@ function showPhoto(phase, record) {
   date.dateTime = photo.date;
   date.textContent = language === "en" ? photo.date : photo.date.replaceAll("-", ".");
   const regions = CHANGE_REGIONS[record.id];
+  const contours = phase === "ours" ? (regions.ours.contours || []) : [];
   const rings = phase === "baseline" ? regions.baseline.rings
-    : phase === "ours" ? regions.ours.rings : [];
+    : phase === "ours" && !contours.length ? regions.ours.rings : [];
   figure.classList.toggle("baseline-panel", phase === "baseline");
   figure.classList.toggle("ours-panel", phase === "ours");
   figure.querySelector(".rings").replaceChildren(...rings.map(([x, y, width, height, angle = 0]) => {
@@ -67,6 +68,14 @@ function showPhoto(phase, record) {
       transform: "rotate(" + angle + "deg)"
     });
     return ring;
+  }));
+  const contourLayer = figure.querySelector(".contours");
+  contourLayer.replaceChildren(...contours.map(points => {
+    const polygon = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+    polygon.setAttribute("points", points.map(([x, y]) => `${x},${y}`).join(" "));
+    polygon.setAttribute("vector-effect", "non-scaling-stroke");
+    polygon.setAttribute("aria-hidden", "true");
+    return polygon;
   }));
 }
 

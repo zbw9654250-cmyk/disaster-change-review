@@ -8,6 +8,7 @@ import numpy as np
 from PIL import Image
 from scipy import ndimage as ndi
 from scipy.spatial import cKDTree
+from skimage import measure
 
 
 SITE = Path(__file__).resolve().parents[1] / "docs" / "assets" / "geology"
@@ -117,6 +118,51 @@ def detect_changes(before_rgb, after_rgb):
         candidates.append((mass, [round(v, 3) for v in ring]))
     candidates.sort(key=lambda item: item[0], reverse=True)
     return [ring for mass, ring in candidates[:2] if mass >= .25 * candidates[0][0]]
+
+
+def contour_changes(before_rgb, after_rgb, minimum_area=500):
+    """Return a normalized contour for the coherent dark lava-change zone.
+
+    The gallery uses the La Palma pair for this function. The rule combines a
+    dark, low-chroma appearance in the later image with a large luminance drop
+    from the earlier image, then closes narrow gaps before vectorizing the
+    boundary. The result is an image-change boundary and does not claim a
+    surveyed lava edge.
+    """
+    a, b = np.asarray(before_rgb, dtype=float), np.asarray(after_rgb, dtype=float)
+    before_gray = a.mean(axis=2)
+    after_gray = b.mean(axis=2)
+    after_chroma = np.ptp(b, axis=2)
+    height, width = before_gray.shape
+    mask = ((after_gray < 120) & (after_chroma < 10) &
+            ((before_gray - after_gray) > 20) & ((b[..., 1] - b[..., 0]) < 20))
+    yy, xx = np.indices(mask.shape)
+    mask &= xx > .26 * width
+    mask &= yy > .25 * height
+    mask = ndi.binary_opening(mask, iterations=1)
+    mask = ndi.binary_closing(mask, iterations=5)
+    mask = ndi.binary_fill_holes(mask)
+    labels, count = ndi.label(mask)
+    contours = []
+    for label in range(1, count + 1):
+        component = labels == label
+        if int(component.sum()) < minimum_area:
+            continue
+        paths = measure.find_contours(component.astype(float), .5)
+        if not paths:
+            continue
+        path = max(paths, key=len)
+        path = measure.approximate_polygon(path, tolerance=3.0)
+        points = []
+        for row, column in path:
+            point = [round(100 * float(column) / width, 3),
+                     round(100 * float(row) / height, 3)]
+            if not points or point != points[-1]:
+                points.append(point)
+        if len(points) >= 4:
+            contours.append(points)
+    contours.sort(key=lambda points: -len(points))
+    return contours
 
 
 def main():

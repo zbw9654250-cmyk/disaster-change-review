@@ -138,6 +138,13 @@ def check_gallery():
                 if not (0 <= x < x + width <= 100 and 0 <= y < y + height <= 100
                         and len(angle) <= 1 and all(-180 <= a <= 180 for a in angle)):
                     raise ValueError(f"Invalid {label} annotation: {row['id']}")
+        contours = result.get("ours", {}).get("contours", [])
+        if row["id"] in {"la-palma", "hurricane-michael", "santa-rosa"} and not contours:
+            raise ValueError(f"Featured case needs a generated contour: {row['id']}")
+        for contour in contours:
+            if len(contour) < 4 or any(len(point) != 2 or not all(0 <= value <= 100 for value in point)
+                                       for point in contour):
+                raise ValueError(f"Invalid contour annotation: {row['id']}")
         if sizes[0] != sizes[1] or before["file"] == after["file"]:
             raise ValueError(f"Expected two equally sized views: {row['id']}")
     print(f"Verified {len(records)} image pairs and reproduced baseline/model regions from RGB.")
