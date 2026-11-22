@@ -18,8 +18,6 @@ The page provides three baselines. All three take the same aligned before and af
 
 RGB-rule-v1 is the CPU baseline. FC-Siam-Diff and BIT use the [Open-CD Lite](https://github.com/taktpixel/opencd-lite) inference interface and the LEVIR-CD checkpoints from the [Open-CD Model Zoo](https://huggingface.co/likyoo/Open-CD_Model_Zoo). The FC-Siam-Diff and BIT results on the page were generated on an RTX 5090 for the five demo pairs. The page stores contours and metrics, and does not store model weights.
 
-Both deep checkpoints were trained on LEVIR-CD building-change data. The geological-disaster and xBD images on the page are cross-dataset inputs, so the results are zero-shot change-localization examples. They are not disaster-damage accuracy results. An xBD footprint describes building extent, not a pixel-level damage mask, so it is not used to invent pixel IoU.
-
 ## Results on the page
 
 Choose a case first, then choose RGB-rule-v1, FC-Siam-Diff or BIT in the baseline section. If a deep model produces no positive pixels for a case, the page shows an empty contour and keeps the model latency and mask fraction. The empty contour is part of the actual model output.

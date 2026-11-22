@@ -18,8 +18,6 @@
 
 RGB-rule-v1 是 CPU 基线。FC-Siam-Diff 和 BIT 使用 [Open-CD Lite](https://github.com/taktpixel/opencd-lite) 的推理接口，以及 [Open-CD Model Zoo](https://huggingface.co/likyoo/Open-CD_Model_Zoo) 提供的 LEVIR-CD checkpoint。网页中的 FC-Siam-Diff 和 BIT 结果是在 RTX 5090 上对五组演示影像运行后生成的，网页只保存轮廓和指标，不保存模型权重。
 
-两个深度模型的 checkpoint 训练于 LEVIR-CD 建筑变化数据。网页中的地质灾害和 xBD 影像属于跨数据集输入，所以结果是零样本变化定位示例，不能直接当作灾损精度。xBD footprint 表示建筑范围，也不是逐像素灾损掩膜，项目不会据此虚构像素 IoU。
-
 ## 网页中的结果
 
 打开网页后，先选择案例，再在“三条基线”中选择 RGB-rule-v1、FC-Siam-Diff 或 BIT。当前案例没有深度模型正类区域时，网页会显示空轮廓，并保留该模型的推理时间和掩膜比例。空轮廓也是模型实际输出的一部分。
