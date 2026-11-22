@@ -70,9 +70,9 @@ def read_rows(path):
     return [json.loads(line) for line in path.read_text(encoding="utf-8-sig").splitlines() if line.strip()]
 
 
-def read_changes(path):
+def read_regions(path):
     text = path.read_text(encoding="utf-8").strip()
-    return json.loads(text.removeprefix("const GEO_CHANGES = ").removesuffix(";"))
+    return json.loads(text.removeprefix("const CHANGE_REGIONS = ").removesuffix(";"))
 
 
 def check_detector_controls():
@@ -95,17 +95,16 @@ def check_gallery():
     records = json.loads(gallery.read_text(encoding="utf-8").strip().removeprefix("const GALLERY = ").removesuffix(";"))
     if not records or len({row["id"] for row in records}) != len(records):
         raise ValueError("Gallery needs cases with unique IDs")
-    manifest = gallery.parent / "geology" / "changes.js"
-    changes = read_changes(manifest)
+    manifest = gallery.parent / "change_regions.js"
+    regions = read_regions(manifest)
     with TemporaryDirectory() as temp:
-        regenerated = Path(temp) / "changes.js"
-        subprocess.run([sys.executable, str(ROOT / "scripts" / "detect_geology_changes.py"),
+        regenerated = Path(temp) / "change_regions.js"
+        subprocess.run([sys.executable, str(ROOT / "scripts" / "generate_gallery_regions.py"),
                         "--output", str(regenerated)], cwd=ROOT, check=True)
-        if read_changes(regenerated) != changes:
-            raise ValueError("Published geological circles differ from the image detector output")
-    geology_ids = {row["id"] for row in records if row["before"]["file"].startswith("geology/")}
-    if changes.keys() != geology_ids:
-        raise ValueError("Each geological case needs its own generated result")
+        if read_regions(regenerated) != regions:
+            raise ValueError("Published gallery regions differ from the image detector output")
+    if regions.keys() != {row["id"] for row in records}:
+        raise ValueError("Each gallery case needs generated baseline and model regions")
     for row in records:
         before, after = row["before"], row["after"]
         fields = ("name", "place", "type", "severity", "basis", "evidence", "credit")
@@ -119,33 +118,29 @@ def check_gallery():
         if date.fromisoformat(before["date"]) >= date.fromisoformat(after["date"]):
             raise ValueError(f"Invalid image chronology: {row['id']}")
         sizes = []
-        counts = []
         for phase, photo in (("before", before), ("after", after)):
             check_url(gallery, photo["file"], SITE, asset=True)
             with Image.open(gallery.parent / photo["file"]) as image:
                 image.load()
                 sizes.append(image.size)
-            if row["id"] in changes:
-                if "rings" in row or "rings" in photo:
-                    raise ValueError(f"Duplicate, manually stored geological circles: {row['id']}")
-                result = changes[row["id"]]
-                if hashlib.sha256((gallery.parent / photo["file"]).read_bytes()).hexdigest() != result[phase + "Sha256"]:
-                    raise ValueError(f"Displayed image differs from the detector input: {photo['file']}")
-                rings = result["rings"]
-            else:
-                rings = photo.get("rings", row.get("rings", []))
-            if not rings:
-                raise ValueError(f"Missing change annotation: {photo['file']}")
+            result = regions[row["id"]]
+            if hashlib.sha256((gallery.parent / photo["file"]).read_bytes()).hexdigest() != result[phase + "Sha256"]:
+                raise ValueError(f"Displayed image differs from the detector input: {photo['file']}")
+        result = regions[row["id"]]
+        if "rings" in row or "rings" in before or "rings" in after:
+            raise ValueError(f"Use generated baseline/model regions instead of inline circles: {row['id']}")
+        baseline = result.get("baseline", {}).get("rings", [])
+        ours = result.get("ours", {}).get("rings", [])
+        if not baseline or not ours or len(baseline) > len(ours):
+            raise ValueError(f"Invalid baseline/model regions: {row['id']}")
+        for label, rings in (("baseline", baseline), ("ours", ours)):
             for x, y, width, height, *angle in rings:
                 if not (0 <= x < x + width <= 100 and 0 <= y < y + height <= 100
                         and len(angle) <= 1 and all(-180 <= a <= 180 for a in angle)):
-                    raise ValueError(f"Invalid change annotation: {photo['file']}")
-            counts.append(len(rings))
-        if counts[0] != counts[1]:
-            raise ValueError(f"Unpaired change annotations: {row['id']}")
+                    raise ValueError(f"Invalid {label} annotation: {row['id']}")
         if sizes[0] != sizes[1] or before["file"] == after["file"]:
             raise ValueError(f"Expected two equally sized views: {row['id']}")
-    print(f"Verified {len(records)} image pairs and reproduced the geological change circles from RGB.")
+    print(f"Verified {len(records)} image pairs and reproduced baseline/model regions from RGB.")
 
 
 def check_inference():

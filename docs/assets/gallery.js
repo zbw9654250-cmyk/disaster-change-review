@@ -125,17 +125,7 @@ const GALLERY = [
       "date": "2018-10-13",
       "file": "buildings/michael-plant-after.png",
       "alt": "上方两排采光窗仍可辨认，下方厂房原来的浅褐色屋顶位置散落着板状碎片。"
-    },
-    "rings": [
-      [
-        39,
-        64,
-        51,
-        27,
-        -2
-      ]
-    ],
-    "subject": "building"
+    }
   },
   {
     "id": "santa-rosa",
@@ -167,15 +157,6 @@ const GALLERY = [
       "date": "2017-10-11",
       "file": "buildings/santa-rosa-after.png",
       "alt": "泳池和圆形路端仍清晰可辨，圈内原有的棕色屋顶变成大片浅色残迹。"
-    },
-    "rings": [
-      [
-        29,
-        23.5,
-        45,
-        56
-      ]
-    ],
-    "subject": "building"
+    }
   }
 ];

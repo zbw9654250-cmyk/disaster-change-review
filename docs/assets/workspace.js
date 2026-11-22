@@ -44,19 +44,23 @@ function setLanguageLinks(record, phase) {
 }
 
 function showPhoto(phase, record) {
-  const photo = record[phase];
+  const photo = phase === "before" ? record.before : record.after;
   const figure = byId(phase);
   const image = figure.querySelector("img");
   image.src = "assets/" + photo.file;
-  image.alt = language === "en" ? record.en[phase + "Alt"] : photo.alt;
+  image.alt = language === "en" ? record.en[(phase === "before" ? "before" : "after") + "Alt"] : photo.alt;
   figure.querySelector(".photo").href = viewLink(record.id, language, phase);
   const date = figure.querySelector("time");
   date.dateTime = photo.date;
   date.textContent = language === "en" ? photo.date : photo.date.replaceAll("-", ".");
-  const rings = GEO_CHANGES[record.id]?.rings ?? photo.rings ?? record.rings;
+  const regions = CHANGE_REGIONS[record.id];
+  const rings = phase === "baseline" ? regions.baseline.rings
+    : phase === "ours" ? regions.ours.rings : [];
+  figure.classList.toggle("baseline-panel", phase === "baseline");
+  figure.classList.toggle("ours-panel", phase === "ours");
   figure.querySelector(".rings").replaceChildren(...rings.map(([x, y, width, height, angle = 0]) => {
     const ring = document.createElement("span");
-    ring.className = "ring";
+    ring.className = "ring " + (phase === "baseline" ? "baseline-ring" : "ours-ring");
     Object.assign(ring.style, {
       left: x + "%", top: y + "%", width: width + "%", height: height + "%",
       transform: "rotate(" + angle + "deg)"
@@ -71,7 +75,8 @@ function selectCase(record) {
     byId(field).textContent = text[field];
   }
   showPhoto("before", record);
-  showPhoto("after", record);
+  showPhoto("baseline", record);
+  showPhoto("ours", record);
   const source = byId("source");
   source.textContent = text.credit;
   source.href = record.source;
@@ -83,7 +88,7 @@ function selectCase(record) {
 
 const selected = GALLERY.find(record => record.id === params.get("case"));
 const phase = params.get("phase");
-if (selected && (phase === "before" || phase === "after")) {
+if (selected && ["before", "baseline", "ours"].includes(phase)) {
   setLanguageLinks(selected, phase);
   showPhoto(phase, selected);
   const figure = byId(phase);

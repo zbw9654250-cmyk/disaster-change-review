@@ -2,13 +2,13 @@
 
 [简体中文](README.md) · **English**
 
-Compare two images of the same place before and after a disaster. In the Oso landslide example, follow the river to see how debris from the slope reached the valley floor.
+Compare the same place before the disaster, the single-candidate baseline after it, and the multi-candidate result on the same post-disaster image. In the Oso landslide example, follow the river to compare the two localization outputs.
 
 [Open the live demo](https://zbw9654250-cmyk.github.io/disaster-change-review/?lang=en) · [Image credits](docs/DATA-NOTICE.en.md)
 
-![Oso before and after the landslide, with automatically detected changes circled](docs/assets/demo-preview.en.webp)
+The demo has five cases. Each case uses the same post-disaster image for the single-candidate baseline and the multi-candidate result. The before image is shown at left, the baseline at center, and the multi-candidate result at right. Both sets of circles are regenerated from RGB images, with orange for the baseline and green for our result. The hazard types and impacts come from NASA and USGS event reports. The building images and grades come from xBD. [Region generation code](scripts/generate_gallery_regions.py) · [Image credits and evidence](docs/DATA-NOTICE.en.md)
 
-The demo has five cases. For the two landslides and the La Palma eruption, a program compares the before and after RGB images and circles areas of visible change. The circles can be regenerated from the images. The hazard types and impacts come from NASA and USGS event reports. The two building cases use preset circles to show a factory after a hurricane and a house after a wildfire. Their damage grades come from xBD. [Change detection code](scripts/detect_geology_changes.py) · [Image credits and evidence](docs/DATA-NOTICE.en.md)
+The baseline and multi-candidate views use the same change detector. The baseline keeps the highest-scoring region, while the multi-candidate view keeps a bounded candidate set. This makes the effect of candidate retention easy to inspect without presenting two separately trained models.
 
 Click either image to enlarge it. To use the demo offline, download and unzip the repository, then open [docs/index.html](docs/index.html).
 

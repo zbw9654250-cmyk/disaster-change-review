@@ -4,9 +4,11 @@
 
 ## 滑坡和火山
 
-三组案例均使用 NASA Earth Observatory 发布的 Landsat 8 影像，灾前和灾后取同一地点、同一像素范围。程序从两期 RGB 计算局部颜色和纹理的变化，降低亮云和开阔水域的影响，再给变化集中、连续的区域画椭圆。三个案例使用同一套参数。网页读取预先计算的坐标，在两期原图的相应位置画圈。黄圈提示读图位置，云影和季节差异也可能影响结果。河道受阻、公路损毁和农田被覆盖的判读依据见下表。
+三组案例均使用 NASA Earth Observatory 发布的 Landsat 8 影像，灾前和灾后取同一地点、同一像素范围。程序从两期 RGB 计算局部颜色和纹理的变化，降低亮云和开阔水域的影响，再给变化集中、连续的区域画椭圆。三个案例使用同一套参数。网页保留灾前原图，在同一张灾后图上分别显示橙色单候选基线和绿色多候选结果。云影和季节差异也可能影响结果。河道受阻、公路损毁和农田被覆盖的判读依据见下表。
 
-在仓库根目录安装 `modules/observations/requirements.txt` 的依赖后，运行 `python scripts/detect_geology_changes.py --output docs/assets/geology/changes.js` 可从六张原图重新生成黄圈。输出同时记录每张输入图的 SHA-256。[生成坐标与影像摘要](assets/geology/changes.js)
+在仓库根目录安装 `modules/observations/requirements.txt` 的依赖后，运行 `python scripts/generate_gallery_regions.py --output docs/assets/change_regions.js` 可从十张灾前灾后图重新生成两套圈选结果。基线只保留最高分候选，多候选结果保留检测器的候选集合。输出同时记录每张输入图的 SHA-256。[生成区域与影像摘要](assets/change_regions.js)
+
+两套结果来自同一个变化检测器，不代表两个独立训练的模型。网页这样拆开是为了对照单候选和多候选保留策略。
 
 | 案例 | 灾前 → 灾后 | 制图与数据 | 受灾程度的依据 |
 | --- | --- | --- | --- |
@@ -14,11 +16,11 @@
 | 大苏尔滑坡 | 2017-04-20 → 2017-05-22 | Joshua Stevens / NASA Earth Observatory，USGS Landsat | 塌方毁坏超过 400 米公路，长度取自现场调查。[USGS 调查](https://www.usgs.gov/special-topics/big-sur-landslides/science/mud-creek-landslide-may-20-2017) |
 | 拉帕尔马岛火山 | 2021-05-21 → 2021-12-15 | Lauren Dauphin / NASA Earth Observatory，USGS Landsat | 熔岩覆盖沿岸田地并入海，形成两处新的陆地。[NASA 事件记录](https://science.nasa.gov/earth/earth-observatory/a-changed-landscape-on-la-palma-149231/) |
 
-原图下载、裁切坐标与再使用条件见[两处滑坡的影像记录](assets/geology/SOURCES.md)和[火山影像记录](assets/geology/volcano/SOURCES.md)。仓库首页的[网页截图](assets/demo-preview.webp)展示奥索滑坡，保留同组影像的制图与数据署名。
+原图下载、裁切坐标与再使用条件见[两处滑坡的影像记录](assets/geology/SOURCES.md)和[火山影像记录](assets/geology/volcano/SOURCES.md)。在线演示直接从仓库中的原图和生成区域文件读取内容。
 
 ## xBD 建筑
 
-两组卫星影像取自 xBD 测试集。影像由 Maxar / DigitalGlobe 提供，建筑轮廓和损伤等级由 Ritwik Gupta 等发布。每组从两期原图的相同像素范围裁出，保留原始方向和颜色。黄圈由人工标出，采集日和整栋建筑的“毁坏”（`destroyed`）等级来自下表的原始标注。
+两组卫星影像取自 xBD 测试集。影像由 Maxar / DigitalGlobe 提供，建筑轮廓和损伤等级由 Ritwik Gupta 等发布。每组从两期原图的相同像素范围裁出，保留原始方向和颜色。网页中的基线圈和多候选圈都由同一套 RGB 检测器生成，采集日和整栋建筑的等级来自下表的原始标注。
 
 | 案例 | 灾前 → 灾后 | 原图裁切范围（左、上、右、下，像素） | xBD 建筑 UID 与原始标注 |
 | --- | --- | --- | --- |
